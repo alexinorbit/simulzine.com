@@ -21,8 +21,7 @@
 !!python/unicode 'blog/tags/sad.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'blog/tags/thoughts.html': [macros.j2, base.j2, tagged_posts.j2,
   analytics.j2]
-!!python/unicode 'index.html': [blog.j2, !!python/unicode 'blog/database-driven-blogs-static-html-generators.html',
-  base.j2, analytics.j2, macros.j2]
+!!python/unicode 'index.html': [macros.j2, base.j2, analytics.j2]
 !!python/unicode 'media/css/bootstrap.css': []
 !!python/unicode 'media/css/site.css': []
 !!python/unicode 'media/css/syntax-default.css': []
