@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>
+        BASIC blog excerpts feed    </title>
+        <link href="blog/excerpts.xml" rel="self" />
+    
+        <link href="/"/>
+    
+        
+    <updated>2012-07-02T00:35:01Z</updated>
+
+    <id>/blog/excerpts.xml/</id>
+
+            <entry>
+            <title type="html">Database-driven Blogs and static HTML generators</title>
+            <author><name>Alex Giannakidis</name></author>
+            <link href="/blog/database-driven-blogs-static-html-generators.html"/>
+            <updated>2012-04-12T10:00:00Z</updated>
+            <published>2012-04-12T10:00:00Z</published>
+            <id>/blog/database-driven-blogs-static-html-generators.html</id>
+                        <category   scheme="/blog/tags"
+                        term="happy"
+                        label="Happy" />
+                        <category   scheme="/blog/tags"
+                        term="thoughts"
+                        label="Thoughts" />
+            
+            <content type="html">
+                &lt;p&gt;&lt;img alt=&#34;swan&#34; src=&#34;/media/images/obsolete_database.jpg&#34; /&gt;&lt;/p&gt;
+                &lt;p&gt;Searching for the right way to set up and maintain this blog and to overcome the restrictions that come with mainstream blogging software and services, I arrived at certain conclusions that you&amp;#8217;ll find in the following article. It&amp;#8217;s an article about the technical requirements of modern blogging where I consider recent trends and question traditional ways of getting things done. It addresses techies that are about to start blogging seriously, established bloggers and web developers who are looking for state-of-the-art&amp;nbsp;solutions.&lt;/p&gt;            </content>
+        </entry>
+    </feed>

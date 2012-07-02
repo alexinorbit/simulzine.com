@@ -1,0 +1,79 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  {% block starthead %}{% endblock starthead %}
+  <meta charset="{{ resource.meta.charset }}"
+  <meta http-equiv="X-UA-Compatible" content="{{ resource.meta.compatibility }}">
+  <title>{% block title %}{{ resource.meta.title }}{% endblock %}</title>
+  <meta name="description" content="{{ resource.meta.description }}">
+  <meta name="author" content="{{ resource.meta.author }}">
+  <meta name="viewport" content="{{ resource.meta.viewport }}">
+  {% block webfonts %}
+ <link href='http://fonts.googleapis.com/css?family=Audiowide|Ubuntu|Open+Sans:400,300,300italic,400italic,600,600italic,700,800italic|Muli:300,300italic,400,400italic&subset=latin,greek-ext' rel='stylesheet' type='text/css'>
+  {% endblock webfonts %}
+  {% block favicons %}
+  <!-- Place favicon.ico & apple-touch-icon.png
+        in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="{{ media_url('/favicon.ico') }}">
+  <link rel="apple-touch-icon" href="{{ media_url('/apple-touch-icon.png') }}">
+  {% endblock favicons %}
+
+  {% block css %}
+  <link rel="stylesheet" href="{{ media_url('css/site.css') }}">
+  <link rel="stylesheet" href="{{ media_url('css/syntax-native.css') }}">
+  {% endblock css %}
+
+  {% block headjs %}
+    <script src="{{ media_url('js/libs/modernizr-1.7.min.js') }}"></script>
+  {% endblock headjs %}
+  {% block endhead %}{% endblock endhead %}
+</head>
+<body id="{{ resource.meta.id if resource.meta.id else resource.slug }}">
+  {% block content %}
+  <div id="container">
+      {% block container %}
+      <div id="main" role="main">
+          <header class="banner clearfix">
+          {% block header -%}
+           <a href="index.html"> <h1>SIMULZINE</h1> <a/>
+           <a href="about.html"> <h3>by Alex Giannakidis</h3> </a>
+          {%- endblock %}
+          {% block nav %}
+          {% from "macros.j2" import render_nav with context %}
+          {{ render_nav(menu, 'main_nav') }}
+          {% endblock %}
+          </header>
+          {% block mytab %}
+          <section class="content">
+          {% block main %}
+          {% endblock main %}
+          </section> 
+          {% endblock mytab %} 
+      </div>
+       	  
+    {% endblock container %}
+  </div> <!--! end of #container -->
+  <footer>
+    <a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank">creative commons license</a>, 2012, Alex Giannakidis<br/>
+    generated with <a href="https://github.com/hyde/hyde" target="_blank">hyde</a>, view <a href="https://github.com/alexinorbit/simulzine.com" target="_blank">source</a> on github<br/>
+    subscribe to <a href="/atom.xml" target="_blank">rss</a>
+  </footer>
+  {% endblock content%}
+  {% block js %}
+  {% block jquery %}
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js">\x3C/script>')</script>
+  {% endblock jquery %}
+  {% block scripts %}
+  {% endblock scripts %}
+
+  {% block analytics %}
+  {% include "analytics.j2" %}
+  {% endblock analytics %}
+
+  {% endblock js %}
+</body>
+</html>
