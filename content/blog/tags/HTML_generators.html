@@ -4,7 +4,7 @@ listable: false
 
 ---
 
-{% set tag = site.tagger.tags['thoughts'] %}
+{% set tag = site.tagger.tags['HTML_generators'] %}
 {% set source = site.content.node_from_relative_path('blog') %}
-{% set walker = source.walk_resources_tagged_with_thoughts %}
+{% set walker = source.walk_resources_tagged_with_HTML_generators %}
 {% extends "tagged_posts.j2" %}

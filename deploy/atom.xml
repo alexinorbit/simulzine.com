@@ -7,7 +7,7 @@
         <link href="/"/>
     
         
-    <updated>2012-07-02T16:19:59Z</updated>
+    <updated>2012-07-02T17:09:51Z</updated>
 
     <id>/atom.xml/</id>
 
@@ -15,18 +15,24 @@
             <title type="html">Database-driven Blogs and static HTML generators</title>
             <author><name>Alex Giannakidis</name></author>
             <link href="/blog/database-driven-blogs-static-html-generators.html"/>
-            <updated>2012-04-12T10:00:00Z</updated>
-            <published>2012-04-12T10:00:00Z</published>
+            <updated>2012-07-02T10:00:00Z</updated>
+            <published>2012-07-02T10:00:00Z</published>
             <id>/blog/database-driven-blogs-static-html-generators.html</id>
                         <category   scheme="/blog/tags"
-                        term="happy"
-                        label="Happy" />
+                        term="web_development"
+                        label="Web_Development" />
                         <category   scheme="/blog/tags"
-                        term="thoughts"
-                        label="Thoughts" />
+                        term="blogging"
+                        label="Blogging" />
+                        <category   scheme="/blog/tags"
+                        term="CMS"
+                        label="Cms" />
+                        <category   scheme="/blog/tags"
+                        term="HTML_generators"
+                        label="Html_Generators" />
             
             <content type="html">
-                                &lt;p&gt;&lt;img alt=&#34;swan&#34; src=&#34;/media/images/obsolete_database.jpg&#34; /&gt;&lt;/p&gt;
+                                &lt;p&gt;&lt;img alt=&#34;forgotten_database&#34; src=&#34;/media/images/forgotten_database.jpg&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Searching for the right way to set up and maintain this blog and to overcome the restrictions that come with mainstream blogging software and services, I arrived at certain conclusions that you&amp;#8217;ll find in the following article. It&amp;#8217;s an article about the technical requirements of modern blogging where I consider recent trends and question traditional ways of getting things done. It addresses techies that are about to start blogging seriously, established bloggers and web developers who are looking for state-of-the-art&amp;nbsp;solutions.&lt;/p&gt;
 &lt;h1 id=&#34;planning-the-simulzinecom-project&#34;&gt;Planning the simulzine.com&amp;nbsp;project&lt;/h1&gt;
 &lt;p&gt;Beginning to plan our next software project, we usually choose a familiar tool-set and known services. This way we are able to rapid prototype our application and then concentrate on the actual requirements of the project. But is this always the right path to follow? We can quickly think of how things can be build, we&amp;#8217;ve created things that function in the past, we feel comfortable about them and are often allergic to new tools. But this prevents us from perceiving better and smarter ways to fulfil our tasks and we often incorporate unnecessary components into the application. In order to broaden our perspective we need to be aware of the community, get out of our comfort zone of skills and rethink traditions. In the context of project planning, my suggestion is to find the time to experiment and where possible go with open standards. In the coming sections, I have noted some of the things I considered important when planning for this&amp;nbsp;blog.&lt;/p&gt;
