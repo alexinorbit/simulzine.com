@@ -7,7 +7,7 @@
         <link href="/"/>
     
         
-    <updated>2012-07-05T14:33:48Z</updated>
+    <updated>2012-07-05T16:57:23Z</updated>
 
     <id>/blog/excerpts.xml/</id>
 
@@ -15,8 +15,8 @@
             <title type="html">Database-driven Blogs and static HTML generators</title>
             <author><name>Alex Giannakidis</name></author>
             <link href="/blog/database-driven-blogs-static-html-generators.html"/>
-            <updated>2012-07-02T10:00:00Z</updated>
-            <published>2012-07-02T10:00:00Z</published>
+            <updated>2012-07-05T10:00:00Z</updated>
+            <published>2012-07-05T10:00:00Z</published>
             <id>/blog/database-driven-blogs-static-html-generators.html</id>
                         <category   scheme="/blog/tags"
                         term="web_development"
