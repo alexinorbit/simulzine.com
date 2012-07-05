@@ -33,7 +33,7 @@ context:
                 url: about.html
 meta:
     nodemeta: meta.yaml
-    created: !!timestamp 2010-01-01 00:00:00
+    created: !!timestamp 2012-07-01 00:00:00
     author: Alex Giannakidis
     analytics:
         id: UA-30895874-1
