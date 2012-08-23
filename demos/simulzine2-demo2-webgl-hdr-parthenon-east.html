@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<title>simulzine demo#3 - available dynamic range visualization in webgl </title>
+		<title>simulzine demo#2 - high dynamic range visualization in webgl </title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<link href='http://fonts.googleapis.com/css?family=Audiowide|Ubuntu|Open+Sans:400,300,300italic,400italic,600,600italic,700,800italic|Muli:300,300italic,400,400italic&subset=latin,greek-ext' rel='stylesheet' type='text/css'>
@@ -12,6 +12,7 @@
 			font-size:13px;
 			text-align:center;
 			font-weight: bold;
+
 			background-color: #303030;
 			margin: 0px;
 			overflow: hidden;
@@ -43,12 +44,10 @@
 		<div id="container"></div>
 		<div id="top" style="font-weight:400;">
 		
-		<a href="http://www.simulzine.com/blog/webgl_hdr_parthenon_east_all.html"> 	&larr; back to article</a> &nbsp;&nbsp;&nbsp;&nbsp;
-		 <span style="font-family: 'Audiowide',  sans-serif;  font-size:12px;"s>SIMULZINE</span> demo#3<br/>
-		 Parthenon East Facade 32bit gigapixel image captured at 3 exposure brackets in the range between 1/25 and 1/2500 sec. <br/> 
-  		(272 positions, 816 photographs)<br/> 
-  		The following visualization reveals the color and luminance information hidden in the 32bit HDR gigapixel image.<br/>
-<span style="font-weight:900; font-size:16px; color:#fff;">available dynamic range visualization (webGL)</span> 
+		<a style="font-family: 'Audiowide',  sans-serif;  font-size:12px;" href="http://www.simulzine.com/blog/gigapixel-imaging-at-the-Acropolis-of-Athens-Parthenon-east-facade.html">SIMULZINE#3</a> demo#2<br/>
+		 Position (5,4) of 32bit gigapixel image captured at 3 exposure times of 1/160, 1/320 & 1/640 sec.<br/> 
+		 The following visualization reveals the color and luminance information hidden in the HDR image.<br/> 
+<span style="font-weight:900; font-size:16px; color:#fff;">luminance visualization 32bit HDR image (webGL)</span> 
 <br/><br/>
 		</div>
 		<div id="bottom" style="font-weight:400;">
@@ -147,7 +146,7 @@
 				scene.add( camera );
 
 
-				var texture = THREE.ImageUtils.loadTexture( "threejs/examples/textures/cropped_ok_1024.png" );
+				var texture = THREE.ImageUtils.loadTexture( "threejs/examples/textures/one_pic_1024.png" );
 				texture.minFilter = THREE.LinearFilter;
 				texture.magFilter = THREE.NearestFilter;
 
@@ -163,7 +162,7 @@
 
 				} );
 
-				var plane = new THREE.PlaneGeometry( 1024, 551 );
+				var plane = new THREE.PlaneGeometry( 1024, 681 );
 
 				quad = new THREE.Mesh( plane, materialHDR );
 				quad.position.z = -100;

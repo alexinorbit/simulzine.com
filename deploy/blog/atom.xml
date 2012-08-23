@@ -7,7 +7,7 @@
         <link href="/"/>
     
         
-    <updated>2012-08-23T03:22:28Z</updated>
+    <updated>2012-08-23T04:23:53Z</updated>
 
     <id>/blog/atom.xml/</id>
 
@@ -32,16 +32,16 @@
                         label="Parthenon" />
             
             <content type="html">
-                                &lt;p&gt;&lt;img alt=&#34;parthenon_gigapixel_screenshot&#34; src=&#34;/media/images/simulzine2-cover.jpg&#34; /&gt;
+                                &lt;p&gt;&lt;img alt=&#34;SIMULZINE#2-colver-parthenon-gigapixel-screenshot&#34; src=&#34;/media/images/simulzine2-cover.jpg&#34; /&gt;
 &lt;div class=&#34;button_demo_container&#34;&gt;
-&lt;a class=&#34;button_demo white&#34; href=&#34;http://www.simulzine.com/demos/giga_parthenon_east.html&#34; &gt;explore gigapixel image &amp;#187;&amp;#187;&lt;/a&gt;
+&lt;a class=&#34;button_demo white&#34; href=&#34;http://www.simulzine.com/demos/simulzine2-demo1-gigapixel-of-parthenon-east-facade.html&#34; target=&#34;_blank&#34;&gt;explore gigapixel image &amp;#187;&amp;#187;&lt;/a&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;My latest project, with orbitlab, was the creation of an interactive &lt;a href=&#34;http://acropolis-virtualtour.gr&#34; target=&#34;_blank&#34;&gt;virtual tour at the Acropolis of Athens&lt;/a&gt;. Amongst others, it involved the acquisition of five gigapixel scale images from the Acropolis Monuments. The project was an initiative of the &lt;a href=&#34;http://www.ysma.gr&#34; target=&#34;_blank&#34;&gt;Acropolis Restoration Service&lt;/a&gt;, the organization responsible for the restoration of the tormented and partially destroyed 2500 years old Acropolis Monuments over the past 30 years.
 &lt;br/&gt;&lt;br/&gt;
 The decision to adopt &lt;span class=&#34;italic_style&#34;&gt;state of the art&lt;/span&gt; technological solutions to &amp;#8220;bring online&amp;#8221; the entirety of the Acropolis is not merely a statement for the preservation work undertaken by the organization, but also a great contribution to the institution&amp;#8217;s mission to promote remote access to cultural&amp;nbsp;heritage.&lt;/p&gt;
 &lt;h1 id=&#34;choosing-the-point-of-view&#34;&gt;Choosing the Point of&amp;nbsp;View&lt;/h1&gt;
 &lt;p&gt;The monument facades to be photographed, were previously examined for proper lighting conditions, required for a long  gigapixel shooting. The point of view was carefully chosen with respect to insidious distortions that come up when you are too close to the monument. About 30 m in front of the east facade would not only show details of restoration works, but also produce the &amp;#8220;wow!&amp;#8221; effect when zooming in the final gigapixel image. The sun should be high, minimizing shadows. The east facade of the Parthenon was photographed by our crew at noon 13.00 for about one hour in September of&amp;nbsp;2010.&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;forgotten_database&#34; src=&#34;/media/images/simulzine2-fig1.jpg&#34; /&gt;
+&lt;p&gt;&lt;img alt=&#34;horizontal field of view of gigapixel shoot&#34; src=&#34;/media/images/simulzine2-fig1.jpg&#34; /&gt;
 &lt;div class=&#34;image_section&#34;&gt;
     &lt;span class=&#34;image_figure&#34;&gt;figure 1&lt;/span&gt;&lt;br&gt; 
     horizontal field of view of gigapixel shoot&lt;br&gt; 
@@ -70,7 +70,7 @@ The decision to adopt &lt;span class=&#34;italic_style&#34;&gt;state of the art&
 &lt;li&gt;robotic camera mount : &lt;span class=&#34;caps&#34;&gt;EPIC&lt;/span&gt;&amp;nbsp;Pro&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Our crew programmed the robotic rig to capture an area of 55&amp;#176; horizontal and 40&amp;#176; vertical field of view with a focal length of 500mm, that means a 16 X 17 grid with 272 cells (camera positions) - in three different exposure levels - that makes us 816 photographs and about 8.5 &lt;span class=&#34;caps&#34;&gt;GB&lt;/span&gt; of raw data on the&amp;nbsp;D700.&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;forgotten_database&#34; src=&#34;/media/images/simulzine2-fig2.jpg&#34; /&gt;
+&lt;p&gt;&lt;img alt=&#34;computed grid based on shooting parameters and covered area&#34; src=&#34;/media/images/simulzine2-fig2.jpg&#34; /&gt;
 &lt;div class=&#34;image_section&#34;&gt;
     &lt;span class=&#34;image_figure&#34;&gt;figure 2&lt;/span&gt;&lt;/br&gt; 
     computed grid based on shooting parameters and covered area&lt;/br&gt; 
@@ -80,14 +80,14 @@ The decision to adopt &lt;span class=&#34;italic_style&#34;&gt;state of the art&
 &lt;p&gt;Below, I will describe the post-processing workflow, from converting the &lt;span class=&#34;caps&#34;&gt;RAW&lt;/span&gt; photographs, &lt;span class=&#34;caps&#34;&gt;HDR&lt;/span&gt; processing, stitching, blending &lt;span class=&#34;amp&#34;&gt;&amp;amp;&lt;/span&gt; tonemapping up until the web deployment of the final gigapixel&amp;nbsp;image. &lt;/p&gt;
 &lt;h1 id=&#34;raw-conversion&#34;&gt;Raw&amp;nbsp;Conversion&lt;/h1&gt;
 &lt;p&gt;The first task of post processing this big amount of photographs is to set a uniform white balance throughout all of them. We usually use a gray card for this procedure but it can be done in many different ways at the raw conversion process or in situ. So from the camera&amp;#8217;s raw format (most DSLRs today compress at 14bit of color information) we convert to 16bit .tif without loosing valuable dynamic range. The use of a full frame sensor (Nikon D700) often results to strong vignetting around the image, so this had to be also corrected during the raw&amp;nbsp;conversion.&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;forgotten_database&#34; src=&#34;/media/images/simulzine2-fig3.jpg&#34; /&gt;
+&lt;p&gt;&lt;img alt=&#34;raw conversion of all photographs involves white balance &amp;amp; vignetiing correction&#34; src=&#34;/media/images/simulzine2-fig3.jpg&#34; /&gt;
 &lt;div class=&#34;image_section&#34;&gt;
     &lt;span class=&#34;image_figure&#34;&gt;figure 3&lt;/span&gt;&lt;/br&gt; 
     raw conversion of all photographs involves white balance &lt;span class=&#34;amp&#34;&gt;&amp;amp;&lt;/span&gt; vignetiing correction&lt;/br&gt; 
 &lt;/div&gt;&lt;/p&gt;
 &lt;h1 id=&#34;grid-alignment&#34;&gt;Grid&amp;nbsp;Alignment&lt;/h1&gt;
 &lt;p&gt;After removing possible duplicate shots, we are ready to align our set of 816 photographs in our favorite stitching &lt;span class=&#34;amp&#34;&gt;&amp;amp;&lt;/span&gt; blending software. We favor &lt;a href=&#34;http://www.ptgui.com/&#34; target=&#34;_blank&#34;&gt;PTGui&lt;/a&gt; not just because it has a new functionality supporting robotic rigs but because it is pretty straightforward and supports the stitching process with a variety of other tools. It has also proven to handle large data sets quiet stable. &lt;a href=&#34;http://hugin.sourceforge.net/&#34; target=&#34;_blank&#34;&gt;Hugin&lt;/a&gt;, the open source alternative fairly straightfoward too and can be effectively used easy for small panoramas but lacks support for gigapixel images. Below you can see a screenshot of 272 positions with 3 exposure brackets aligned in the PTGui&amp;nbsp;editor.&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;forgotten_database&#34; src=&#34;/media/images/simulzine2-fig4.jpg&#34; /&gt;
+&lt;p&gt;&lt;img alt=&#34;816 photographs automatic aligned in ptgui, 272 grid positions, 3 exposure brackets&#34; src=&#34;/media/images/simulzine2-fig4.jpg&#34; /&gt;
 &lt;div class=&#34;image_section&#34;&gt;
     &lt;span class=&#34;image_figure&#34;&gt;figure 4&lt;/span&gt;&lt;/br&gt; 
     816 photographs automatic aligned in ptgui, 272 grid positions, 3 exposure brackets&lt;/br&gt; 
@@ -95,25 +95,25 @@ The decision to adopt &lt;span class=&#34;italic_style&#34;&gt;state of the art&
 &lt;h1 id=&#34;hdr-acquisition-processing&#34;&gt;&lt;span class=&#34;caps&#34;&gt;HDR&lt;/span&gt; acquisition &lt;span class=&#34;amp&#34;&gt;&amp;amp;&lt;/span&gt;&amp;nbsp;processing&lt;/h1&gt;
 &lt;p&gt;&lt;span class=&#34;caps&#34;&gt;HDR&lt;/span&gt; Processing will contribute effectively to the results and is standard for professional work. For multiple exposures acquisition, a step of &lt;span class=&#34;caps&#34;&gt;1EV&lt;/span&gt; was sufficient for the well lighten east facade of the Parthenon and was chosen for the 3-exposures bracketing sequence. Basic panoramic imaging requires the camera to be in aperture priority, to keep a constant depth of field during the multiple exposures. So we let the camera do the metering and the lens to focus. Taking some test images will help to adjust the bracketing sequence. The goal is to capture as much of the dynamic range of the scene in varying lighting conditions. Images were taken with an aperture size of f11 (best performance of our lens) and exposure times from 1/25 to 1/2500&amp;nbsp;second. &lt;/p&gt;
 &lt;p&gt;Figure 5 showcases the detail accumulation of the bracketed sequence for a single grid position. Click the button below to view an &lt;span class=&#34;caps&#34;&gt;HDR&lt;/span&gt; visualization of the resulting 32bit image after exposure blending. Figures 6,7 &lt;span class=&#34;amp&#34;&gt;&amp;amp;&lt;/span&gt; 8 display the separated exposure brackets for the whole set of loaded images in PTGui. Click the button below to view an &lt;span class=&#34;caps&#34;&gt;HDR&lt;/span&gt; visualization of the resulting gigapixel 32bit image after exposure blending. (To view the &lt;span class=&#34;caps&#34;&gt;HDR&lt;/span&gt; visualizations you need a WebGL enabled&amp;nbsp;browser)&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;forgotten_database&#34; src=&#34;/media/images/simulzine2-fig5.jpg&#34; /&gt;
+&lt;p&gt;&lt;img alt=&#34;gaining detail from bracketed set of 3 exposures results to a 32bit HDR image&#34; src=&#34;/media/images/simulzine2-fig5.jpg&#34; /&gt;
 &lt;div class=&#34;image_section&#34;&gt;
     &lt;span class=&#34;image_figure&#34;&gt;figure 5&lt;/span&gt;&lt;/br&gt; 
     gaining detail from bracketed set of 3 exposures results to a 32bit &lt;span class=&#34;caps&#34;&gt;HDR&lt;/span&gt; image&lt;/br&gt; 
 &lt;/div&gt;
 &lt;div class=&#34;button_demo_container&#34;&gt;
-&lt;a class=&#34;button_demo white&#34; href=&#34;http://www.simulzine.com/demos/2_webgl_hdr_parthenon_east_position.html&#34; &gt;view hdr visualization of resulting 32bit image &amp;#187;&amp;#187;&lt;/a&gt;
+&lt;a class=&#34;button_demo white&#34; href=&#34;http://www.simulzine.com/demos/simulzine2-demo2-webgl-hdr-parthenon-east.html&#34; target=&#34;_blank&#34; &gt;view hdr visualization of resulting 32bit image &amp;#187;&amp;#187;&lt;/a&gt;
 &lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;forgotten_database&#34; src=&#34;/media/images/simulzine2-fig6.jpg&#34; /&gt;
+&lt;p&gt;&lt;img alt=&#34;272 normal exposed photographs aligned&#34; src=&#34;/media/images/simulzine2-fig6.jpg&#34; /&gt;
 &lt;div class=&#34;image_section&#34;&gt;
     &lt;span class=&#34;image_figure&#34;&gt;figure 6&lt;/span&gt;&lt;/br&gt; 
 272 normal exposed photographs aligned&lt;/br&gt; 
 &lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;forgotten_database&#34; src=&#34;/media/images/simulzine2-fig7.jpg&#34; /&gt;
+&lt;p&gt;&lt;img alt=&#34;272 over exposed photographs aligned&#34; src=&#34;/media/images/simulzine2-fig7.jpg&#34; /&gt;
 &lt;div class=&#34;image_section&#34;&gt;
     &lt;span class=&#34;image_figure&#34;&gt;figure 7&lt;/span&gt;&lt;/br&gt; 
 272 over exposed photographs aligned&lt;/br&gt; 
 &lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;forgotten_database&#34; src=&#34;/media/images/simulzine2-fig8.jpg&#34; /&gt;
+&lt;p&gt;&lt;img alt=&#34;272 under exposed photographs aligned&#34; src=&#34;/media/images/simulzine2-fig8.jpg&#34; /&gt;
 &lt;div class=&#34;image_section&#34;&gt;
     &lt;span class=&#34;image_figure&#34;&gt;figure 8&lt;/span&gt;&lt;/br&gt; 
 272 under exposed photographs aligned&lt;/br&gt; 
@@ -121,7 +121,7 @@ The decision to adopt &lt;span class=&#34;italic_style&#34;&gt;state of the art&
 &lt;h1 id=&#34;stitching-and-blending&#34;&gt;Stitching and&amp;nbsp;Blending&lt;/h1&gt;
 &lt;p&gt;There is a variety of reliable software in the market, suitable for gigapixel processing, but it is worth to say that they all use the same stitching algorithms  &lt;a href=&#34;http://en.wikipedia.org/wiki/Panorama_Tools&#34; target=&#34;_blank&#34;&gt;(panotools)&lt;/a&gt;. Most stitching software are just graphical user interfaces for these algorithms packed with a lot of functionalities that make our lives easier. An overlapping of 25% for neighboring (horizontal &lt;span class=&#34;amp&#34;&gt;&amp;amp;&lt;/span&gt; vertilcal) photographs was sufficient enough for the automatic detection of control points throughout the whole gigapixel&amp;nbsp;image.&lt;/p&gt;
 &lt;p&gt;The following figure depicts the whole post-processing workflow after raw conversion. Although very few, there were some stitching errors that were of minor importance (like the one marked below), that we chose not to retouch. To preserve the empirical provenance of the final image no retouching should be applied on pixel information of the actual&amp;nbsp;monument.&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;forgotten_database&#34; src=&#34;/media/images/simulzine2-fig9.jpg&#34; /&gt;
+&lt;p&gt;&lt;img alt=&#34;stitching, blending &amp;amp; tonemapping of overlapping areas&#34; src=&#34;/media/images/simulzine2-fig9.jpg&#34; /&gt;
 &lt;div class=&#34;image_section&#34;&gt;
     &lt;span class=&#34;image_figure&#34;&gt;figure 9&lt;/span&gt;&lt;br&gt; 
     stitching, blending &lt;span class=&#34;amp&#34;&gt;&amp;amp;&lt;/span&gt; tonemapping of overlapping areas&lt;br&gt; 
@@ -133,29 +133,29 @@ The decision to adopt &lt;span class=&#34;italic_style&#34;&gt;state of the art&
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;When we&amp;#8217;ve done a good job at capturing the dynamic range then blending of the images on overlapping areas will not be a hard job. PTGui supports three blending algorithms, the internal one, smartblend and enblend. We found out that smartblend can&amp;#8217;t deal with big image sizes, it simply crashes during the rendering process. Enblend was a good choice for this work. Our final render is a 32bit &lt;span class=&#34;caps&#34;&gt;HDR&lt;/span&gt; image in gigapixel resolution (.hdr or .exr format). Tip: Render small images first to see if blending suits your setup before going for maximum&amp;nbsp;resolution. &lt;/p&gt;
 &lt;div class=&#34;button_demo_container&#34;&gt;
-&lt;a class=&#34;button_demo white&#34; href=&#34;http://www.simulzine.com/demos/2_webgl_hdr_parthenon_east_position.html&#34; &gt;view hdr visualization of resulting 32bit gigapixel image &amp;#187;&amp;#187;&lt;/a&gt;
+&lt;a class=&#34;button_demo white&#34; href=&#34;http://www.simulzine.com/demos/simulzine2-demo3-webgl-hdr-parthenon-east.html&#34; target=&#34;_blank&#34; &gt;view hdr visualization of resulting 32bit gigapixel image &amp;#187;&amp;#187;&lt;/a&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Next step will be tonemapping so we can display the &lt;span class=&#34;caps&#34;&gt;HDR&lt;/span&gt; image on traditional&amp;nbsp;displays.&lt;/p&gt;
 &lt;h1 id=&#34;tonemapping&#34;&gt;Tonemapping&lt;/h1&gt;
 &lt;p&gt;As we seen before &lt;span class=&#34;caps&#34;&gt;HDR&lt;/span&gt; images include more color information then traditional bitmaps. More than display hardware can use. These digital images can&amp;#8217;t be displayed in traditional mediums like paper or common monitors or LCDs, with limited luminance. There is an ongoing development of &lt;span class=&#34;caps&#34;&gt;HDR&lt;/span&gt; displays that can make use of 32 bit color information. Dolby is making efforts to license a &lt;span class=&#34;caps&#34;&gt;HDR&lt;/span&gt; display technology to &lt;span class=&#34;caps&#34;&gt;LCD&lt;/span&gt; manufacturers like&amp;nbsp;Sony.&lt;/p&gt;
 &lt;p&gt;So our next step will be the tonemapping of the &lt;span class=&#34;caps&#34;&gt;HDR&lt;/span&gt; gigapixel image, so it can be displayed in traditional displays. Tone mapping is an image processing technique that compresses (or maps) large color information to limited dynamic range formats like .tif or .jpg, with the goal to maintain as much image detail as possible. It is particularly helpful in scenes where dark and bright areas coexist (eg. high contrast scenes). Although tone mapping is mostly used by digital &amp;#8220;cinephotographers&amp;#8221; to produce &lt;span class=&#34;caps&#34;&gt;VFX&lt;/span&gt;, illustrative or aesthetically pleasing images, our goal was to enhance realism and depict the monuments objectively for display on regular computer monitors. Below you can see different tone mapped variations of the Parthenon East&amp;nbsp;Facade: &lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;forgotten_database&#34; src=&#34;/media/images/simulzine2-fig10.jpg&#34; /&gt;
+&lt;p&gt;&lt;img alt=&#34;tonemapping of 32bit image vivid version&#34; src=&#34;/media/images/simulzine2-fig10.jpg&#34; /&gt;
 &lt;div class=&#34;image_section&#34;&gt;
     &lt;span class=&#34;image_figure&#34;&gt;figure 10&lt;/span&gt;&lt;/br&gt; 
 tonemapping of 32bit image (vivid version)&lt;/br&gt; 
 &lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;forgotten_database&#34; src=&#34;/media/images/simulzine2-fig11.jpg&#34; /&gt;
+&lt;p&gt;&lt;img alt=&#34;tonemapping of 32bit image surrealistic version&#34; src=&#34;/media/images/simulzine2-fig11.jpg&#34; /&gt;
 &lt;div class=&#34;image_section&#34;&gt;
     &lt;span class=&#34;image_figure&#34;&gt;figure 11&lt;/span&gt;&lt;/br&gt; 
 tonemapping of 32bit image (surrealistic version)&lt;/br&gt; 
 &lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;forgotten_database&#34; src=&#34;/media/images/simulzine2-fig12.jpg&#34; /&gt;
+&lt;p&gt;&lt;img alt=&#34;tonemapping of 32bit image (exposure corrected version)&#34; src=&#34;/media/images/simulzine2-fig12.jpg&#34; /&gt;
 &lt;div class=&#34;image_section&#34;&gt;
     &lt;span class=&#34;image_figure&#34;&gt;figure 12&lt;/span&gt;&lt;/br&gt; 
 tonemapping of 32bit image (exposure corrected version)&lt;/br&gt; 
 &lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;forgotten_database&#34; src=&#34;/media/images/simulzine2-fig13.jpg&#34; /&gt;
+&lt;p&gt;&lt;img alt=&#34;tonemapping of 32bit image, retouched sky, cropped (final version)&#34; src=&#34;/media/images/simulzine2-fig13.jpg&#34; /&gt;
 &lt;div class=&#34;image_section&#34;&gt;
     &lt;span class=&#34;image_figure&#34;&gt;figure 13&lt;/span&gt;&lt;/br&gt; 
 tonemapping of 32bit image, retouched sky, cropped (final version)&lt;/br&gt;
@@ -168,7 +168,7 @@ tonemapping of 32bit image, retouched sky, cropped (final version)&lt;/br&gt;
 &lt;h1 id=&#34;deployment-tiling&#34;&gt;Deployment -&amp;nbsp;Tiling&lt;/h1&gt;
 &lt;p&gt;Well, creating the gigapixel image is one matter. Another important aspect is how to display this huge amount of pixels over the internet. So let&amp;#8217;s talk about deployment. Current possibilities depend on browser plug-ins like flash or silverlight required to display rich media within web environments. There are numerous viewers like &lt;a href=&#34;http://krpano.com/&#34; target=&#34;_blank&#34;&gt;krpano&lt;/a&gt; (our choice) and &lt;a href=&#34;http://krpano.com/&#34; target=&#34;_blank&#34;&gt;zoomify&lt;/a&gt; for flash or &lt;a href=&#34;http://en.wikipedia.org/wiki/Deep_Zoom&#34; target=&#34;_blank&#34;&gt;deepzoom&lt;/a&gt; for silverlight. Unfortunately &lt;span class=&#34;caps&#34;&gt;HTML5&lt;/span&gt; and its Canvas element isn&amp;#8217;t currently suitable or mature enough to handle gigapixel images (both krpano and zoomify support &lt;span class=&#34;caps&#34;&gt;HTML5&lt;/span&gt; rendering, but not for gigapixel scale images). Another drawback regarding deployment of gigapixel images is the currently weak support for mobile devices. The only working example I could test was &lt;a href=&#34;http://itunes.apple.com/us/app/gigapan-for-ipad/id393734649?mt=8&#34; target=&#34;_blank&#34;&gt;Gigapan for iPad&lt;/a&gt;, a native coded gallery like app for gigapixel images of the &lt;a href=&#34;http://gigapan.com/&#34; target=&#34;_blank&#34;&gt;gigapan gallery&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The method for displaying gigapixel images effectively is based on tiling, just like maps are displayed in browsers. Figures 14 &lt;span class=&#34;amp&#34;&gt;&amp;amp;&lt;/span&gt; 15 describe the process of tiling and displaying gigapixel images over the internet: &lt;span class=&#34;image_figure&#34;&gt;The final image is spitted into multiple levels of smaller tiles that load depending on the navigation path of the user (panning &lt;span class=&#34;amp&#34;&gt;&amp;amp;&lt;/span&gt; zooming). All the  have the same resolution over the different zoom levels. Every zoom level is a plane with a varying quantity of (equal sized) tiles and updates the viewport of the user by loading the corresponding&amp;nbsp;tiles.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;forgotten_database&#34; src=&#34;/media/images/simulzine2-fig14.jpg&#34; /&gt;
+&lt;p&gt;&lt;img alt=&#34;tiling setup of N zoom levels&#34; src=&#34;/media/images/simulzine2-fig14.jpg&#34; /&gt;
 &lt;div class=&#34;image_section&#34;&gt;
     &lt;span class=&#34;image_figure&#34;&gt;figure 14&lt;/span&gt;&lt;br&gt; 
     tiling setup of N zoom levels,&lt;br/&gt; 
@@ -181,7 +181,7 @@ tonemapping of 32bit image, retouched sky, cropped (final version)&lt;/br&gt;
       &lt;span style=&#34;font-weight:400;&#34;&gt;D&lt;/span&gt;: parameter of fov variations depended on zoom and interaction settings
     &lt;/div&gt;&lt;br /&gt;
 &lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;forgotten_database&#34; src=&#34;/media/images/simulzine2-fig15.jpg&#34; /&gt;
+&lt;p&gt;![hypothetical 3d space arrangement of different zoom levels(/media/images/simulzine2-fig15.jpg)
 &lt;div class=&#34;image_section&#34;&gt;
     &lt;span class=&#34;image_figure&#34;&gt;figure 15&lt;/span&gt;&lt;br&gt; 
     hypothetical 3d space arrangement of different zoom levels&lt;br&gt; 
