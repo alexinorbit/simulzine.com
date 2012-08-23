@@ -149,7 +149,6 @@ footer{
 
 .button_demo_container{
 	text-align:center;
-	margin-bottom:30px;
 }
 
 .bigrounded {
@@ -670,19 +669,6 @@ vertical-align:middle; margin-bottom: 0px; }
 	font-style:italic;
 }
 
-.bold_style {
-	font-weight:400;
-}
-
-.superscript_style {
-	font-size:xx-small; 
-	vertical-align:super;
-}
-
-.subscript_style {
-	font-size:xx-small; 
-	vertical-align:sub;
-}
 /* SYNTAX */
 .codehilite .hll { background-color: #404040 }
 .codehilite .c { color: #999999; font-style: italic } /* Comment */

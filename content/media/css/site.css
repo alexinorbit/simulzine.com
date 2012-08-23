@@ -56,7 +56,7 @@ a:hover{
 }
 
 body{
-    font-family:'Open Sans', sans-serif;
+    font-family:'Muli', sans-serif;
     background-color: #fcfcfc;
     padding: 0;
     margin: 0;
@@ -120,6 +120,38 @@ footer{
     top: 1px;
 }
 
+.button_demo {	
+	display: inline-block;
+    zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
+    *display: inline;
+    vertical-align: baseline;
+    margin: 20px 5px;
+    cursor: pointer;
+    text-align: center;
+    border-width:0px;
+    border-style:solid;
+    border-color: #800000;
+    text-decoration: none;
+    font: 18px/100% 'Muli', sans-serif;
+    padding: 15px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    /*-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2); */
+     -webkit-box-shadow: 0 1px 2px rgba(241,9,9,.6);
+    -moz-box-shadow: 0 1px 2pxrgba(241,9,9,.6);
+    box-shadow: 0 1px 2px rgba(241,9,9,.6);
+
+}
+
+.button_demo_container{
+	text-align:center;
+	margin-bottom:30px;
+}
+
 .bigrounded {
     -webkit-border-radius: 2em;
     -moz-border-radius: 2em;
@@ -137,8 +169,7 @@ footer{
 
 /* white */
 .white {
-    color: #4c4c4c;
-    border: solid 0px #b7b7b7;
+    color: #4c4c4c;   
     background: #e5e5e5;
 }
 .white:hover {
@@ -318,14 +349,18 @@ section.content_list{
 /* Content */
 
 article.post p{
-    font-size: 14px;
+    font-size: 16px;
     line-height: 24px;
     margin: 15px 6px;
+    font-weight:300;
 }
 
 article.post img{
     display: block;
-    margin-bottom: 24px;
+    margin-bottom: 0px;
+    text-align:center;
+    width:600px;
+    
 }
 
 .post time{
@@ -339,7 +374,8 @@ article.post ul{
 	margin-top:15px;
 	margin-bottom:15px;
 	list-style-type:circle;
-	font-size:14px;
+	font-size:16px;
+	font-weight: 300;
 }
 
 article.post li{
@@ -603,6 +639,50 @@ vertical-align:middle; margin-bottom: 0px; }
 	float:right;
 }
 
+.image_section {
+	margin: 0px 0px 40px 0px;
+	padding:0px;
+	width:600px;
+	text-align:center;
+	font-size: 16px;
+    line-height: 18px;
+    font-family: 'Muli',  sans-serif;
+    font-weight: 300; 
+    color: #000;
+    font-style:italic;
+    
+	
+}
+
+#legend, image_section {
+	font-size: 14px;
+	list-style-type:none;
+	display: inline;
+	
+}
+
+.image_figure {
+	color:#303030; 
+	font-size:14px;
+}
+
+.italic_style {
+	font-style:italic;
+}
+
+.bold_style {
+	font-weight:400;
+}
+
+.superscript_style {
+	font-size:xx-small; 
+	vertical-align:super;
+}
+
+.subscript_style {
+	font-size:xx-small; 
+	vertical-align:sub;
+}
 /* SYNTAX */
 .codehilite .hll { background-color: #404040 }
 .codehilite .c { color: #999999; font-style: italic } /* Comment */
