@@ -7,7 +7,7 @@
         <link href="/"/>
     
         
-    <updated>2012-08-23T04:23:53Z</updated>
+    <updated>2013-06-24T14:11:46Z</updated>
 
     <id>/blog/atom.xml/</id>
 
@@ -197,6 +197,104 @@ tonemapping of 32bit image, retouched sky, cropped (final version)&lt;/br&gt;
 &lt;h1 id=&#34;expanding-the-boundaries-of-photography&#34;&gt;&lt;span class=&#34;dquo&#34;&gt;&amp;#8220;&lt;/span&gt;Expanding the boundaries of&amp;nbsp;photography&amp;#8221;&lt;/h1&gt;
 &lt;p&gt;Gigapixel images are explorable images, that provide the viewer with access to a variety of information otherwise hidden to the physical visitor of an archaeological or other site. They represent the virtual binoculars of the user. They can serve documentation and restoration purposes over a variety of disciplines. In addition gigapixel images are suitable for fulldome or large theater projections. Gigapixel imaging was taken out of scientific research and pioneered for the internet and the rest of us by the &lt;a href=&#34;http://www.xrez.com/&#34; target=&#34;_blank&#34;&gt;xRez&lt;/a&gt; team. It&amp;#8217;s about &amp;#8220;expanding the boundaries of photography&amp;#8221; as they say. You can watch a recent revealing lecture about gigapixel imaging by Greg Downing and Eric Hanson of xRez &lt;a href=&#34;http://www.annenbergspaceforphotography.org/events/iris-nights/digital-darkroom/104&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. &lt;/p&gt;
 &lt;p&gt;Thank you for&amp;nbsp;reading.&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">Customizable Accordion Menu for the krPano Panorama Viewer</title>
+            <author><name>Alex Giannakidis</name></author>
+            <link href="/blog/accordion-menu-krpano-panorama-viewer.html"/>
+            <updated>2012-08-22T00:00:00Z</updated>
+            <published>2012-08-22T00:00:00Z</published>
+            <id>/blog/accordion-menu-krpano-panorama-viewer.html</id>
+                        <category   scheme="/blog/tags"
+                        term="gigapixel"
+                        label="Gigapixel" />
+                        <category   scheme="/blog/tags"
+                        term="Acropolis"
+                        label="Acropolis" />
+                        <category   scheme="/blog/tags"
+                        term="HDR"
+                        label="Hdr" />
+                        <category   scheme="/blog/tags"
+                        term="Parthenon"
+                        label="Parthenon" />
+            
+            <content type="html">
+                                &lt;p&gt;&lt;img alt=&#34;SIMULZINE#2-colver-parthenon-gigapixel-screenshot&#34; src=&#34;/media/images/simulzine2-cover.jpg&#34; /&gt;
+&lt;div class=&#34;button_demo_container&#34;&gt;
+&lt;a class=&#34;button_demo white&#34; href=&#34;http://www.simulzine.com/demos/simulzine2-demo1-gigapixel-of-parthenon-east-facade.html&#34; target=&#34;_blank&#34;&gt;explore gigapixel image &amp;#187;&amp;#187;&lt;/a&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;My latest project, with orbitlab, was the creation of an interactive &lt;a href=&#34;http://acropolis-virtualtour.gr&#34; target=&#34;_blank&#34;&gt;virtual tour at the Acropolis of Athens&lt;/a&gt;. Amongst others, it involved the acquisition of five gigapixel scale images from the Acropolis Monuments. The project was an initiative of the &lt;a href=&#34;http://www.ysma.gr&#34; target=&#34;_blank&#34;&gt;Acropolis Restoration Service&lt;/a&gt;, the organization responsible for the restoration of the tormented and partially destroyed 2500 years old Acropolis Monuments over the past 30 years.
+&lt;br/&gt;&lt;br/&gt;
+The decision to adopt &lt;span class=&#34;italic_style&#34;&gt;state of the art&lt;/span&gt; technological solutions to &amp;#8220;bring online&amp;#8221; the entirety of the Acropolis is not merely a statement for the preservation work undertaken by the organization, but also a great contribution to the institution&amp;#8217;s mission to promote remote access to cultural&amp;nbsp;heritage.&lt;/p&gt;
+&lt;h1 id=&#34;choosing-the-point-of-view&#34;&gt;Choosing the Point of&amp;nbsp;View&lt;/h1&gt;
+&lt;p&gt;The monument facades to be photographed, were previously examined for proper lighting conditions, required for a long  gigapixel shooting. The point of view was carefully chosen with respect to insidious distortions that come up when you are too close to the monument. About 30 m in front of the east facade would not only show details of restoration works, but also produce the &amp;#8220;wow!&amp;#8221; effect when zooming in the final gigapixel image. The sun should be high, minimizing shadows. The east facade of the Parthenon was photographed by our crew at noon 13.00 for about one hour in September of&amp;nbsp;2010.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;horizontal field of view of gigapixel shoot&#34; src=&#34;/media/images/simulzine2-fig1.jpg&#34; /&gt;
+&lt;div class=&#34;image_section&#34;&gt;
+    &lt;span class=&#34;image_figure&#34;&gt;figure 1&lt;/span&gt;&lt;br&gt; 
+    horizontal field of view of gigapixel shoot&lt;br&gt; 
+    &lt;div id=&#34;legend&#34;&gt;
+      &lt;span style=&#34;font-weight:400;&#34;&gt;hfov&lt;/span&gt;: horizontal field of view,
+      &lt;span style=&#34;font-weight:400;&#34;&gt;d&lt;/span&gt;: distance of camera from object,
+      &lt;span style=&#34;font-weight:400;&#34;&gt;red lines&lt;/span&gt;: equal sides of isosceles triangle,
+      &lt;span style=&#34;font-weight:400;&#34;&gt;blue dotted line&lt;/span&gt;: Parthenon East Facade,
+      &lt;span style=&#34;font-weight:400;&#34;&gt;red circle&lt;/span&gt;: camera,
+      &lt;span style=&#34;font-weight:400;&#34;&gt;image&lt;/span&gt;: Acropolis groundplan orthophoto
+    &lt;/div&gt;&lt;br /&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;h1 id=&#34;things-to-consider-before-shooting&#34;&gt;Things to consider before&amp;nbsp;shooting&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Weather : sunny, clear atmosphere, no clouds (bad for&amp;nbsp;stitching)&lt;/li&gt;
+&lt;li&gt;Sun Position: The sun has to be in a convenient position (during the hole shooting!) to properly light the part of the monument to be&amp;nbsp;photographed&lt;/li&gt;
+&lt;li&gt;Crowding : You don&amp;#8217;t want people in your shots. When possible set up a perimeter. Prepare for delays, repeated shots, manual shooting with the robotic&amp;nbsp;arm.&lt;/li&gt;
+&lt;li&gt;Focusing : You may want to switch to manual focusing at areas where foreground objects could disturb your depth of&amp;nbsp;field&lt;/li&gt;
+&lt;li&gt;Know your gear:  Estimate the time needed to complete the shots! You don&amp;#8217;t want the night to come or run out of battery. Estimate file size, keep&amp;nbsp;backup!&lt;/li&gt;
+&lt;li&gt;Take Notes: Especially about duplicate shots and downloaded photographs from your camera (saves a lot of boring work&amp;nbsp;afterward!)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;brush: xml&#34;&gt;
+&lt;action name=&#34;createGbutton&#34;&gt; &lt;!-- action to create dynamically a Group textfield based button --&gt;
+        addplugin(get(pname));
+        set(plugin[%pname].html,[p]%1[/p]);
+        set(plugin[%pname].x,%2);
+        set(plugin[%pname].y,%3);
+        set(plugin[%pname].width,%4);
+        set(plugin[%pname].height,%5);
+        set(plugin[%pname].url,%&lt;span class=&#34;caps&#34;&gt;SWFPATH&lt;/span&gt;%/plugins/textfield.swf);
+        plugin[%pname].loadstyle(GroupButtonsStyle)
+&lt;/action&gt;
+
+&lt;action name=&#34;createEbutton&#34;&gt; &lt;!-- action to create dynamically an Event textfield based button --&gt;
+        addplugin(get(pname));
+        set(plugin[%pname].html,[p]%1[/p]);
+        set(plugin[%pname].x,%2);
+        set(plugin[%pname].y,%3);
+        set(plugin[%pname].width,%4);
+        set(plugin[%pname].height,%5);
+        set(plugin[%pname].url,%&lt;span class=&#34;caps&#34;&gt;SWFPATH&lt;/span&gt;%/plugins/textfield.swf);
+        plugin[%pname].loadstyle(EventButtonsStyle)
+&lt;/action&gt;
+
+&lt;action name=&#34;addgroupBTN&#34;&gt; &lt;!-- action to add Group button on stage --&gt;
+        createGbutton(%1, %2, %3, %4, %5);
+        inc(ypos,get(vargl));       
+&lt;/action&gt;
+
+&lt;action name=&#34;addeventBTN&#34;&gt; &lt;!-- action to add Event button on stage --&gt;    
+        createEbutton(%1, %2, %3, %4, %5);
+&lt;/action&gt;
+&lt;/pre&gt;
+
+&lt;h1 id=&#34;available-gear&#34;&gt;Available&amp;nbsp;Gear&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Camera : Nikon&amp;nbsp;D700 &lt;/li&gt;
+&lt;li&gt;Lens : Sigma 500mm f/4.5 &lt;span class=&#34;caps&#34;&gt;EX&lt;/span&gt;&amp;nbsp;&lt;span class=&#34;caps&#34;&gt;HSM&lt;/span&gt; &lt;/li&gt;
+&lt;li&gt;robotic camera mount : &lt;span class=&#34;caps&#34;&gt;EPIC&lt;/span&gt;&amp;nbsp;Pro&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Our crew programmed the robotic rig to capture an area of 55&amp;#176; horizontal and 40&amp;#176; vertical field of view with a focal length of 500mm, that means a 16 X 17 grid with 272 cells (camera positions) - in three different exposure levels - that makes us 816 photographs and about 8.5 &lt;span class=&#34;caps&#34;&gt;GB&lt;/span&gt; of raw data on the&amp;nbsp;D700.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;computed grid based on shooting parameters and covered area&#34; src=&#34;/media/images/simulzine2-fig2.jpg&#34; /&gt;
+&lt;div class=&#34;image_section&#34;&gt;
+    &lt;span class=&#34;image_figure&#34;&gt;figure 2&lt;/span&gt;&lt;/br&gt; 
+    computed grid based on shooting parameters and covered area&lt;/br&gt; 
+&lt;/div&gt;&lt;/p&gt;            </content>
         </entry>
             <entry>
             <title type="html">Database-driven Blogs and static HTML generators</title>

@@ -7,7 +7,7 @@
         <link href="/"/>
     
         
-    <updated>2012-08-23T04:23:52Z</updated>
+    <updated>2013-06-24T14:11:45Z</updated>
 
     <id>/blog/excerpts.xml/</id>
 
@@ -18,6 +18,30 @@
             <updated>2012-08-22T00:00:00Z</updated>
             <published>2012-08-22T00:00:00Z</published>
             <id>/blog/gigapixel-imaging-at-the-Acropolis-of-Athens-Parthenon-east-facade.html</id>
+                        <category   scheme="/blog/tags"
+                        term="gigapixel"
+                        label="Gigapixel" />
+                        <category   scheme="/blog/tags"
+                        term="Acropolis"
+                        label="Acropolis" />
+                        <category   scheme="/blog/tags"
+                        term="HDR"
+                        label="Hdr" />
+                        <category   scheme="/blog/tags"
+                        term="Parthenon"
+                        label="Parthenon" />
+            
+            <content type="html">
+                &lt;p&gt;&lt;img alt=&#34;SIMULZINE#2-colver-parthenon-gigapixel-screenshot&#34; src=&#34;/media/images/simulzine2-cover.jpg&#34; /&gt;&lt;/p&gt;
+                &lt;p&gt;My latest project, with orbitlab, was the creation of an interactive &lt;a href=&#34;http://acropolis-virtualtour.gr&#34; target=&#34;_blank&#34;&gt;virtual tour at the Acropolis of Athens&lt;/a&gt;. Amongst others, it involved the acquisition of five gigapixel scale images from the Acropolis Monuments. The project was an initiative of the &lt;a href=&#34;http://www.ysma.gr&#34; target=&#34;_blank&#34;&gt;Acropolis Restoration Service&lt;/a&gt;, the organization responsible for the restoration of the tormented and partially destroyed 2500 years old Acropolis Monuments over the past 30&amp;nbsp;years.&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">Customizable Accordion Menu for the krPano Panorama Viewer</title>
+            <author><name>Alex Giannakidis</name></author>
+            <link href="/blog/accordion-menu-krpano-panorama-viewer.html"/>
+            <updated>2012-08-22T00:00:00Z</updated>
+            <published>2012-08-22T00:00:00Z</published>
+            <id>/blog/accordion-menu-krpano-panorama-viewer.html</id>
                         <category   scheme="/blog/tags"
                         term="gigapixel"
                         label="Gigapixel" />

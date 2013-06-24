@@ -16,17 +16,29 @@
         in the root of your domain and delete these references -->
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+
+ 
+    <link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeMDUltra.css" rel="stylesheet" type="text/css" />
+  <!--  <link rel="stylesheet" href="/media/css/syntaxhighlighter/styles/shCore.css">
+  <link rel="stylesheet" href="/media/css/syntaxhighlighter/styles/shThemeDefault.css"> -->
+  <link rel="stylesheet" href="/media/css/site.css">
   
-    <link rel="stylesheet" href="/media/css/site.css">
   
-      <script src="/media/js/libs/modernizr-1.7.min.js"></script>
+      <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"></script>
+    <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js" type="text/javascript"></script>
+  <!-- <script type="text/javascript" src="/media/css/syntaxhighlighter/scripts/shCore.js"></script>
+   <script type="text/javascript" src="/media/css/syntaxhighlighter/scripts/shBrushXml.js"></script>
+   <script type="text/javascript" src="/media/css/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+   <script type="text/javascript" src="/media/css/syntaxhighlighter/scripts/shAutoloader.js"></script> -->
+    <script src="/media/js/libs/modernizr-1.7.min.js"></script>
     </head>
 <body id="gigapixel-imaging-at-the-Acropolis-of-Athens-Parthenon-east-facade">
     <div id="container">
             <div id="main" role="main">
           <header class="banner clearfix">
-          <a href="index.html"> <h1>SIMULZINE</h1> <a/>
-           <a href="about.html"> <h3>by Alex Giannakidis</h3> </a>                              <nav class=main_nav>
+          <a href="http://www.simulzine.com/index.html"> <h1>SIMULZINE</h1> <a/>
+           <a href="http://www.simulzine.com/about.html"> <h3>by Alex Giannakidis</h3> </a>                              <nav class=main_nav>
     <ul>
                 <li>
             <a title="Home Page"
@@ -267,9 +279,9 @@ tags:
 
 <div class="prev_next">
 	<a class="prev" 
-	title="Database-driven Blogs and static HTML generators"
-        href="/blog/database-driven-blogs-static-html-generators.html" >
-	Database-driven Blogs and static HTML generators
+	title="Customizable Accordion Menu for the krPano Panorama Viewer"
+        href="/blog/accordion-menu-krpano-panorama-viewer.html" >
+	Customizable Accordion Menu for the krPano Panorama Viewer
 	</a>
 	<a class="next"
     title=""
@@ -286,7 +298,16 @@ tags:
     view <a href="https://github.com/alexinorbit/simulzine.com" target="_blank">source</a> on github, 
     subscribe to <a href="/atom.xml" target="_blank">rss</a>
   </footer>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+      <script type="text/javascript">
+		SyntaxHighlighter.autoloader(
+  			'js jscript javascript      /media/css/syntaxhighlighter/scripts/shBrushJScript.js',
+  			'xml xhtml xslt html xhtml  /media/css/syntaxhighlighter/scripts/shBrushXml.js'
+		);
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.defaults['gutter'] = false;
+	SyntaxHighlighter.all();
+	</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js">\x3C/script>')</script>
      <script type="text/javascript">
  $(".post_nav").css("visibility", "hidden"); 
@@ -324,6 +345,6 @@ tags:
     s.parentNode.insertBefore(g, s);
     })(document, 'script');
 </script>
-  
+  	 
   </body>
 </html>
