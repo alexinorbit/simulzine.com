@@ -91,13 +91,13 @@ All dimensions are in % (percentage) of the viewers width and height. Please tak
     <span class="image_figure">figure 1</span><br> 
     user variables to generate the accordion menu<br> 
     <div id="legend">
-      <span style="font-weight:400;">X</span>: horizontal field of view,
-      <span style="font-weight:400;">Y</span>: distance of camera from object,
-      <span style="font-weight:400;"><span class="caps">GH</span></span>: equal sides of isosceles triangle,
-      <span style="font-weight:400;"><span class="caps">EH</span></span>: Parthenon East Facade,
-      <span style="font-weight:400;"><span class="caps">G1E</span></span>: camera,
-      <span style="font-weight:400;"><span class="caps">GN</span></span>: Acropolis groundplan orthophoto
-      <span style="font-weight:400;"><span class="caps">MW</span></span>: Acropolis groundplan orthophoto
+      <span style="font-weight:400;">X</span>: x position of menu (origin top left),
+      <span style="font-weight:400;">Y</span>: y position of menu (origin top left),
+      <span style="font-weight:400;"><span class="caps">MW</span></span>: width of menu,
+      <span style="font-weight:400;"><span class="caps">GH</span></span>: group buttons height,
+      <span style="font-weight:400;"><span class="caps">EH</span></span>: event buttons height,
+      <span style="font-weight:400;"><span class="caps">GN</span></span>: quantity of group buttons,
+      <span style="font-weight:400;"><span class="caps">G1EN</span></span>: quantity of event buttons for group 1
     </div><br />
 </div></p>
 <h1 id="a-quick-look-at-the-code">A quick look at the&nbsp;code</h1>
@@ -241,6 +241,9 @@ set(plugin[Btn_Group2_event_1].onclick,loadscene_2());
 </ul>
 <h1 id="the-github-repository">The github&nbsp;repository</h1>
 <p>As mentioned earlier I&#8217;ve creted a github repository to host the code of the generator. I&#8217;m planning to extend the project with an image based accordion menu in the future like the one you can see in the Acropolis Virtual Tour when you click at the &#8220;Detail Views&#8221; button. I also hope that I get some help from other krpano developers for this next&nbsp;task.</p>
+<div class="button_demo_container">
+<a class="button_demo white" href="http://www.simulzine.com/demos/accordion-menu/index.html" target="_blank">view github repository &#187;&#187;</a>
+</div>
 <div class="article_tags">
 <ul class="tags clear">
 tags:
