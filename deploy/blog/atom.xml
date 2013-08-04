@@ -7,7 +7,7 @@
         <link href="/"/>
     
         
-    <updated>2013-08-04T08:57:02Z</updated>
+    <updated>2013-08-04T09:44:14Z</updated>
 
     <id>/blog/atom.xml/</id>
 
@@ -15,21 +15,24 @@
             <title type="html">Accordion Menu Generator for the krPano Panorama Viewer</title>
             <author><name>Alex Giannakidis</name></author>
             <link href="/blog/accordion-menu-krpano-panorama-viewer.html"/>
-            <updated>2013-07-01T00:00:00Z</updated>
-            <published>2013-07-01T00:00:00Z</published>
+            <updated>2013-08-01T00:00:00Z</updated>
+            <published>2013-08-01T00:00:00Z</published>
             <id>/blog/accordion-menu-krpano-panorama-viewer.html</id>
                         <category   scheme="/blog/tags"
-                        term="gigapixel"
-                        label="Gigapixel" />
+                        term="krpano"
+                        label="Krpano" />
                         <category   scheme="/blog/tags"
-                        term="Acropolis"
-                        label="Acropolis" />
+                        term="accordion_menu"
+                        label="Accordion_Menu" />
                         <category   scheme="/blog/tags"
-                        term="HDR"
-                        label="Hdr" />
+                        term="open_source"
+                        label="Open_Source" />
                         <category   scheme="/blog/tags"
-                        term="Parthenon"
-                        label="Parthenon" />
+                        term="GUI"
+                        label="Gui" />
+                        <category   scheme="/blog/tags"
+                        term="github"
+                        label="Github" />
             
             <content type="html">
                                 &lt;p&gt;&lt;img alt=&#34;SIMULZINE#3-cover-accordion-menu-generator&#34; src=&#34;/media/images/accordion.png&#34; /&gt;
