@@ -7,10 +7,199 @@
         <link href="/"/>
     
         
-    <updated>2013-06-24T14:11:44Z</updated>
+    <updated>2013-08-04T08:57:00Z</updated>
 
     <id>/atom.xml/</id>
 
+            <entry>
+            <title type="html">Accordion Menu Generator for the krPano Panorama Viewer</title>
+            <author><name>Alex Giannakidis</name></author>
+            <link href="/blog/accordion-menu-krpano-panorama-viewer.html"/>
+            <updated>2013-07-01T00:00:00Z</updated>
+            <published>2013-07-01T00:00:00Z</published>
+            <id>/blog/accordion-menu-krpano-panorama-viewer.html</id>
+                        <category   scheme="/blog/tags"
+                        term="gigapixel"
+                        label="Gigapixel" />
+                        <category   scheme="/blog/tags"
+                        term="Acropolis"
+                        label="Acropolis" />
+                        <category   scheme="/blog/tags"
+                        term="HDR"
+                        label="Hdr" />
+                        <category   scheme="/blog/tags"
+                        term="Parthenon"
+                        label="Parthenon" />
+            
+            <content type="html">
+                                &lt;p&gt;&lt;img alt=&#34;SIMULZINE#3-cover-accordion-menu-generator&#34; src=&#34;/media/images/accordion.png&#34; /&gt;
+&lt;div class=&#34;button_demo_container&#34;&gt;
+&lt;a class=&#34;button_demo white&#34; href=&#34;http://www.simulzine.com/demos/accordion-menu/index.html&#34; target=&#34;_blank&#34;&gt;generate an accordion menu &amp;#187;&amp;#187;&lt;/a&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;An accordion menu is an often used element by &lt;span class=&#34;caps&#34;&gt;GUI&lt;/span&gt; designers. It comes handy because it&amp;#8217;s a &amp;#8220;spacesaver&amp;#8221; in rich applications that need to have their content easily accessible. Especially in mobile devices, accordions menus are found everywhere. In this post I present an accordion menu generator for the krpano panorama viewer, that recently got compatible with mobile devices (through webGL or css3D). This is also my first open source project&amp;nbsp;:) &lt;/p&gt;
+&lt;h1 id=&#34;how-this-project-started&#34;&gt;How this project&amp;nbsp;started&lt;/h1&gt;
+&lt;p&gt;I prepared a static version of an animated accordion menu, last year, for use in the Acropolis Virtual Tour. After some people in the krpano forums requested the code for the menu, I started to build a dynamic version which could generate a menu based on some essential parameters. Lately the project evolved and got a front-end for novice users to test and generate their menu on the fly. The code of the generated menu is highly customizable in terms of style and functionality. The code is publicly available on github, as a separete repository, and can be improved or extended with other features by anyone&amp;nbsp;interested.&lt;/p&gt;
+&lt;h1 id=&#34;essentials-of-an-accordion-in-the-graphical-user-interface&#34;&gt;Essentials of an accordion in the graphical user&amp;nbsp;interface&lt;/h1&gt;
+&lt;p&gt;According to wikipedia: &lt;span class=&#34;italic_style&#34;&gt;an accordion is a vertically stacked list of items (e.g. labels or thumbnails). Each item can be &amp;#8220;expanded&amp;#8221; or &amp;#8220;stretched&amp;#8221; to reveal the content associated with that item. There can be zero or more items expanded at a time, depending on the configuration.&lt;/span&gt; In our case I split the accordion menu in groups and events. Groups are the items that can be expanded and reveal the event buttons. A group can have numerous events. Another important aspect of our approach are formations. When a group becomes active the according formation animates the other objects to reveal the event buttons associated with&amp;nbsp;it.&lt;/p&gt;
+&lt;h1 id=&#34;variables-of-the-generator&#34;&gt;Variables of the&amp;nbsp;generator&lt;/h1&gt;
+&lt;p&gt;The following figure depicts the required user input to generate the accordion. Blue dotted lines refer to dimensions (width, height, position) and green lines refer to quantity.
+All dimensions are in % (percentage) of the viewers width and height. Please take into consideration that this figure is only a part of&amp;nbsp;viewer. &lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;accordion variables&#34; src=&#34;/media/images/accordion-vars.png&#34; /&gt;
+&lt;div class=&#34;image_section&#34;&gt;
+    &lt;span class=&#34;image_figure&#34;&gt;figure 1&lt;/span&gt;&lt;br&gt; 
+    user variables to generate the accordion menu&lt;br&gt; 
+    &lt;div id=&#34;legend&#34;&gt;
+      &lt;span style=&#34;font-weight:400;&#34;&gt;X&lt;/span&gt;: horizontal field of view,
+      &lt;span style=&#34;font-weight:400;&#34;&gt;Y&lt;/span&gt;: distance of camera from object,
+      &lt;span style=&#34;font-weight:400;&#34;&gt;&lt;span class=&#34;caps&#34;&gt;GH&lt;/span&gt;&lt;/span&gt;: equal sides of isosceles triangle,
+      &lt;span style=&#34;font-weight:400;&#34;&gt;&lt;span class=&#34;caps&#34;&gt;EH&lt;/span&gt;&lt;/span&gt;: Parthenon East Facade,
+      &lt;span style=&#34;font-weight:400;&#34;&gt;&lt;span class=&#34;caps&#34;&gt;G1E&lt;/span&gt;&lt;/span&gt;: camera,
+      &lt;span style=&#34;font-weight:400;&#34;&gt;&lt;span class=&#34;caps&#34;&gt;GN&lt;/span&gt;&lt;/span&gt;: Acropolis groundplan orthophoto
+      &lt;span style=&#34;font-weight:400;&#34;&gt;&lt;span class=&#34;caps&#34;&gt;MW&lt;/span&gt;&lt;/span&gt;: Acropolis groundplan orthophoto
+    &lt;/div&gt;&lt;br /&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;h1 id=&#34;a-quick-look-at-the-code&#34;&gt;A quick look at the&amp;nbsp;code&lt;/h1&gt;
+&lt;p&gt;The krpano viewer is a fully functional panoramic rendering engine. It uses xml code for storing static settings and has its own dynamic scripting language, also called krpano script, when more advanced features, like custom variables and functions, are needed. When embeding the viewer into &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt;, a &lt;span class=&#34;caps&#34;&gt;DOM&lt;/span&gt; element is created that can be manipulated via javascript. This structure helps novice users to have a project up and running quickly (with the default settings), and at the same time gives developers the required tools to make unique customized stuff. &lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;What follows is the main function (also called action) for the generation of an accordion menu based on user input. It is about sequencial placing of group/event buttons and assigning the according properties (labels, onclick events, styles, etc.) to&amp;nbsp;them.&lt;/p&gt;
+&lt;div id=&#34;codebox&#34; style=&#34;&#34;&gt;
+&lt;pre class=&#34;brush: xml&#34;&gt;
+
+&lt;action name=&#34;createMenu&#34;&gt; &lt;!-- Generator of Accordion Menu --&gt;
+setParameters(); &lt;!-- set initial values of menu position --&gt;
+&lt;!-- keep previous and current x, y positions of a pointer in the generation process --&gt;
+set(ypos,0);
+set(xpos, get(varX));
+set(ypos2,0); 
+set(xpos2, get(varX));
+add(ypos,varY);
+
+&lt;!-- start procedural generation of menu --&gt;
+for(set(i,1), i le varGN, inc(i), &lt;!-- varGN is quantity of group buttons --&gt;
+    txtadd(pname, &#39;Btn_Group&#39;, get(i)); &lt;!-- add custom text on group button --&gt;
+    txtadd(xpos_percent,get(xpos), &#39;%&#39;);
+    txtadd(ypos_percent,get(ypos), &#39;%&#39;);
+    txtadd(gformation, &#39;GroupFormation&#39;, get(i), &#39;()&#39;);
+    addgroupBTN(get(pname), get(xpos_percent), get(ypos_percent), get(varMW_percent), get(varGH_percent)); &lt;!-- create and add a group button on specified X and Y positions based on parsed values--&gt;
+    set(plugin[%pname].onclick, get(gformation)); &lt;!-- set onclick event of newly created group button --&gt;
+    &lt;!-- specify current Y position (ypos2) for generating event buttons  --&gt;
+    mul(ypos2,i, varGH);
+    add(ypos2,varY);    
+        if(i == 1, set(varGNx, get(varG1EN)); );  &lt;!-- varG1EN is quantity of event buttons for first group --&gt;
+        if(i == 2, set(varGNx, get(varG2EN)); );  &lt;!-- varG2EN is quantity of event buttons for second group --&gt;
+        if(i == 3, set(varGNx, get(varG3EN)););  &lt;!-- varG3EN is quantity of event buttons for third group --&gt;
+        if(i == 4, set(varGNx, get(varG4EN)););  &lt;!-- varG4EN is quantity of event buttons for fourth group --&gt;
+        for(set(k,1), k le varGNx, inc(k), &lt;!-- varGNx is quantity of current group --&gt;
+            txtadd(pname, &#39;Btn_Group&#39;, get(i),&#39;_event_&#39;, get(k)); &lt;!-- add custom text on event button --&gt;
+            txtadd(xpos_percent,get(xpos), &#39;%&#39;); 
+            txtadd(ypos2_percent,get(ypos2), &#39;%&#39;);
+            txtadd(gformation, &#39;GroupFormation&#39;, get(i), &#39;()&#39;);
+            addeventBTN(get(pname), get(xpos_percent), get(ypos2_percent), get(varew_percent), get(varEH_percent));  &lt;!-- create and add an event button on specified X and Y positions based on parsed values--&gt;
+            inc(ypos2,get(varEH)); &lt;!--increase current Y positions by height of event buttons --&gt;
+            set(plugin[%pname].onclick, get(gformation)); &lt;!-- set onclick event of newly created event button --&gt;
+            );
+    );
+&lt;/action&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Group and Event buttons are added based on the following custom functions. They are based on the textfield plugin that comes with the krpano viewer, but it can be replaced by other plugins or tailored&amp;nbsp;images.&lt;/p&gt;
+&lt;div id=&#34;codebox&#34; style=&#34;&#34;&gt;
+&lt;pre class=&#34;brush: xml&#34;&gt;
+
+&lt;action name=&#34;createGbutton&#34;&gt; &lt;!-- action to create dynamically a Group textfield based button --&gt;
+        addplugin(get(pname));
+        set(plugin[%pname].html,[p]%1[/p]);
+        set(plugin[%pname].x,%2);
+        set(plugin[%pname].y,%3);
+        set(plugin[%pname].width,%4);
+        set(plugin[%pname].height,%5);
+        set(plugin[%pname].url, plugins/textfield.swf);
+        plugin[%pname].loadstyle(GroupButtonsStyle)
+&lt;/action&gt;
+
+&lt;action name=&#34;createEbutton&#34;&gt; &lt;!-- action to create dynamically an Event textfield based button --&gt;
+        addplugin(get(pname));
+        set(plugin[%pname].html,[p]%1[/p]);
+        set(plugin[%pname].x,%2);
+        set(plugin[%pname].y,%3);
+        set(plugin[%pname].width,%4);
+        set(plugin[%pname].height,%5);
+        set(plugin[%pname].url, plugins/textfield.swf);
+        plugin[%pname].loadstyle(EventButtonsStyle)
+&lt;/action&gt;
+
+&lt;action name=&#34;addgroupBTN&#34;&gt; &lt;!-- action to add Group button on stage --&gt;
+        createGbutton(%1, %2, %3, %4, %5);
+        inc(ypos,get(varGH));       
+&lt;/action&gt;
+
+&lt;action name=&#34;addeventBTN&#34;&gt; &lt;!-- action to add Event button on stage --&gt;    
+        createEbutton(%1, %2, %3, %4, %5);
+&lt;/action&gt;
+
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Another important aspect of the accordion are the different formations (or states) that are triggered based on which Group Button is active (as mentioned earlier). Formations are not generated on the fly (eg. dynamic). I&amp;#8217;ve scripted the first four of them statically, so currently the menu is limited to 4 group buttons.  For example the code for Group 2 is&amp;nbsp;:&lt;/p&gt;
+&lt;div id=&#34;codebox&#34; style=&#34;&#34;&gt;
+&lt;pre class=&#34;brush: xml&#34;&gt;
+
+&lt;action name=&#34;GroupFormation2&#34;&gt;
+&lt;!-- Expand Group 2 Button, Show event buttons of Group 2, Move rest of Group Buttons to convinient position, Hide the rest of event buttons --&gt;
+hideGroup3();
+hideGroup1();
+hideGroup4();
+set(plugin[Btn_Group3].blendmode, normal);
+set(plugin[Btn_Group4].blendmode, normal);
+set(plugin[Btn_Group1].blendmode, normal);
+set(plugin[Btn_Group2].blendmode, hardlight);
+mul(varqevents2, varG2EN, varEH);
+add(varg2l2,varqevents2,varGH);
+txtadd(varg2l2_percent,get(varg2l2), &#39;%&#39;);
+tween(plugin[Btn_Group1].height, get(varGH_percent));
+tween(plugin[Btn_Group2].height, get(varg2l2_percent));
+tween(plugin[Btn_Group3].height, get(varGH_percent));
+tween(plugin[Btn_Group4].height, get(varGH_percent));
+set(varg2y2,get(varg2y0));
+add(varg3y2, varg2y2, varg2l2);
+txtadd(varg3y2_percent,get(varg3y2), &#39;%&#39;);
+add(varg4y2, varg3y2, varGH);
+txtadd(varg4y2_percent,get(varg4y2), &#39;%&#39;);
+tween(plugin[Btn_Group2].y, get(varg2y0_percent));
+tween(plugin[Btn_Group3].y, get(varg3y2_percent));
+tween(plugin[Btn_Group4].y, get(varg4y2_percent));
+showGroup2();
+set(plugin[Btn_Group1].enabled,true);
+set(plugin[Btn_Group2].enabled,false);
+set(plugin[Btn_Group3].enabled,true);
+set(plugin[Btn_Group4].enabled,true);
+&lt;/action&gt;
+
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To name and set the onclick events of the buttons based on your preference include this in your code (for every button)&amp;nbsp;:&lt;/p&gt;
+&lt;div id=&#34;codebox&#34; style=&#34;&#34;&gt;
+&lt;pre class=&#34;brush: xml&#34;&gt;
+
+set(plugin[Btn_Group2_event_1].html,[p]In the main Gorge 1[/p]);
+set(plugin[Btn_Group2_event_1].onclick,loadscene_2());
+
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&#34;specifics-of-our-krpano-accordion-menu&#34;&gt;Specifics of our  krpano Accordion&amp;nbsp;Menu&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;currently supports up to four Groups and six Events per Group, but can be easily extended to&amp;nbsp;more&lt;/li&gt;
+&lt;li&gt;uses .blendmode property (currently not supported in &lt;span class=&#34;caps&#34;&gt;HTML5&lt;/span&gt;&amp;nbsp;version)&lt;/li&gt;
+&lt;li&gt;can be custom styled based on your design - just edit the according style&amp;nbsp;entities&lt;/li&gt;
+&lt;li&gt;only one group expanded at a&amp;nbsp;time&lt;/li&gt;
+&lt;li&gt;works with text labels (eg. textfield plugin) but can be edited to work with images&amp;nbsp;also&lt;/li&gt;
+&lt;li&gt;all dimensions are in % (percentage) of the viewers width and&amp;nbsp;height.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;the-github-repository&#34;&gt;The github&amp;nbsp;repository&lt;/h1&gt;
+&lt;p&gt;As mentioned earlier I&amp;#8217;ve creted a github repository to host the code of the generator. I&amp;#8217;m planning to extend the project with an image based accordion menu in the future like the one you can see in the Acropolis Virtual Tour when you click at the &amp;#8220;Detail Views&amp;#8221; button. I also hope that I get some help from other krpano developers for this next&amp;nbsp;task.&lt;/p&gt;            </content>
+        </entry>
             <entry>
             <title type="html">Gigapixel Imaging at the Acropolis of Athens - Parthenon</title>
             <author><name>Alex Giannakidis</name></author>
@@ -197,104 +386,6 @@ tonemapping of 32bit image, retouched sky, cropped (final version)&lt;/br&gt;
 &lt;h1 id=&#34;expanding-the-boundaries-of-photography&#34;&gt;&lt;span class=&#34;dquo&#34;&gt;&amp;#8220;&lt;/span&gt;Expanding the boundaries of&amp;nbsp;photography&amp;#8221;&lt;/h1&gt;
 &lt;p&gt;Gigapixel images are explorable images, that provide the viewer with access to a variety of information otherwise hidden to the physical visitor of an archaeological or other site. They represent the virtual binoculars of the user. They can serve documentation and restoration purposes over a variety of disciplines. In addition gigapixel images are suitable for fulldome or large theater projections. Gigapixel imaging was taken out of scientific research and pioneered for the internet and the rest of us by the &lt;a href=&#34;http://www.xrez.com/&#34; target=&#34;_blank&#34;&gt;xRez&lt;/a&gt; team. It&amp;#8217;s about &amp;#8220;expanding the boundaries of photography&amp;#8221; as they say. You can watch a recent revealing lecture about gigapixel imaging by Greg Downing and Eric Hanson of xRez &lt;a href=&#34;http://www.annenbergspaceforphotography.org/events/iris-nights/digital-darkroom/104&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. &lt;/p&gt;
 &lt;p&gt;Thank you for&amp;nbsp;reading.&lt;/p&gt;            </content>
-        </entry>
-            <entry>
-            <title type="html">Customizable Accordion Menu for the krPano Panorama Viewer</title>
-            <author><name>Alex Giannakidis</name></author>
-            <link href="/blog/accordion-menu-krpano-panorama-viewer.html"/>
-            <updated>2012-08-22T00:00:00Z</updated>
-            <published>2012-08-22T00:00:00Z</published>
-            <id>/blog/accordion-menu-krpano-panorama-viewer.html</id>
-                        <category   scheme="/blog/tags"
-                        term="gigapixel"
-                        label="Gigapixel" />
-                        <category   scheme="/blog/tags"
-                        term="Acropolis"
-                        label="Acropolis" />
-                        <category   scheme="/blog/tags"
-                        term="HDR"
-                        label="Hdr" />
-                        <category   scheme="/blog/tags"
-                        term="Parthenon"
-                        label="Parthenon" />
-            
-            <content type="html">
-                                &lt;p&gt;&lt;img alt=&#34;SIMULZINE#2-colver-parthenon-gigapixel-screenshot&#34; src=&#34;/media/images/simulzine2-cover.jpg&#34; /&gt;
-&lt;div class=&#34;button_demo_container&#34;&gt;
-&lt;a class=&#34;button_demo white&#34; href=&#34;http://www.simulzine.com/demos/simulzine2-demo1-gigapixel-of-parthenon-east-facade.html&#34; target=&#34;_blank&#34;&gt;explore gigapixel image &amp;#187;&amp;#187;&lt;/a&gt;
-&lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;My latest project, with orbitlab, was the creation of an interactive &lt;a href=&#34;http://acropolis-virtualtour.gr&#34; target=&#34;_blank&#34;&gt;virtual tour at the Acropolis of Athens&lt;/a&gt;. Amongst others, it involved the acquisition of five gigapixel scale images from the Acropolis Monuments. The project was an initiative of the &lt;a href=&#34;http://www.ysma.gr&#34; target=&#34;_blank&#34;&gt;Acropolis Restoration Service&lt;/a&gt;, the organization responsible for the restoration of the tormented and partially destroyed 2500 years old Acropolis Monuments over the past 30 years.
-&lt;br/&gt;&lt;br/&gt;
-The decision to adopt &lt;span class=&#34;italic_style&#34;&gt;state of the art&lt;/span&gt; technological solutions to &amp;#8220;bring online&amp;#8221; the entirety of the Acropolis is not merely a statement for the preservation work undertaken by the organization, but also a great contribution to the institution&amp;#8217;s mission to promote remote access to cultural&amp;nbsp;heritage.&lt;/p&gt;
-&lt;h1 id=&#34;choosing-the-point-of-view&#34;&gt;Choosing the Point of&amp;nbsp;View&lt;/h1&gt;
-&lt;p&gt;The monument facades to be photographed, were previously examined for proper lighting conditions, required for a long  gigapixel shooting. The point of view was carefully chosen with respect to insidious distortions that come up when you are too close to the monument. About 30 m in front of the east facade would not only show details of restoration works, but also produce the &amp;#8220;wow!&amp;#8221; effect when zooming in the final gigapixel image. The sun should be high, minimizing shadows. The east facade of the Parthenon was photographed by our crew at noon 13.00 for about one hour in September of&amp;nbsp;2010.&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;horizontal field of view of gigapixel shoot&#34; src=&#34;/media/images/simulzine2-fig1.jpg&#34; /&gt;
-&lt;div class=&#34;image_section&#34;&gt;
-    &lt;span class=&#34;image_figure&#34;&gt;figure 1&lt;/span&gt;&lt;br&gt; 
-    horizontal field of view of gigapixel shoot&lt;br&gt; 
-    &lt;div id=&#34;legend&#34;&gt;
-      &lt;span style=&#34;font-weight:400;&#34;&gt;hfov&lt;/span&gt;: horizontal field of view,
-      &lt;span style=&#34;font-weight:400;&#34;&gt;d&lt;/span&gt;: distance of camera from object,
-      &lt;span style=&#34;font-weight:400;&#34;&gt;red lines&lt;/span&gt;: equal sides of isosceles triangle,
-      &lt;span style=&#34;font-weight:400;&#34;&gt;blue dotted line&lt;/span&gt;: Parthenon East Facade,
-      &lt;span style=&#34;font-weight:400;&#34;&gt;red circle&lt;/span&gt;: camera,
-      &lt;span style=&#34;font-weight:400;&#34;&gt;image&lt;/span&gt;: Acropolis groundplan orthophoto
-    &lt;/div&gt;&lt;br /&gt;
-&lt;/div&gt;&lt;/p&gt;
-&lt;h1 id=&#34;things-to-consider-before-shooting&#34;&gt;Things to consider before&amp;nbsp;shooting&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;Weather : sunny, clear atmosphere, no clouds (bad for&amp;nbsp;stitching)&lt;/li&gt;
-&lt;li&gt;Sun Position: The sun has to be in a convenient position (during the hole shooting!) to properly light the part of the monument to be&amp;nbsp;photographed&lt;/li&gt;
-&lt;li&gt;Crowding : You don&amp;#8217;t want people in your shots. When possible set up a perimeter. Prepare for delays, repeated shots, manual shooting with the robotic&amp;nbsp;arm.&lt;/li&gt;
-&lt;li&gt;Focusing : You may want to switch to manual focusing at areas where foreground objects could disturb your depth of&amp;nbsp;field&lt;/li&gt;
-&lt;li&gt;Know your gear:  Estimate the time needed to complete the shots! You don&amp;#8217;t want the night to come or run out of battery. Estimate file size, keep&amp;nbsp;backup!&lt;/li&gt;
-&lt;li&gt;Take Notes: Especially about duplicate shots and downloaded photographs from your camera (saves a lot of boring work&amp;nbsp;afterward!)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre class=&#34;brush: xml&#34;&gt;
-&lt;action name=&#34;createGbutton&#34;&gt; &lt;!-- action to create dynamically a Group textfield based button --&gt;
-        addplugin(get(pname));
-        set(plugin[%pname].html,[p]%1[/p]);
-        set(plugin[%pname].x,%2);
-        set(plugin[%pname].y,%3);
-        set(plugin[%pname].width,%4);
-        set(plugin[%pname].height,%5);
-        set(plugin[%pname].url,%&lt;span class=&#34;caps&#34;&gt;SWFPATH&lt;/span&gt;%/plugins/textfield.swf);
-        plugin[%pname].loadstyle(GroupButtonsStyle)
-&lt;/action&gt;
-
-&lt;action name=&#34;createEbutton&#34;&gt; &lt;!-- action to create dynamically an Event textfield based button --&gt;
-        addplugin(get(pname));
-        set(plugin[%pname].html,[p]%1[/p]);
-        set(plugin[%pname].x,%2);
-        set(plugin[%pname].y,%3);
-        set(plugin[%pname].width,%4);
-        set(plugin[%pname].height,%5);
-        set(plugin[%pname].url,%&lt;span class=&#34;caps&#34;&gt;SWFPATH&lt;/span&gt;%/plugins/textfield.swf);
-        plugin[%pname].loadstyle(EventButtonsStyle)
-&lt;/action&gt;
-
-&lt;action name=&#34;addgroupBTN&#34;&gt; &lt;!-- action to add Group button on stage --&gt;
-        createGbutton(%1, %2, %3, %4, %5);
-        inc(ypos,get(vargl));       
-&lt;/action&gt;
-
-&lt;action name=&#34;addeventBTN&#34;&gt; &lt;!-- action to add Event button on stage --&gt;    
-        createEbutton(%1, %2, %3, %4, %5);
-&lt;/action&gt;
-&lt;/pre&gt;
-
-&lt;h1 id=&#34;available-gear&#34;&gt;Available&amp;nbsp;Gear&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;Camera : Nikon&amp;nbsp;D700 &lt;/li&gt;
-&lt;li&gt;Lens : Sigma 500mm f/4.5 &lt;span class=&#34;caps&#34;&gt;EX&lt;/span&gt;&amp;nbsp;&lt;span class=&#34;caps&#34;&gt;HSM&lt;/span&gt; &lt;/li&gt;
-&lt;li&gt;robotic camera mount : &lt;span class=&#34;caps&#34;&gt;EPIC&lt;/span&gt;&amp;nbsp;Pro&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Our crew programmed the robotic rig to capture an area of 55&amp;#176; horizontal and 40&amp;#176; vertical field of view with a focal length of 500mm, that means a 16 X 17 grid with 272 cells (camera positions) - in three different exposure levels - that makes us 816 photographs and about 8.5 &lt;span class=&#34;caps&#34;&gt;GB&lt;/span&gt; of raw data on the&amp;nbsp;D700.&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;computed grid based on shooting parameters and covered area&#34; src=&#34;/media/images/simulzine2-fig2.jpg&#34; /&gt;
-&lt;div class=&#34;image_section&#34;&gt;
-    &lt;span class=&#34;image_figure&#34;&gt;figure 2&lt;/span&gt;&lt;/br&gt; 
-    computed grid based on shooting parameters and covered area&lt;/br&gt; 
-&lt;/div&gt;&lt;/p&gt;            </content>
         </entry>
             <entry>
             <title type="html">Database-driven Blogs and static HTML generators</title>

@@ -644,3 +644,24 @@ vertical-align:middle; margin-bottom: 0px; }
 	font-size:xx-small; 
 	vertical-align:sub;
 }
+
+#codebox {
+	
+	-webkit-transition: width 1s ease-out;
+    -moz-transition: width 1s ease-out;
+    -o-transition: width 1s ease-out;
+    transition: width 1s ease-out;
+	width:615px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+#codebox:hover
+{
+	    -webkit-transition: width 1s ease-out;
+    -moz-transition: width 1s ease-out;
+    -o-transition: width 1s ease-out;
+    transition: width 1s ease-out;
+
+    width:130%;
+}

@@ -24,20 +24,13 @@
 
  
   {% block css %}
-  <link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeMDUltra.css" rel="stylesheet" type="text/css" />
-  <!--  <link rel="stylesheet" href="{{ media_url('css/syntaxhighlighter/styles/shCore.css') }}">
-  <link rel="stylesheet" href="{{ media_url('css/syntaxhighlighter/styles/shThemeDefault.css') }}"> -->
-  <link rel="stylesheet" href="{{ media_url('css/site.css') }}">
-  
+  <link rel="stylesheet" href="{{ media_url('css/syntaxhighlighter/styles/shCoreMidnight.css') }}" type="text/css" >
+  <link rel="stylesheet" href="{{ media_url('css/site.css') }}" >
   {% endblock css %}
 
   {% block headjs %}
-    <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"></script>
-    <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js" type="text/javascript"></script>
-  <!-- <script type="text/javascript" src="{{ media_url('css/syntaxhighlighter/scripts/shCore.js') }}"></script>
-   <script type="text/javascript" src="{{ media_url('css/syntaxhighlighter/scripts/shBrushXml.js') }}"></script>
-   <script type="text/javascript" src="{{ media_url('css/syntaxhighlighter/scripts/shBrushJScript.js') }}"></script>
-   <script type="text/javascript" src="{{ media_url('css/syntaxhighlighter/scripts/shAutoloader.js') }}"></script> -->
+   <script type="text/javascript" src="{{ media_url('css/syntaxhighlighter/scripts/shCore.js') }}"></script>
+   <script type="text/javascript" src="{{ media_url('css/syntaxhighlighter/scripts/shAutoloader.js') }}"></script>
     <script src="{{ media_url('js/libs/modernizr-1.7.min.js') }}"></script>
   {% endblock headjs %}
   {% block endhead %}{% endblock endhead %}
@@ -79,6 +72,7 @@
 		SyntaxHighlighter.autoloader(
   			'js jscript javascript      {{ media_url('css/syntaxhighlighter/scripts/shBrushJScript.js') }}',
   			'xml xhtml xslt html xhtml  {{ media_url('css/syntaxhighlighter/scripts/shBrushXml.js') }}'
+  			
 		);
 	SyntaxHighlighter.defaults['toolbar'] = false;
 	SyntaxHighlighter.defaults['gutter'] = false;
