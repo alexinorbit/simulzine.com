@@ -7,7 +7,7 @@
         <link href="/"/>
     
         
-    <updated>2013-08-04T23:56:04Z</updated>
+    <updated>2013-08-05T11:58:14Z</updated>
 
     <id>/blog/atom.xml/</id>
 
@@ -37,7 +37,7 @@
             <content type="html">
                                 &lt;p&gt;&lt;img alt=&#34;SIMULZINE#3-cover-accordion-menu-generator&#34; src=&#34;/media/images/accordion.png&#34; /&gt;
 &lt;div class=&#34;button_demo_container&#34;&gt;
-&lt;a class=&#34;button_demo white&#34; href=&#34;http://www.simulzine.com/demos/accordion-menu/index.html&#34; target=&#34;_blank&#34;&gt;generate an accordion menu &amp;#187;&amp;#187;&lt;/a&gt;
+&lt;a class=&#34;button_demo white&#34; href=&#34;http://simulzine.com/projects/accordion-menu-generator/krpano/&#34; target=&#34;_blank&#34;&gt;generate an accordion menu &amp;#187;&amp;#187;&lt;/a&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;An accordion menu is an often used element by &lt;span class=&#34;caps&#34;&gt;GUI&lt;/span&gt; designers. It comes handy because it&amp;#8217;s a &amp;#8220;spacesaver&amp;#8221; in rich applications that need to have their content easily accessible. Especially in mobile devices, accordions menus are found everywhere. In this post I present an accordion menu generator for the krpano panorama viewer, that recently got compatible with mobile devices (through webGL or css3D). This is also my first open source project&amp;nbsp;:) &lt;/p&gt;
 &lt;h1 id=&#34;how-this-project-started&#34;&gt;How this project&amp;nbsp;started&lt;/h1&gt;
@@ -203,7 +203,7 @@ set(plugin[Btn_Group2_event_1].onclick,loadscene_2());
 &lt;h1 id=&#34;the-github-repository&#34;&gt;The github&amp;nbsp;repository&lt;/h1&gt;
 &lt;p&gt;As mentioned earlier I&amp;#8217;ve creted a github repository to host the code of the generator. I&amp;#8217;m planning to extend the project with an image based accordion menu in the future like the one you can see in the Acropolis Virtual Tour when you click at the &amp;#8220;Detail Views&amp;#8221; button. I also hope that I get some help from other krpano developers for this next&amp;nbsp;task.&lt;/p&gt;
 &lt;div class=&#34;button_demo_container&#34;&gt;
-&lt;a class=&#34;button_demo white&#34; href=&#34;http://www.simulzine.com/demos/accordion-menu/index.html&#34; target=&#34;_blank&#34;&gt;view github repository &amp;#187;&amp;#187;&lt;/a&gt;
+&lt;a class=&#34;button_demo white&#34; href=&#34;https://github.com/alexinorbit/accordion-menu-generator&#34; target=&#34;_blank&#34;&gt;view github repository &amp;#187;&amp;#187;&lt;/a&gt;
 &lt;/div&gt;            </content>
         </entry>
             <entry>
