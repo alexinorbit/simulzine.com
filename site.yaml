@@ -26,6 +26,13 @@ context:
                 type: node
                 url: blog
             -
+                name: demos
+                description: demos prototypes drafts
+                css_class: about
+                type: page
+                url: demos.html
+                
+            -
                 name: info
                 description: About
                 css_class: about
