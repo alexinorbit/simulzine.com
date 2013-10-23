@@ -187,7 +187,7 @@ footer{
     zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
     *display: inline;
     vertical-align: baseline;
-    margin: 20px 5px;
+    margin: 10px 5px;
     cursor: pointer;
     text-align: center;
     border-width:0px;
