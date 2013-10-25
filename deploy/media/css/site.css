@@ -48,7 +48,7 @@ table {
 }
 
 a {
-    color: #666666;  
+    color: rgba(241,9,9,.6);  
 }
 
 a:hover{
@@ -699,8 +699,9 @@ vertical-align:middle; margin-bottom: 0px; }
     
 }
 .demo_section ul {
-list-style-type: none;
+list-style-type: circle;
 font-size: 12px;
+text-align: left;
 }
 
 .image_figure {
