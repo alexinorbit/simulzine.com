@@ -1,4 +1,5 @@
 ---
+index: 3
 title: Accordion Menu Generator for the krPano Panorama Viewer
 description: >
    how the accordion menu generator works
@@ -13,7 +14,7 @@ tags:
 
 {% mark image -%}
 
-![SIMULZINE#3-cover-accordion-menu-generator]([[!!images/accordion.png]])
+![SIMULZINE#3-cover-accordion-menu-generator](/media/images/accordion.png)
 
 {%- endmark %}
 
@@ -25,7 +26,7 @@ tags:
 
 An accordion menu is an often used element by GUI designers. It comes handy because it's a "spacesaver" in rich applications that need to have their content easily accessible. Especially in mobile devices, accordions menus are found everywhere. In this post I present an accordion menu generator for the krpano panorama viewer, that recently got compatible with mobile devices (through webGL or css3D). This is also my first open source project :)
 
-{%- endmark %} 
+{%- endmark %}
 
 
 # How this project started #
@@ -39,12 +40,12 @@ According to wikipedia: <span class="italic_style">an accordion is a vertically 
 # Variables of the generator #
 
 The following figure depicts the required user input to generate the accordion. Blue dotted lines refer to dimensions (width, height, position) and green lines refer to quantity.
-All dimensions are in % (percentage) of the viewers width and height. Please take into consideration that this figure is only a part of viewer. 
+All dimensions are in % (percentage) of the viewers width and height. Please take into consideration that this figure is only a part of viewer.
 
 ![accordion variables]([[!!images/accordion-vars.png ]])
 <div class="image_section">
-	<span class="image_figure">figure 1</span><br> 
-	user variables to generate the accordion menu<br> 
+	<span class="image_figure">figure 1</span><br>
+	user variables to generate the accordion menu<br>
 	<div id="legend">
 	  <span style="font-weight:400;">X</span>: x position of menu (origin top left),
 	  <span style="font-weight:400;">Y</span>: y position of menu (origin top left),
@@ -53,7 +54,7 @@ All dimensions are in % (percentage) of the viewers width and height. Please tak
 	  <span style="font-weight:400;">EH</span>: event buttons height,
 	  <span style="font-weight:400;">GN</span>: quantity of group buttons,
 	  <span style="font-weight:400;">G1EN</span>: quantity of event buttons for group 1
-	</div>  
+	</div>
 </div>
 
 
@@ -65,13 +66,13 @@ What follows is the main function (also called action) for the generation of an 
 
 <div id="codebox" style="">
 <pre class="brush: xml">
-	
+
 <action name="createMenu"> <!-- Generator of Accordion Menu -->
 setParameters(); <!-- set initial values of menu position -->
 <!-- keep previous and current x, y positions of a pointer in the generation process -->
 set(ypos,0);
 set(xpos, get(varX));
-set(ypos2,0); 
+set(ypos2,0);
 set(xpos2, get(varX));
 add(ypos,varY);
 
@@ -85,14 +86,14 @@ for(set(i,1), i le varGN, inc(i), <!-- varGN is quantity of group buttons -->
 	set(plugin[%pname].onclick, get(gformation)); <!-- set onclick event of newly created group button -->
 	<!-- specify current Y position (ypos2) for generating event buttons  -->
 	mul(ypos2,i, varGH);
-	add(ypos2,varY);	
+	add(ypos2,varY);
 		if(i == 1, set(varGNx, get(varG1EN)); );  <!-- varG1EN is quantity of event buttons for first group -->
 		if(i == 2, set(varGNx, get(varG2EN)); );  <!-- varG2EN is quantity of event buttons for second group -->
 		if(i == 3, set(varGNx, get(varG3EN)););  <!-- varG3EN is quantity of event buttons for third group -->
 		if(i == 4, set(varGNx, get(varG4EN)););  <!-- varG4EN is quantity of event buttons for fourth group -->
 	 	for(set(k,1), k le varGNx, inc(k), <!-- varGNx is quantity of current group -->
 			txtadd(pname, 'Btn_Group', get(i),'_event_', get(k)); <!-- add custom text on event button -->
-			txtadd(xpos_percent,get(xpos), '%'); 
+			txtadd(xpos_percent,get(xpos), '%');
 			txtadd(ypos2_percent,get(ypos2), '%');
 			txtadd(gformation, 'GroupFormation', get(i), '()');
 			addeventBTN(get(pname), get(xpos_percent), get(ypos2_percent), get(varew_percent), get(varEH_percent));  <!-- create and add an event button on specified X and Y positions based on parsed values-->
@@ -133,10 +134,10 @@ Group and Event buttons are added based on the following custom functions. They 
 
 <action name="addgroupBTN"> <!-- action to add Group button on stage -->
 		createGbutton(%1, %2, %3, %4, %5);
-		inc(ypos,get(varGH));		
+		inc(ypos,get(varGH));
 </action>
 
-<action name="addeventBTN"> <!-- action to add Event button on stage -->	
+<action name="addeventBTN"> <!-- action to add Event button on stage -->
 		createEbutton(%1, %2, %3, %4, %5);
 </action>
 
@@ -210,5 +211,3 @@ As mentioned earlier I've creted a github repository to host the code of the gen
 <div class="button_demo_container">
 <a class="button_demo white" href="https://github.com/alexinorbit/accordion-menu-generator" target="_blank">view github repository &#187;&#187;</a>
 </div>
-
-

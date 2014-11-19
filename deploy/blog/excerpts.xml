@@ -2,15 +2,39 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>
         BASIC blog excerpts feed    </title>
-        <link href="blog/excerpts.xml" rel="self" />
+        <link href="/blog/excerpts.xml" rel="self" />
     
         <link href="/"/>
     
         
-    <updated>2013-10-18T01:09:33Z</updated>
+    <updated>2014-11-19T21:25:47Z</updated>
 
     <id>/blog/excerpts.xml/</id>
 
+            <entry>
+            <title type="html">Generating 2d sprites using animated 3d models</title>
+            <author><name>Alex Giannakidis</name></author>
+            <link href="/blog/2d-sprite-animations-using-3d-models-in-blender.html"/>
+            <updated>2014-11-15T00:00:00Z</updated>
+            <published>2014-11-15T00:00:00Z</published>
+            <id>/blog/2d-sprite-animations-using-3d-models-in-blender.html</id>
+                        <category   scheme="/blog/tags"
+                        term="blender"
+                        label="Blender" />
+                        <category   scheme="/blog/tags"
+                        term="2D"
+                        label="2d" />
+                        <category   scheme="/blog/tags"
+                        term="3D"
+                        label="3d" />
+                        <category   scheme="/blog/tags"
+                        term="html5"
+                        label="Html5" />
+            
+            <content type="html">
+                &lt;p&gt;&lt;img alt=&#34;SIMULZINE#4-cover-2d-3d-blender&#34; src=&#34;/media/images/simulzine4-cover.jpg&#34; /&gt;&lt;/p&gt;
+                &lt;p&gt;This article describes the workflow used for making 2d sprite textures with the help of 3d animated models and Blender as the . The resulting 2d animations can be used as assets in games or other applications. In exchange more realistic and easier to produce animations can be embedded in a 2d&amp;nbsp;setting.&lt;/p&gt;            </content>
+        </entry>
             <entry>
             <title type="html">Accordion Menu Generator for the krPano Panorama Viewer</title>
             <author><name>Alex Giannakidis</name></author>
@@ -23,10 +47,10 @@
                         label="Krpano" />
                         <category   scheme="/blog/tags"
                         term="accordion_menu"
-                        label="Accordion_Menu" />
+                        label="Accordion_menu" />
                         <category   scheme="/blog/tags"
                         term="open_source"
-                        label="Open_Source" />
+                        label="Open_source" />
                         <category   scheme="/blog/tags"
                         term="GUI"
                         label="Gui" />
@@ -71,7 +95,7 @@
             <id>/blog/database-driven-blogs-static-html-generators.html</id>
                         <category   scheme="/blog/tags"
                         term="web_development"
-                        label="Web_Development" />
+                        label="Web_development" />
                         <category   scheme="/blog/tags"
                         term="blogging"
                         label="Blogging" />
@@ -80,7 +104,7 @@
                         label="Cms" />
                         <category   scheme="/blog/tags"
                         term="HTML_generators"
-                        label="Html_Generators" />
+                        label="Html_generators" />
             
             <content type="html">
                 &lt;p&gt;&lt;img alt=&#34;forgotten_database&#34; src=&#34;/media/images/forgotten_database.jpg&#34; /&gt;&lt;/p&gt;

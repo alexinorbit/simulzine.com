@@ -1,4 +1,6 @@
 .hyde_deps
 krpano/
 threejs/
+createjs/
+demos/images
 accordion-menu-generator/

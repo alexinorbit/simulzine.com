@@ -1,0 +1,148 @@
+---
+index: 4
+title: Generating 2d sprites using animated 3d models
+description: >
+   tutorial of gigapixel imaging
+created: !!timestamp '2014-11-15'
+tags:
+    - blender
+    - 2D
+    - 3D
+    - html5
+---
+
+{% mark image -%}
+
+![SIMULZINE#4-cover-2d-3d-blender](/media/images/simulzine4-cover.jpg)
+
+{%- endmark %}
+
+<br/>
+
+{% mark excerpt -%}
+
+This article describes the workflow used for making 2d sprite textures with the help of 3d animated models and Blender. The resulting 2d animations can be used as assets in games or other applications. In this way, more realistic and easier to produce animations can be embedded in a 2d setting.
+
+{%- endmark %}
+
+
+# A river scene for an HTML5 fishing game #
+
+The workflow was developed and used in some HTML5 demo games of a game studio for which i was doing contract work back in 2013. We wanted to make a visually appealing river scene, where the player will repeatedly throw a fishing pole into the water to catch fish. Based on his catch, the player would either win, lose or participate in a mini game. The background image of the scene was chosen by the art director, while i, as the animator, focused mostly on the water, the fishing pole, and the clamp shell.
+
+![backdrop of the river scene]([[!!images/simulzine4-fig1.jpg]])
+<div class="image_section">
+  <span class="image_figure">figure 1</span><br>
+  backdrop of the river scene<br>
+</div>
+
+# 3d animated river water #
+
+In contrast to ocean water, some specific characteristics of river water are :
+
+* flow in one direction
+* constant speed
+* smaller surface waves
+* shallow depths
+
+Surprisingly, there are a lot of tutorials about making animated 3d ocean water, but maybe none that focus on the specifics of river water. An additional challenge was the fact that this water animation had to be a seamless loop. It would loop constantly in the scene, giving the impression of a realistic river observed closely from its banks.
+
+To address the above, a simple scene was created in Blender constisting of :
+
+* a plane with the background image as texture
+* a plane with a sky image as texture
+* a subdivided plane with an ocean modifier applied on it
+* a camera and a light source
+
+![the river scene in Blender]([[!!images/simulzine4-fig3.jpg]])
+<div class="image_section">
+  <span class="image_figure">figure 2</span><br>
+  the river scene in Blender<br>
+  <div id="legend">
+    <span style="font-weight:400;">top panel</span>: general 3d view,
+    <span style="font-weight:400;">bottom panels</span>: camera views
+    <span style="font-weight:400;">right</span>: outliner and ocean modifier
+  </div>
+</div>
+
+Download the blendfile to understand and use this setup in your own projects.
+
+<div class="button_demo_container">
+<a class="button_demo white" href="file:///media/alex/green500/Dropbox/repos/simulzine.com/demos/simulzine4-demo1-animated-river-water.html" target="_blank">download .blendfile &#187;&#187;</a>
+</div>
+
+
+The river consists of a plane (with an ocean modifier applied) repeated three times in the Y direction. To simulate the river flow, the camera (with its backdrop and the sky) were moved in the Y direction, while the ocean modifier generated the desired water effects. Having in mind that the ocean modifier renders identical waves in every repeated plane, if we start moving the camera (with its backdrop and the sky) from the center of the first plane to the exact center of the next repeated plane, a seamless loopable animation is achieved! Also, the material of the river has a mirror effect similar to most water materials used in 3d. This way it reflects the surrounding environment (in our case the background image and the sky).
+
+![a sprite sheet of the river water animation consisting of 29 frames]([[!!images/simulzine4-fig2.jpg]])
+<div class="image_section">
+  <span class="image_figure">figure 3</span><br>
+  a sprite sheet of the river water animation consisting of 29 frames<br>
+</div>
+
+
+<div class="button_demo_container">
+<a class="button_demo white" href="file:///media/alex/green500/Dropbox/repos/simulzine.com/demos/simulzine4-demo1-animated-river-water.html" target="_blank">view HTML5 canvas animation &#187;&#187;</a>
+</div>
+
+# 3d animated fishing pole and lure #
+
+A 3d model of a fishing pole was purchased and then adjusted and animated in Blender. The challenges here were the realistic bending of the flexible pole followed by the dynamic movement of the lure, the correct perspective of fishing in the shore of a river, the impact point/time of the lure in the water and finally some foam effect for the water surface.
+
+![the animation of the fishing pole and lure setup in Blender]([[!!images/simulzine4-fig4.png]])
+<div class="image_section">
+  <span class="image_figure">figure 4</span><br>
+  the animation of the fishing pole and lure in Blender<br>
+</div>
+
+A simple deform modifier and shapekeys were used to animate the fishing pole. The lure, the line and the handle were animated seperately. The splash and foam effect was generated using a particle system triggered at water impact and kept alive until the end of the animation. The animation had two states: an "idle" state (where the lure moves like a pendulum) and a "throw and catch" state. These two states can then be controlled via javascript in the game. Everything was timed to achieve the desired result: about 4 seconds animation, using 75 distinct frames rendered in Blender.
+
+![forgotten_database]([[!!images/simulzine4-fig4a.jpg]])
+<div class="image_section">
+  <span class="image_figure">figure 5</span><br>
+  a sprite sheet of the fishing pole animation consisting of 74 frames<br>
+</div>
+
+<div class="button_demo_container">
+<a class="button_demo white" href="file:///media/alex/green500/Dropbox/repos/simulzine.com/demos/simulzine4-demo1-animated-river-water.html" target="_blank">view HTML5 canvas animation &#187;&#187;</a>
+</div>
+
+# 3d animated clamp shell with or without a perl inside #
+
+For its use in another scene in the game, an animated clamp shell was required that would be either empty or (if the player was lucky) holding a pearl inside. Luckily the 3d model of the shell was provided to us, but the UV texturing had to be done in Blender. The flickering movement of the shell, before it opens wide, was done by simply applying a noise modifier to its rotation f-curves.
+
+![the animation of the clamp shell in Blender]([[!!images/simulzine4-fig5.png]])
+<div class="image_section">
+  <span class="image_figure">figure 6</span><br>
+  the animation of the clamp shell in Blender<br>
+  <div id="legend">
+    <span style="font-weight:400;">left top panel</span>: camera view,
+    <span style="font-weight:400;">left bottom panel</span>: the noise modifier on the rotation f-curve,
+    <span style="font-weight:400;">center panel</span>: general 3d view
+  </div>
+</div>
+
+![a sprite sheet of the clamp shell animation consisting of 35 frames]([[!!images/simulzine4-fig5a.jpg]])
+<div class="image_section">
+  <span class="image_figure">figure 7</span><br>
+  a sprite sheet of the clamp shell animation consisting of 35 frames<br>
+</div>
+
+<div class="button_demo_container">
+<a class="button_demo white" href="file:///media/alex/green500/Dropbox/repos/simulzine.com/demos/simulzine4-demo1-animated-river-water.html" target="_blank">view HTML5 canvas animation &#187;&#187;</a>
+</div>
+
+# Rendering and 2d sprite sheet generation #
+
+To bring these 3d animations in a 2d game, they have to be rendered frame by frame with the use of alpha channels in the empty space. Also the camera has to be placed in a convenient point of view so as to avoid differences in perspective with the rest of the environment. The rendered images can then be brought in a software like Texturepacker to trim the white space and produce sprite sheets to use in the game platform of choice. Depending on the resolution requirements, these 2d animations can get resource-hungry in terms of file size and rendering performance, so do your math before timing your animation and rendering the frames needed from Blender.
+
+# Limitations of HTML5 Game Development for mobile devices #
+
+The game was developed in HTML5 Canvas using the CreateJS library and was intended for mobile devices, so we quickly faced the performance limitations of browser games, especially in mobile platforms. Texture sizes, frames per second, device specific errors or preloading/caching methods became part of our regular concerns. Fortunately, the lead developer of the game liked what could be achieved with this workflow and supported the extra development needed to render the realistic 2d sprites efficiently in the demo game setting.
+
+# Tools used for this workflow #
+
+* Blender was the 3d animation suite of choice
+* Texturepacker was used for sprite sheet generation
+* CreateJS was the Javascript Canvas Library
+* Flash Professional Toolkit for CreateJS was used to prepare the demos for this article

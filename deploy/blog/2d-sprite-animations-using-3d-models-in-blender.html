@@ -1,0 +1,288 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset=""
+  <meta http-equiv="X-UA-Compatible" content="">
+  <title>Generating 2d sprites using animated 3d models</title>
+  <meta name="description" content="tutorial of gigapixel imaging
+">
+  <meta name="author" content="Alex Giannakidis">
+  <meta name="viewport" content="">
+   <link href='http://fonts.googleapis.com/css?family=Audiowide|Ubuntu|Open+Sans:400,300,300italic,400italic,600,600italic,700,800italic|Muli:300,300italic,400,400italic&subset=latin,greek-ext' rel='stylesheet' type='text/css'>
+      <!-- Place favicon.ico & apple-touch-icon.png
+        in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="/media/favicon.ico">
+  <link rel="apple-touch-icon" href="/media/apple-touch-icon.png">
+    
+
+ 
+    <link rel="stylesheet" href="/media/css/syntaxhighlighter/styles/shCoreMidnight.css" type="text/css" >
+  <link rel="stylesheet" href="/media/css/site.css" >
+  
+     <script type="text/javascript" src="/media/css/syntaxhighlighter/scripts/shCore.js"></script>
+   <script type="text/javascript" src="/media/css/syntaxhighlighter/scripts/shAutoloader.js"></script>
+    <script src="/media/js/libs/modernizr-1.7.min.js"></script>
+    </head>
+<body id="2d-sprite-animations-using-3d-models-in-blender">
+    <div id="container">
+            <div id="main" role="main">
+          <header class="banner clearfix">
+          <a href="http://www.simulzine.com/index.html"> <h1>SIMULZINE</h1> <a/>
+           <a href="http://www.simulzine.com/about.html"> <h3>by Alex Giannakidis</h3> </a>                              <nav class=main_nav>
+    <ul>
+                <li>
+            <a title="Home Page"
+                class="button white home"
+                href="/index.html">
+                home
+            </a>
+        </li>        <li>
+            <a title="Blog"
+                class="button white active blog"
+                href="/blog">
+                articles
+            </a>
+        </li>        <li>
+            <a title="demos prototypes drafts"
+                class="button white about"
+                href="/demos.html">
+                demos
+            </a>
+        </li>        <li>
+            <a title="About"
+                class="button white about"
+                href="/about.html">
+                info
+            </a>
+        </li>    </ul>
+</nav>
+                    </header>
+          <section class="content">
+<article class="post">
+
+  <nav class="post_nav">
+    <h0>SIMULZINE ff</h0>
+    
+    <h1 class="title">
+        <a href="/blog/2d-sprite-animations-using-3d-models-in-blender.html">
+            Generating 2d sprites using animated 3d models
+        </a>
+    </h1>
+    <time datetime="2014-11-15">
+        Posted: 15 Nov 2014
+    </time>
+    <a class="button white backlink" href="/blog">all articles</a>
+  </nav>
+
+<div class="inArticleTitle">
+	Generating 2d sprites using animated 3d models
+</div>
+<time datetime="2014-11-15">
+    Posted: 15 Nov 2014
+</time>
+<p><img alt="SIMULZINE#4-cover-2d-3d-blender" src="/media/images/simulzine4-cover.jpg" />
+<br/></p>
+<p>This article describes the workflow used for making 2d sprite textures with the help of 3d animated models and Blender. The resulting 2d animations can be used as assets in games or other applications. In this way, more realistic and easier to produce animations can be embedded in a 2d&nbsp;setting.</p>
+<h1 id="a-river-scene-for-an-html5-fishing-game">A river scene for an <span class="caps">HTML5</span> fishing&nbsp;game</h1>
+<p>The workflow was developed and used in some <span class="caps">HTML5</span> demo games of a game studio for which i was doing contract work back in 2013. We wanted to make a visually appealing river scene, where the player will repeatedly throw a fishing pole into the water to catch fish. Based on his catch, the player would either win, lose or participate in a mini game. The background image of the scene was chosen by the art director, while i, as the animator, focused mostly on the water, the fishing pole, and the clamp&nbsp;shell.</p>
+<p><img alt="backdrop of the river scene" src="/media/images/simulzine4-fig1.jpg" />
+<div class="image_section">
+  <span class="image_figure">figure 1</span><br>
+  backdrop of the river scene<br>
+</div></p>
+<h1 id="3d-animated-river-water">3d animated river&nbsp;water</h1>
+<p>In contrast to ocean water, some specific characteristics of river water are&nbsp;:</p>
+<ul>
+<li>flow in one&nbsp;direction</li>
+<li>constant&nbsp;speed</li>
+<li>smaller surface&nbsp;waves</li>
+<li>shallow&nbsp;depths</li>
+</ul>
+<p>Surprisingly, there are a lot of tutorials about making animated 3d ocean water, but maybe none that focus on the specifics of river water. An additional challenge was the fact that this water animation had to be a seamless loop. It would loop constantly in the scene, giving the impression of a realistic river observed closely from its&nbsp;banks.</p>
+<p>To address the above, a simple scene was created in Blender constisting of&nbsp;:</p>
+<ul>
+<li>a plane with the background image as&nbsp;texture</li>
+<li>a plane with a sky image as&nbsp;texture</li>
+<li>a subdivided plane with an ocean modifier applied on&nbsp;it</li>
+<li>a camera and a light&nbsp;source</li>
+</ul>
+<p><img alt="the river scene in Blender" src="/media/images/simulzine4-fig3.jpg" />
+<div class="image_section">
+  <span class="image_figure">figure 2</span><br>
+  the river scene in Blender<br>
+  <div id="legend">
+    <span style="font-weight:400;">top panel</span>: general 3d view,
+    <span style="font-weight:400;">bottom panels</span>: camera views
+    <span style="font-weight:400;">right</span>: outliner and ocean modifier
+  </div>
+</div></p>
+<p>Download the blendfile to understand and use this setup in your own&nbsp;projects.</p>
+<div class="button_demo_container">
+<a class="button_demo white" href="file:///media/alex/green500/Dropbox/repos/simulzine.com/demos/simulzine4-demo1-animated-river-water.html" target="_blank">download .blendfile &#187;&#187;</a>
+</div>
+
+<p>The river consists of a plane (with an ocean modifier applied) repeated three times in the Y direction. To simulate the river flow, the camera (with its backdrop and the sky) were moved in the Y direction, while the ocean modifier generated the desired water effects. Having in mind that the ocean modifier renders identical waves in every repeated plane, if we start moving the camera (with its backdrop and the sky) from the center of the first plane to the exact center of the next repeated plane, a seamless loopable animation is achieved! Also, the material of the river has a mirror effect similar to most water materials used in 3d. This way it reflects the surrounding environment (in our case the background image and the&nbsp;sky).</p>
+<p><img alt="a sprite sheet of the river water animation consisting of 29 frames" src="/media/images/simulzine4-fig2.jpg" />
+<div class="image_section">
+  <span class="image_figure">figure 3</span><br>
+  a sprite sheet of the river water animation consisting of 29 frames<br>
+</div></p>
+<div class="button_demo_container">
+<a class="button_demo white" href="file:///media/alex/green500/Dropbox/repos/simulzine.com/demos/simulzine4-demo1-animated-river-water.html" target="_blank">view <span class="caps">HTML5</span> canvas animation &#187;&#187;</a>
+</div>
+
+<h1 id="3d-animated-fishing-pole-and-lure">3d animated fishing pole and&nbsp;lure</h1>
+<p>A 3d model of a fishing pole was purchased and then adjusted and animated in Blender. The challenges here were the realistic bending of the flexible pole followed by the dynamic movement of the lure, the correct perspective of fishing in the shore of a river, the impact point/time of the lure in the water and finally some foam effect for the water&nbsp;surface.</p>
+<p><img alt="the animation of the fishing pole and lure setup in Blender" src="/media/images/simulzine4-fig4.png" />
+<div class="image_section">
+  <span class="image_figure">figure 4</span><br>
+  the animation of the fishing pole and lure in Blender<br>
+</div></p>
+<p>A simple deform modifier and shapekeys were used to animate the fishing pole. The lure, the line and the handle were animated seperately. The splash and foam effect was generated using a particle system triggered at water impact and kept alive until the end of the animation. The animation had two states: an &#8220;idle&#8221; state (where the lure moves like a pendulum) and a &#8220;throw and catch&#8221; state. These two states can then be controlled via javascript in the game. Everything was timed to achieve the desired result: about 4 seconds animation, using 75 distinct frames rendered in&nbsp;Blender.</p>
+<p><img alt="forgotten_database" src="/media/images/simulzine4-fig4a.jpg" />
+<div class="image_section">
+  <span class="image_figure">figure 5</span><br>
+  a sprite sheet of the fishing pole animation consisting of 74 frames<br>
+</div></p>
+<div class="button_demo_container">
+<a class="button_demo white" href="file:///media/alex/green500/Dropbox/repos/simulzine.com/demos/simulzine4-demo1-animated-river-water.html" target="_blank">view <span class="caps">HTML5</span> canvas animation &#187;&#187;</a>
+</div>
+
+<h1 id="3d-animated-clamp-shell-with-or-without-a-perl-inside">3d animated clamp shell with or without a perl&nbsp;inside</h1>
+<p>For its use in another scene in the game, an animated clamp shell was required that would be either empty or (if the player was lucky) holding a pearl inside. Luckily the 3d model of the shell was provided to us, but the <span class="caps">UV</span> texturing had to be done in Blender. The flickering movement of the shell, before it opens wide, was done by simply applying a noise modifier to its rotation&nbsp;f-curves.</p>
+<p><img alt="the animation of the clamp shell in Blender" src="/media/images/simulzine4-fig5.png" />
+<div class="image_section">
+  <span class="image_figure">figure 6</span><br>
+  the animation of the clamp shell in Blender<br>
+  <div id="legend">
+    <span style="font-weight:400;">left top panel</span>: camera view,
+    <span style="font-weight:400;">left bottom panel</span>: the noise modifier on the rotation f-curve,
+    <span style="font-weight:400;">center panel</span>: general 3d view
+  </div>
+</div></p>
+<p><img alt="a sprite sheet of the clamp shell animation consisting of 35 frames" src="/media/images/simulzine4-fig5a.jpg" />
+<div class="image_section">
+  <span class="image_figure">figure 7</span><br>
+  a sprite sheet of the clamp shell animation consisting of 35 frames<br>
+</div></p>
+<div class="button_demo_container">
+<a class="button_demo white" href="file:///media/alex/green500/Dropbox/repos/simulzine.com/demos/simulzine4-demo1-animated-river-water.html" target="_blank">view <span class="caps">HTML5</span> canvas animation &#187;&#187;</a>
+</div>
+
+<h1 id="rendering-and-2d-sprite-sheet-generation">Rendering and 2d sprite sheet&nbsp;generation</h1>
+<p>To bring these 3d animations in a 2d game, they have to be rendered frame by frame with the use of alpha channels in the empty space. Also the camera has to be placed in a convenient point of view so as to avoid differences in perspective with the rest of the environment. The rendered images can then be brought in a software like Texturepacker to trim the white space and produce sprite sheets to use in the game platform of choice. Depending on the resolution requirements, these 2d animations can get resource-hungry in terms of file size and rendering performance, so do your math before timing your animation and rendering the frames needed from&nbsp;Blender.</p>
+<h1 id="limitations-of-html5-game-development-for-mobile-devices">Limitations of <span class="caps">HTML5</span> Game Development for mobile&nbsp;devices</h1>
+<p>The game was developed in <span class="caps">HTML5</span> Canvas using the CreateJS library and was intended for mobile devices, so we quickly faced the performance limitations of browser games, especially in mobile platforms. Texture sizes, frames per second, device specific errors or preloading/caching methods became part of our regular concerns. Fortunately, the lead developer of the game liked what could be achieved with this workflow and supported the extra development needed to render the realistic 2d sprites efficiently in the demo game&nbsp;setting.</p>
+<h1 id="tools-used-for-this-workflow">Tools used for this&nbsp;workflow</h1>
+<ul>
+<li>Blender was the 3d animation suite of&nbsp;choice</li>
+<li>Texturepacker was used for sprite sheet&nbsp;generation</li>
+<li>CreateJS was the Javascript Canvas&nbsp;Library</li>
+<li>Flash Professional Toolkit for CreateJS was used to prepare the demos for this&nbsp;article</li>
+</ul>
+<div class="article_tags">
+<ul class="tags clear">
+tags:
+<li>
+    <a class="small" href="/blog/tags/blender.html">
+        blender
+    </a>
+</li>
+<li>
+    <a class="small" href="/blog/tags/2D.html">
+        2D
+    </a>
+</li>
+<li>
+    <a class="small" href="/blog/tags/3D.html">
+        3D
+    </a>
+</li>
+<li>
+    <a class="small" href="/blog/tags/html5.html">
+        html5
+    </a>
+</li>
+</ul>
+</div>
+</article><div class="social_buttons">
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="orbitlab" data-related="orbitlab" data-hashtags="acropolis">Tweet</a>
+<div class="g-plusone"></div>
+</div>
+</section>
+
+<div class="prev_next">
+	<a class="prev"
+	title="Accordion Menu Generator for the krPano Panorama Viewer"
+        href="/blog/accordion-menu-krpano-panorama-viewer.html" >
+	Accordion Menu Generator for the krPano Panorama Viewer
+	</a>
+	<a class="next"
+    title=""
+    >
+	  
+	</a>
+</div> 
+      </div>
+       	  
+      </div> <!--! end of #container -->
+  <footer>
+    <a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank">creative commons license</a>, 2012, Alex Giannakidis |
+    static pages generated with <a href="https://github.com/hyde/hyde" target="_blank">hyde</a> <br/> 
+    view <a href="https://github.com/alexinorbit/simulzine.com" target="_blank">source</a> on github, 
+    subscribe to <a href="/atom.xml" target="_blank">rss</a>
+  </footer>
+      <script type="text/javascript">
+		SyntaxHighlighter.autoloader(
+  			'js jscript javascript      /media/css/syntaxhighlighter/scripts/shBrushJScript.js',
+  			'xml xhtml xslt html xhtml  /media/css/syntaxhighlighter/scripts/shBrushXml.js'
+  			
+		);
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.defaults['gutter'] = false;
+	SyntaxHighlighter.all();
+	</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js">\x3C/script>')</script>
+     <script type="text/javascript">
+ $(".post_nav").css("visibility", "hidden");
+    $(window).scroll(function () {
+		var d = $(window).scrollTop();
+    	if (d > 200 )
+    		{
+      			$(".post_nav").css("visibility", "visible");
+      			$(".post_nav").fadeIn("slow");
+      		};
+      	if (d < 200 )
+    		{
+      			$(".post_nav").fadeOut("slow");
+      		};
+    });
+</script>
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+    <!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
+       change the UA-XXXXX-X to be your site's ID -->
+<script>
+    var _gaq = [['_setAccount', 'UA-30895874-1'], ['_trackPageview']];
+    (function(d, t) {
+    var g = d.createElement(t),
+        s = d.getElementsByTagName(t)[0];
+    g.async = true;
+    g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g, s);
+    })(document, 'script');
+</script>
+  	 
+  </body>
+</html>

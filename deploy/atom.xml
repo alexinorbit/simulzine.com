@@ -2,15 +2,38 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>
         SIMULZINE - Alex Giannakidis    </title>
-        <link href="atom.xml" rel="self" />
+        <link href="/atom.xml" rel="self" />
     
         <link href="/"/>
     
         
-    <updated>2013-10-18T01:09:31Z</updated>
+    <updated>2014-11-19T21:25:47Z</updated>
 
     <id>/atom.xml/</id>
 
+            <entry>
+            <title type="html">Generating 2d sprites using animated 3d models</title>
+            <author><name>Alex Giannakidis</name></author>
+            <link href="/blog/2d-sprite-animations-using-3d-models-in-blender.html"/>
+            <updated>2014-11-15T00:00:00Z</updated>
+            <published>2014-11-15T00:00:00Z</published>
+            <id>/blog/2d-sprite-animations-using-3d-models-in-blender.html</id>
+                        <category   scheme="/blog/tags"
+                        term="blender"
+                        label="Blender" />
+                        <category   scheme="/blog/tags"
+                        term="2D"
+                        label="2d" />
+                        <category   scheme="/blog/tags"
+                        term="3D"
+                        label="3d" />
+                        <category   scheme="/blog/tags"
+                        term="html5"
+                        label="Html5" />
+            
+            <content type="html">
+                                            </content>
+        </entry>
             <entry>
             <title type="html">Accordion Menu Generator for the krPano Panorama Viewer</title>
             <author><name>Alex Giannakidis</name></author>
@@ -23,10 +46,10 @@
                         label="Krpano" />
                         <category   scheme="/blog/tags"
                         term="accordion_menu"
-                        label="Accordion_Menu" />
+                        label="Accordion_menu" />
                         <category   scheme="/blog/tags"
                         term="open_source"
-                        label="Open_Source" />
+                        label="Open_source" />
                         <category   scheme="/blog/tags"
                         term="GUI"
                         label="Gui" />
@@ -35,176 +58,7 @@
                         label="Github" />
             
             <content type="html">
-                                &lt;p&gt;&lt;img alt=&#34;SIMULZINE#3-cover-accordion-menu-generator&#34; src=&#34;/media/images/accordion.png&#34; /&gt;
-&lt;div class=&#34;button_demo_container&#34;&gt;
-&lt;a class=&#34;button_demo white&#34; href=&#34;http://simulzine.com/projects/accordion-menu-generator/krpano/&#34; target=&#34;_blank&#34;&gt;generate an accordion menu &amp;#187;&amp;#187;&lt;/a&gt;
-&lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;An accordion menu is an often used element by &lt;span class=&#34;caps&#34;&gt;GUI&lt;/span&gt; designers. It comes handy because it&amp;#8217;s a &amp;#8220;spacesaver&amp;#8221; in rich applications that need to have their content easily accessible. Especially in mobile devices, accordions menus are found everywhere. In this post I present an accordion menu generator for the krpano panorama viewer, that recently got compatible with mobile devices (through webGL or css3D). This is also my first open source project&amp;nbsp;:) &lt;/p&gt;
-&lt;h1 id=&#34;how-this-project-started&#34;&gt;How this project&amp;nbsp;started&lt;/h1&gt;
-&lt;p&gt;I prepared a static version of an animated accordion menu, last year, for use in the Acropolis Virtual Tour. After some people in the krpano forums requested the code for the menu, I started to build a dynamic version which could generate a menu based on some essential parameters. Lately the project evolved and got a front-end for novice users to test and generate their menu on the fly. The code of the generated menu is highly customizable in terms of style and functionality. The code is publicly available on github, as a separete repository, and can be improved or extended with other features by anyone&amp;nbsp;interested.&lt;/p&gt;
-&lt;h1 id=&#34;essentials-of-an-accordion-in-the-graphical-user-interface&#34;&gt;Essentials of an accordion in the graphical user&amp;nbsp;interface&lt;/h1&gt;
-&lt;p&gt;According to wikipedia: &lt;span class=&#34;italic_style&#34;&gt;an accordion is a vertically stacked list of items (e.g. labels or thumbnails). Each item can be &amp;#8220;expanded&amp;#8221; or &amp;#8220;stretched&amp;#8221; to reveal the content associated with that item. There can be zero or more items expanded at a time, depending on the configuration.&lt;/span&gt; In our case I split the accordion menu in groups and events. Groups are the items that can be expanded and reveal the event buttons. A group can have numerous events. Another important aspect of our approach are formations. When a group becomes active the according formation animates the other objects to reveal the event buttons associated with&amp;nbsp;it.&lt;/p&gt;
-&lt;h1 id=&#34;variables-of-the-generator&#34;&gt;Variables of the&amp;nbsp;generator&lt;/h1&gt;
-&lt;p&gt;The following figure depicts the required user input to generate the accordion. Blue dotted lines refer to dimensions (width, height, position) and green lines refer to quantity.
-All dimensions are in % (percentage) of the viewers width and height. Please take into consideration that this figure is only a part of&amp;nbsp;viewer. &lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;accordion variables&#34; src=&#34;/media/images/accordion-vars.png&#34; /&gt;
-&lt;div class=&#34;image_section&#34;&gt;
-    &lt;span class=&#34;image_figure&#34;&gt;figure 1&lt;/span&gt;&lt;br&gt; 
-    user variables to generate the accordion menu&lt;br&gt; 
-    &lt;div id=&#34;legend&#34;&gt;
-      &lt;span style=&#34;font-weight:400;&#34;&gt;X&lt;/span&gt;: x position of menu (origin top left),
-      &lt;span style=&#34;font-weight:400;&#34;&gt;Y&lt;/span&gt;: y position of menu (origin top left),
-      &lt;span style=&#34;font-weight:400;&#34;&gt;&lt;span class=&#34;caps&#34;&gt;MW&lt;/span&gt;&lt;/span&gt;: width of menu,
-      &lt;span style=&#34;font-weight:400;&#34;&gt;&lt;span class=&#34;caps&#34;&gt;GH&lt;/span&gt;&lt;/span&gt;: group buttons height,
-      &lt;span style=&#34;font-weight:400;&#34;&gt;&lt;span class=&#34;caps&#34;&gt;EH&lt;/span&gt;&lt;/span&gt;: event buttons height,
-      &lt;span style=&#34;font-weight:400;&#34;&gt;&lt;span class=&#34;caps&#34;&gt;GN&lt;/span&gt;&lt;/span&gt;: quantity of group buttons,
-      &lt;span style=&#34;font-weight:400;&#34;&gt;&lt;span class=&#34;caps&#34;&gt;G1EN&lt;/span&gt;&lt;/span&gt;: quantity of event buttons for group 1
-    &lt;/div&gt;&lt;br /&gt;
-&lt;/div&gt;&lt;/p&gt;
-&lt;h1 id=&#34;a-quick-look-at-the-code&#34;&gt;A quick look at the&amp;nbsp;code&lt;/h1&gt;
-&lt;p&gt;The krpano viewer is a fully functional panoramic rendering engine. It uses xml code for storing static settings and has its own dynamic scripting language, also called krpano script, when more advanced features, like custom variables and functions, are needed. When embeding the viewer into &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt;, a &lt;span class=&#34;caps&#34;&gt;DOM&lt;/span&gt; element is created that can be manipulated via javascript. This structure helps novice users to have a project up and running quickly (with the default settings), and at the same time gives developers the required tools to make unique customized stuff. &lt;br /&gt;&lt;/p&gt;
-&lt;p&gt;What follows is the main function (also called action) for the generation of an accordion menu based on user input. It is about sequencial placing of group/event buttons and assigning the according properties (labels, onclick events, styles, etc.) to&amp;nbsp;them.&lt;/p&gt;
-&lt;div id=&#34;codebox&#34; style=&#34;&#34;&gt;
-&lt;pre class=&#34;brush: xml&#34;&gt;
-
-&lt;action name=&#34;createMenu&#34;&gt; &lt;!-- Generator of Accordion Menu --&gt;
-setParameters(); &lt;!-- set initial values of menu position --&gt;
-&lt;!-- keep previous and current x, y positions of a pointer in the generation process --&gt;
-set(ypos,0);
-set(xpos, get(varX));
-set(ypos2,0); 
-set(xpos2, get(varX));
-add(ypos,varY);
-
-&lt;!-- start procedural generation of menu --&gt;
-for(set(i,1), i le varGN, inc(i), &lt;!-- varGN is quantity of group buttons --&gt;
-    txtadd(pname, &#39;Btn_Group&#39;, get(i)); &lt;!-- add custom text on group button --&gt;
-    txtadd(xpos_percent,get(xpos), &#39;%&#39;);
-    txtadd(ypos_percent,get(ypos), &#39;%&#39;);
-    txtadd(gformation, &#39;GroupFormation&#39;, get(i), &#39;()&#39;);
-    addgroupBTN(get(pname), get(xpos_percent), get(ypos_percent), get(varMW_percent), get(varGH_percent)); &lt;!-- create and add a group button on specified X and Y positions based on parsed values--&gt;
-    set(plugin[%pname].onclick, get(gformation)); &lt;!-- set onclick event of newly created group button --&gt;
-    &lt;!-- specify current Y position (ypos2) for generating event buttons  --&gt;
-    mul(ypos2,i, varGH);
-    add(ypos2,varY);    
-        if(i == 1, set(varGNx, get(varG1EN)); );  &lt;!-- varG1EN is quantity of event buttons for first group --&gt;
-        if(i == 2, set(varGNx, get(varG2EN)); );  &lt;!-- varG2EN is quantity of event buttons for second group --&gt;
-        if(i == 3, set(varGNx, get(varG3EN)););  &lt;!-- varG3EN is quantity of event buttons for third group --&gt;
-        if(i == 4, set(varGNx, get(varG4EN)););  &lt;!-- varG4EN is quantity of event buttons for fourth group --&gt;
-        for(set(k,1), k le varGNx, inc(k), &lt;!-- varGNx is quantity of current group --&gt;
-            txtadd(pname, &#39;Btn_Group&#39;, get(i),&#39;_event_&#39;, get(k)); &lt;!-- add custom text on event button --&gt;
-            txtadd(xpos_percent,get(xpos), &#39;%&#39;); 
-            txtadd(ypos2_percent,get(ypos2), &#39;%&#39;);
-            txtadd(gformation, &#39;GroupFormation&#39;, get(i), &#39;()&#39;);
-            addeventBTN(get(pname), get(xpos_percent), get(ypos2_percent), get(varew_percent), get(varEH_percent));  &lt;!-- create and add an event button on specified X and Y positions based on parsed values--&gt;
-            inc(ypos2,get(varEH)); &lt;!--increase current Y positions by height of event buttons --&gt;
-            set(plugin[%pname].onclick, get(gformation)); &lt;!-- set onclick event of newly created event button --&gt;
-            );
-    );
-&lt;/action&gt;
-&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Group and Event buttons are added based on the following custom functions. They are based on the textfield plugin that comes with the krpano viewer, but it can be replaced by other plugins or tailored&amp;nbsp;images.&lt;/p&gt;
-&lt;div id=&#34;codebox&#34; style=&#34;&#34;&gt;
-&lt;pre class=&#34;brush: xml&#34;&gt;
-
-&lt;action name=&#34;createGbutton&#34;&gt; &lt;!-- action to create dynamically a Group textfield based button --&gt;
-        addplugin(get(pname));
-        set(plugin[%pname].html,[p]%1[/p]);
-        set(plugin[%pname].x,%2);
-        set(plugin[%pname].y,%3);
-        set(plugin[%pname].width,%4);
-        set(plugin[%pname].height,%5);
-        set(plugin[%pname].url, plugins/textfield.swf);
-        plugin[%pname].loadstyle(GroupButtonsStyle)
-&lt;/action&gt;
-
-&lt;action name=&#34;createEbutton&#34;&gt; &lt;!-- action to create dynamically an Event textfield based button --&gt;
-        addplugin(get(pname));
-        set(plugin[%pname].html,[p]%1[/p]);
-        set(plugin[%pname].x,%2);
-        set(plugin[%pname].y,%3);
-        set(plugin[%pname].width,%4);
-        set(plugin[%pname].height,%5);
-        set(plugin[%pname].url, plugins/textfield.swf);
-        plugin[%pname].loadstyle(EventButtonsStyle)
-&lt;/action&gt;
-
-&lt;action name=&#34;addgroupBTN&#34;&gt; &lt;!-- action to add Group button on stage --&gt;
-        createGbutton(%1, %2, %3, %4, %5);
-        inc(ypos,get(varGH));       
-&lt;/action&gt;
-
-&lt;action name=&#34;addeventBTN&#34;&gt; &lt;!-- action to add Event button on stage --&gt;    
-        createEbutton(%1, %2, %3, %4, %5);
-&lt;/action&gt;
-
-&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Another important aspect of the accordion are the different formations (or states) that are triggered based on which Group Button is active (as mentioned earlier). Formations are not generated on the fly (eg. dynamic). I&amp;#8217;ve scripted the first four of them statically, so currently the menu is limited to 4 group buttons.  For example the code for Group 2 is&amp;nbsp;:&lt;/p&gt;
-&lt;div id=&#34;codebox&#34; style=&#34;&#34;&gt;
-&lt;pre class=&#34;brush: xml&#34;&gt;
-
-&lt;action name=&#34;GroupFormation2&#34;&gt;
-&lt;!-- Expand Group 2 Button, Show event buttons of Group 2, Move rest of Group Buttons to convinient position, Hide the rest of event buttons --&gt;
-hideGroup3();
-hideGroup1();
-hideGroup4();
-set(plugin[Btn_Group3].blendmode, normal);
-set(plugin[Btn_Group4].blendmode, normal);
-set(plugin[Btn_Group1].blendmode, normal);
-set(plugin[Btn_Group2].blendmode, hardlight);
-mul(varqevents2, varG2EN, varEH);
-add(varg2l2,varqevents2,varGH);
-txtadd(varg2l2_percent,get(varg2l2), &#39;%&#39;);
-tween(plugin[Btn_Group1].height, get(varGH_percent));
-tween(plugin[Btn_Group2].height, get(varg2l2_percent));
-tween(plugin[Btn_Group3].height, get(varGH_percent));
-tween(plugin[Btn_Group4].height, get(varGH_percent));
-set(varg2y2,get(varg2y0));
-add(varg3y2, varg2y2, varg2l2);
-txtadd(varg3y2_percent,get(varg3y2), &#39;%&#39;);
-add(varg4y2, varg3y2, varGH);
-txtadd(varg4y2_percent,get(varg4y2), &#39;%&#39;);
-tween(plugin[Btn_Group2].y, get(varg2y0_percent));
-tween(plugin[Btn_Group3].y, get(varg3y2_percent));
-tween(plugin[Btn_Group4].y, get(varg4y2_percent));
-showGroup2();
-set(plugin[Btn_Group1].enabled,true);
-set(plugin[Btn_Group2].enabled,false);
-set(plugin[Btn_Group3].enabled,true);
-set(plugin[Btn_Group4].enabled,true);
-&lt;/action&gt;
-
-&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;To name and set the onclick events of the buttons based on your preference include this in your code (for every button)&amp;nbsp;:&lt;/p&gt;
-&lt;div id=&#34;codebox&#34; style=&#34;&#34;&gt;
-&lt;pre class=&#34;brush: xml&#34;&gt;
-
-set(plugin[Btn_Group2_event_1].html,[p]In the main Gorge 1[/p]);
-set(plugin[Btn_Group2_event_1].onclick,loadscene_2());
-
-&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h1 id=&#34;specifics-of-our-krpano-accordion-menu&#34;&gt;Specifics of our  krpano Accordion&amp;nbsp;Menu&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;currently supports up to four Groups and six Events per Group, but can be easily extended to&amp;nbsp;more&lt;/li&gt;
-&lt;li&gt;uses .blendmode property (currently not supported in &lt;span class=&#34;caps&#34;&gt;HTML5&lt;/span&gt;&amp;nbsp;version)&lt;/li&gt;
-&lt;li&gt;can be custom styled based on your design - just edit the according style&amp;nbsp;entities&lt;/li&gt;
-&lt;li&gt;only one group expanded at a&amp;nbsp;time&lt;/li&gt;
-&lt;li&gt;works with text labels (eg. textfield plugin) but can be edited to work with images&amp;nbsp;also&lt;/li&gt;
-&lt;li&gt;all dimensions are in % (percentage) of the viewers width and&amp;nbsp;height.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;the-github-repository&#34;&gt;The github&amp;nbsp;repository&lt;/h1&gt;
-&lt;p&gt;As mentioned earlier I&amp;#8217;ve creted a github repository to host the code of the generator. I&amp;#8217;m planning to extend the project with an image based accordion menu in the future like the one you can see in the Acropolis Virtual Tour when you click at the &amp;#8220;Detail Views&amp;#8221; button. I also hope that I get some help from other krpano developers for this next&amp;nbsp;task.&lt;/p&gt;
-&lt;div class=&#34;button_demo_container&#34;&gt;
-&lt;a class=&#34;button_demo white&#34; href=&#34;https://github.com/alexinorbit/accordion-menu-generator&#34; target=&#34;_blank&#34;&gt;view github repository &amp;#187;&amp;#187;&lt;/a&gt;
-&lt;/div&gt;            </content>
+                                            </content>
         </entry>
             <entry>
             <title type="html">Gigapixel Imaging at the Acropolis of Athens - Parthenon</title>
@@ -227,171 +81,7 @@ set(plugin[Btn_Group2_event_1].onclick,loadscene_2());
                         label="Parthenon" />
             
             <content type="html">
-                                &lt;p&gt;&lt;img alt=&#34;SIMULZINE#2-colver-parthenon-gigapixel-screenshot&#34; src=&#34;/media/images/simulzine2-cover.jpg&#34; /&gt;
-&lt;div class=&#34;button_demo_container&#34;&gt;
-&lt;a class=&#34;button_demo white&#34; href=&#34;http://www.simulzine.com/demos/simulzine2-demo1-gigapixel-of-parthenon-east-facade.html&#34; target=&#34;_blank&#34;&gt;explore gigapixel image &amp;#187;&amp;#187;&lt;/a&gt;
-&lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;My latest project, with orbitlab, was the creation of an interactive &lt;a href=&#34;http://acropolis-virtualtour.gr&#34; target=&#34;_blank&#34;&gt;virtual tour at the Acropolis of Athens&lt;/a&gt;. Amongst others, it involved the acquisition of five gigapixel scale images from the Acropolis Monuments. The project was an initiative of the &lt;a href=&#34;http://www.ysma.gr&#34; target=&#34;_blank&#34;&gt;Acropolis Restoration Service&lt;/a&gt;, the organization responsible for the restoration of the tormented and partially destroyed 2500 years old Acropolis Monuments over the past 30 years.
-&lt;br/&gt;&lt;br/&gt;
-The decision to adopt &lt;span class=&#34;italic_style&#34;&gt;state of the art&lt;/span&gt; technological solutions to &amp;#8220;bring online&amp;#8221; the entirety of the Acropolis is not merely a statement for the preservation work undertaken by the organization, but also a great contribution to the institution&amp;#8217;s mission to promote remote access to cultural&amp;nbsp;heritage.&lt;/p&gt;
-&lt;h1 id=&#34;choosing-the-point-of-view&#34;&gt;Choosing the Point of&amp;nbsp;View&lt;/h1&gt;
-&lt;p&gt;The monument facades to be photographed, were previously examined for proper lighting conditions, required for a long  gigapixel shooting. The point of view was carefully chosen with respect to insidious distortions that come up when you are too close to the monument. About 30 m in front of the east facade would not only show details of restoration works, but also produce the &amp;#8220;wow!&amp;#8221; effect when zooming in the final gigapixel image. The sun should be high, minimizing shadows. The east facade of the Parthenon was photographed by our crew at noon 13.00 for about one hour in September of&amp;nbsp;2010.&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;horizontal field of view of gigapixel shoot&#34; src=&#34;/media/images/simulzine2-fig1.jpg&#34; /&gt;
-&lt;div class=&#34;image_section&#34;&gt;
-    &lt;span class=&#34;image_figure&#34;&gt;figure 1&lt;/span&gt;&lt;br&gt; 
-    horizontal field of view of gigapixel shoot&lt;br&gt; 
-    &lt;div id=&#34;legend&#34;&gt;
-      &lt;span style=&#34;font-weight:400;&#34;&gt;hfov&lt;/span&gt;: horizontal field of view,
-      &lt;span style=&#34;font-weight:400;&#34;&gt;d&lt;/span&gt;: distance of camera from object,
-      &lt;span style=&#34;font-weight:400;&#34;&gt;red lines&lt;/span&gt;: equal sides of isosceles triangle,
-      &lt;span style=&#34;font-weight:400;&#34;&gt;blue dotted line&lt;/span&gt;: Parthenon East Facade,
-      &lt;span style=&#34;font-weight:400;&#34;&gt;red circle&lt;/span&gt;: camera,
-      &lt;span style=&#34;font-weight:400;&#34;&gt;image&lt;/span&gt;: Acropolis groundplan orthophoto
-    &lt;/div&gt;&lt;br /&gt;
-&lt;/div&gt;&lt;/p&gt;
-&lt;h1 id=&#34;things-to-consider-before-shooting&#34;&gt;Things to consider before&amp;nbsp;shooting&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;Weather : sunny, clear atmosphere, no clouds (bad for&amp;nbsp;stitching)&lt;/li&gt;
-&lt;li&gt;Sun Position: The sun has to be in a convenient position (during the hole shooting!) to properly light the part of the monument to be&amp;nbsp;photographed&lt;/li&gt;
-&lt;li&gt;Crowding : You don&amp;#8217;t want people in your shots. When possible set up a perimeter. Prepare for delays, repeated shots, manual shooting with the robotic&amp;nbsp;arm.&lt;/li&gt;
-&lt;li&gt;Focusing : You may want to switch to manual focusing at areas where foreground objects could disturb your depth of&amp;nbsp;field&lt;/li&gt;
-&lt;li&gt;Know your gear:  Estimate the time needed to complete the shots! You don&amp;#8217;t want the night to come or run out of battery. Estimate file size, keep&amp;nbsp;backup!&lt;/li&gt;
-&lt;li&gt;Take Notes: Especially about duplicate shots and downloaded photographs from your camera (saves a lot of boring work&amp;nbsp;afterward!)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;available-gear&#34;&gt;Available&amp;nbsp;Gear&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;Camera : Nikon&amp;nbsp;D700 &lt;/li&gt;
-&lt;li&gt;Lens : Sigma 500mm f/4.5 &lt;span class=&#34;caps&#34;&gt;EX&lt;/span&gt;&amp;nbsp;&lt;span class=&#34;caps&#34;&gt;HSM&lt;/span&gt; &lt;/li&gt;
-&lt;li&gt;robotic camera mount : &lt;span class=&#34;caps&#34;&gt;EPIC&lt;/span&gt;&amp;nbsp;Pro&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Our crew programmed the robotic rig to capture an area of 55&amp;#176; horizontal and 40&amp;#176; vertical field of view with a focal length of 500mm, that means a 16 X 17 grid with 272 cells (camera positions) - in three different exposure levels - that makes us 816 photographs and about 8.5 &lt;span class=&#34;caps&#34;&gt;GB&lt;/span&gt; of raw data on the&amp;nbsp;D700.&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;computed grid based on shooting parameters and covered area&#34; src=&#34;/media/images/simulzine2-fig2.jpg&#34; /&gt;
-&lt;div class=&#34;image_section&#34;&gt;
-    &lt;span class=&#34;image_figure&#34;&gt;figure 2&lt;/span&gt;&lt;/br&gt; 
-    computed grid based on shooting parameters and covered area&lt;/br&gt; 
-&lt;/div&gt;&lt;/p&gt;
-&lt;h1 id=&#34;post-processing&#34;&gt;Post-processing&lt;/h1&gt;
-&lt;p&gt;The challenge at gigapixel imaging is to capture a solid dynamic range over the whole scene, and keep the details in light &lt;span class=&#34;amp&#34;&gt;&amp;amp;&lt;/span&gt; dark areas at varying lighting conditions, this makes blending afterward an easier task. With the sun being the only light source (and a moving one&amp;#8230;) things can get a little tricky. With time we know that when taking care of a few basic things in situ (at the image acquisition process), stitching algorithms will make a good job (only a few control points had to be added manually), but what matters most in gigapixel imaging is blending. You&amp;#8217;ll want to include every possible technique that makes it easier for blending algorithms to produce an acceptable and homogeneous result over your final gigapixel&amp;nbsp;image.&lt;/p&gt;
-&lt;p&gt;Below, I will describe the post-processing workflow, from converting the &lt;span class=&#34;caps&#34;&gt;RAW&lt;/span&gt; photographs, &lt;span class=&#34;caps&#34;&gt;HDR&lt;/span&gt; processing, stitching, blending &lt;span class=&#34;amp&#34;&gt;&amp;amp;&lt;/span&gt; tonemapping up until the web deployment of the final gigapixel&amp;nbsp;image. &lt;/p&gt;
-&lt;h1 id=&#34;raw-conversion&#34;&gt;Raw&amp;nbsp;Conversion&lt;/h1&gt;
-&lt;p&gt;The first task of post processing this big amount of photographs is to set a uniform white balance throughout all of them. We usually use a gray card for this procedure but it can be done in many different ways at the raw conversion process or in situ. So from the camera&amp;#8217;s raw format (most DSLRs today compress at 14bit of color information) we convert to 16bit .tif without loosing valuable dynamic range. The use of a full frame sensor (Nikon D700) often results to strong vignetting around the image, so this had to be also corrected during the raw&amp;nbsp;conversion.&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;raw conversion of all photographs involves white balance &amp;amp; vignetiing correction&#34; src=&#34;/media/images/simulzine2-fig3.jpg&#34; /&gt;
-&lt;div class=&#34;image_section&#34;&gt;
-    &lt;span class=&#34;image_figure&#34;&gt;figure 3&lt;/span&gt;&lt;/br&gt; 
-    raw conversion of all photographs involves white balance &lt;span class=&#34;amp&#34;&gt;&amp;amp;&lt;/span&gt; vignetiing correction&lt;/br&gt; 
-&lt;/div&gt;&lt;/p&gt;
-&lt;h1 id=&#34;grid-alignment&#34;&gt;Grid&amp;nbsp;Alignment&lt;/h1&gt;
-&lt;p&gt;After removing possible duplicate shots, we are ready to align our set of 816 photographs in our favorite stitching &lt;span class=&#34;amp&#34;&gt;&amp;amp;&lt;/span&gt; blending software. We favor &lt;a href=&#34;http://www.ptgui.com/&#34; target=&#34;_blank&#34;&gt;PTGui&lt;/a&gt; not just because it has a new functionality supporting robotic rigs but because it is pretty straightforward and supports the stitching process with a variety of other tools. It has also proven to handle large data sets quiet stable. &lt;a href=&#34;http://hugin.sourceforge.net/&#34; target=&#34;_blank&#34;&gt;Hugin&lt;/a&gt;, the open source alternative fairly straightfoward too and can be effectively used easy for small panoramas but lacks support for gigapixel images. Below you can see a screenshot of 272 positions with 3 exposure brackets aligned in the PTGui&amp;nbsp;editor.&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;816 photographs automatic aligned in ptgui, 272 grid positions, 3 exposure brackets&#34; src=&#34;/media/images/simulzine2-fig4.jpg&#34; /&gt;
-&lt;div class=&#34;image_section&#34;&gt;
-    &lt;span class=&#34;image_figure&#34;&gt;figure 4&lt;/span&gt;&lt;/br&gt; 
-    816 photographs automatic aligned in ptgui, 272 grid positions, 3 exposure brackets&lt;/br&gt; 
-&lt;/div&gt;&lt;/p&gt;
-&lt;h1 id=&#34;hdr-acquisition-processing&#34;&gt;&lt;span class=&#34;caps&#34;&gt;HDR&lt;/span&gt; acquisition &lt;span class=&#34;amp&#34;&gt;&amp;amp;&lt;/span&gt;&amp;nbsp;processing&lt;/h1&gt;
-&lt;p&gt;&lt;span class=&#34;caps&#34;&gt;HDR&lt;/span&gt; Processing will contribute effectively to the results and is standard for professional work. For multiple exposures acquisition, a step of &lt;span class=&#34;caps&#34;&gt;1EV&lt;/span&gt; was sufficient for the well lighten east facade of the Parthenon and was chosen for the 3-exposures bracketing sequence. Basic panoramic imaging requires the camera to be in aperture priority, to keep a constant depth of field during the multiple exposures. So we let the camera do the metering and the lens to focus. Taking some test images will help to adjust the bracketing sequence. The goal is to capture as much of the dynamic range of the scene in varying lighting conditions. Images were taken with an aperture size of f11 (best performance of our lens) and exposure times from 1/25 to 1/2500&amp;nbsp;second. &lt;/p&gt;
-&lt;p&gt;Figure 5 showcases the detail accumulation of the bracketed sequence for a single grid position. Click the button below to view an &lt;span class=&#34;caps&#34;&gt;HDR&lt;/span&gt; visualization of the resulting 32bit image after exposure blending. Figures 6,7 &lt;span class=&#34;amp&#34;&gt;&amp;amp;&lt;/span&gt; 8 display the separated exposure brackets for the whole set of loaded images in PTGui. Click the button below to view an &lt;span class=&#34;caps&#34;&gt;HDR&lt;/span&gt; visualization of the resulting gigapixel 32bit image after exposure blending. (To view the &lt;span class=&#34;caps&#34;&gt;HDR&lt;/span&gt; visualizations you need a WebGL enabled&amp;nbsp;browser)&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;gaining detail from bracketed set of 3 exposures results to a 32bit HDR image&#34; src=&#34;/media/images/simulzine2-fig5.jpg&#34; /&gt;
-&lt;div class=&#34;image_section&#34;&gt;
-    &lt;span class=&#34;image_figure&#34;&gt;figure 5&lt;/span&gt;&lt;/br&gt; 
-    gaining detail from bracketed set of 3 exposures results to a 32bit &lt;span class=&#34;caps&#34;&gt;HDR&lt;/span&gt; image&lt;/br&gt; 
-&lt;/div&gt;
-&lt;div class=&#34;button_demo_container&#34;&gt;
-&lt;a class=&#34;button_demo white&#34; href=&#34;http://www.simulzine.com/demos/simulzine2-demo2-webgl-hdr-parthenon-east.html&#34; target=&#34;_blank&#34; &gt;view hdr visualization of resulting 32bit image &amp;#187;&amp;#187;&lt;/a&gt;
-&lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;272 normal exposed photographs aligned&#34; src=&#34;/media/images/simulzine2-fig6.jpg&#34; /&gt;
-&lt;div class=&#34;image_section&#34;&gt;
-    &lt;span class=&#34;image_figure&#34;&gt;figure 6&lt;/span&gt;&lt;/br&gt; 
-272 normal exposed photographs aligned&lt;/br&gt; 
-&lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;272 over exposed photographs aligned&#34; src=&#34;/media/images/simulzine2-fig7.jpg&#34; /&gt;
-&lt;div class=&#34;image_section&#34;&gt;
-    &lt;span class=&#34;image_figure&#34;&gt;figure 7&lt;/span&gt;&lt;/br&gt; 
-272 over exposed photographs aligned&lt;/br&gt; 
-&lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;272 under exposed photographs aligned&#34; src=&#34;/media/images/simulzine2-fig8.jpg&#34; /&gt;
-&lt;div class=&#34;image_section&#34;&gt;
-    &lt;span class=&#34;image_figure&#34;&gt;figure 8&lt;/span&gt;&lt;/br&gt; 
-272 under exposed photographs aligned&lt;/br&gt; 
-&lt;/div&gt;&lt;/p&gt;
-&lt;h1 id=&#34;stitching-and-blending&#34;&gt;Stitching and&amp;nbsp;Blending&lt;/h1&gt;
-&lt;p&gt;There is a variety of reliable software in the market, suitable for gigapixel processing, but it is worth to say that they all use the same stitching algorithms  &lt;a href=&#34;http://en.wikipedia.org/wiki/Panorama_Tools&#34; target=&#34;_blank&#34;&gt;(panotools)&lt;/a&gt;. Most stitching software are just graphical user interfaces for these algorithms packed with a lot of functionalities that make our lives easier. An overlapping of 25% for neighboring (horizontal &lt;span class=&#34;amp&#34;&gt;&amp;amp;&lt;/span&gt; vertilcal) photographs was sufficient enough for the automatic detection of control points throughout the whole gigapixel&amp;nbsp;image.&lt;/p&gt;
-&lt;p&gt;The following figure depicts the whole post-processing workflow after raw conversion. Although very few, there were some stitching errors that were of minor importance (like the one marked below), that we chose not to retouch. To preserve the empirical provenance of the final image no retouching should be applied on pixel information of the actual&amp;nbsp;monument.&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;stitching, blending &amp;amp; tonemapping of overlapping areas&#34; src=&#34;/media/images/simulzine2-fig9.jpg&#34; /&gt;
-&lt;div class=&#34;image_section&#34;&gt;
-    &lt;span class=&#34;image_figure&#34;&gt;figure 9&lt;/span&gt;&lt;br&gt; 
-    stitching, blending &lt;span class=&#34;amp&#34;&gt;&amp;amp;&lt;/span&gt; tonemapping of overlapping areas&lt;br&gt; 
-    &lt;div id=&#34;legend&#34;&gt;
-      &lt;span style=&#34;font-weight:400;&#34;&gt;red area&lt;/span&gt;: overlap of horizontal neighbor,
-      &lt;span style=&#34;font-weight:400;&#34;&gt;multicolored labes&lt;/span&gt;: control points,
-      &lt;span style=&#34;font-weight:400;&#34;&gt;green circle&lt;/span&gt;: stitching error
-    &lt;/div&gt;&lt;br /&gt;
-&lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;When we&amp;#8217;ve done a good job at capturing the dynamic range then blending of the images on overlapping areas will not be a hard job. PTGui supports three blending algorithms, the internal one, smartblend and enblend. We found out that smartblend can&amp;#8217;t deal with big image sizes, it simply crashes during the rendering process. Enblend was a good choice for this work. Our final render is a 32bit &lt;span class=&#34;caps&#34;&gt;HDR&lt;/span&gt; image in gigapixel resolution (.hdr or .exr format). Tip: Render small images first to see if blending suits your setup before going for maximum&amp;nbsp;resolution. &lt;/p&gt;
-&lt;div class=&#34;button_demo_container&#34;&gt;
-&lt;a class=&#34;button_demo white&#34; href=&#34;http://www.simulzine.com/demos/simulzine2-demo3-webgl-hdr-parthenon-east.html&#34; target=&#34;_blank&#34; &gt;view hdr visualization of resulting 32bit gigapixel image &amp;#187;&amp;#187;&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Next step will be tonemapping so we can display the &lt;span class=&#34;caps&#34;&gt;HDR&lt;/span&gt; image on traditional&amp;nbsp;displays.&lt;/p&gt;
-&lt;h1 id=&#34;tonemapping&#34;&gt;Tonemapping&lt;/h1&gt;
-&lt;p&gt;As we seen before &lt;span class=&#34;caps&#34;&gt;HDR&lt;/span&gt; images include more color information then traditional bitmaps. More than display hardware can use. These digital images can&amp;#8217;t be displayed in traditional mediums like paper or common monitors or LCDs, with limited luminance. There is an ongoing development of &lt;span class=&#34;caps&#34;&gt;HDR&lt;/span&gt; displays that can make use of 32 bit color information. Dolby is making efforts to license a &lt;span class=&#34;caps&#34;&gt;HDR&lt;/span&gt; display technology to &lt;span class=&#34;caps&#34;&gt;LCD&lt;/span&gt; manufacturers like&amp;nbsp;Sony.&lt;/p&gt;
-&lt;p&gt;So our next step will be the tonemapping of the &lt;span class=&#34;caps&#34;&gt;HDR&lt;/span&gt; gigapixel image, so it can be displayed in traditional displays. Tone mapping is an image processing technique that compresses (or maps) large color information to limited dynamic range formats like .tif or .jpg, with the goal to maintain as much image detail as possible. It is particularly helpful in scenes where dark and bright areas coexist (eg. high contrast scenes). Although tone mapping is mostly used by digital &amp;#8220;cinephotographers&amp;#8221; to produce &lt;span class=&#34;caps&#34;&gt;VFX&lt;/span&gt;, illustrative or aesthetically pleasing images, our goal was to enhance realism and depict the monuments objectively for display on regular computer monitors. Below you can see different tone mapped variations of the Parthenon East&amp;nbsp;Facade: &lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;tonemapping of 32bit image vivid version&#34; src=&#34;/media/images/simulzine2-fig10.jpg&#34; /&gt;
-&lt;div class=&#34;image_section&#34;&gt;
-    &lt;span class=&#34;image_figure&#34;&gt;figure 10&lt;/span&gt;&lt;/br&gt; 
-tonemapping of 32bit image (vivid version)&lt;/br&gt; 
-&lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;tonemapping of 32bit image surrealistic version&#34; src=&#34;/media/images/simulzine2-fig11.jpg&#34; /&gt;
-&lt;div class=&#34;image_section&#34;&gt;
-    &lt;span class=&#34;image_figure&#34;&gt;figure 11&lt;/span&gt;&lt;/br&gt; 
-tonemapping of 32bit image (surrealistic version)&lt;/br&gt; 
-&lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;tonemapping of 32bit image (exposure corrected version)&#34; src=&#34;/media/images/simulzine2-fig12.jpg&#34; /&gt;
-&lt;div class=&#34;image_section&#34;&gt;
-    &lt;span class=&#34;image_figure&#34;&gt;figure 12&lt;/span&gt;&lt;/br&gt; 
-tonemapping of 32bit image (exposure corrected version)&lt;/br&gt; 
-&lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;tonemapping of 32bit image, retouched sky, cropped (final version)&#34; src=&#34;/media/images/simulzine2-fig13.jpg&#34; /&gt;
-&lt;div class=&#34;image_section&#34;&gt;
-    &lt;span class=&#34;image_figure&#34;&gt;figure 13&lt;/span&gt;&lt;/br&gt; 
-tonemapping of 32bit image, retouched sky, cropped (final version)&lt;/br&gt;
-&lt;div id=&#34;legend&#34;&gt;
-      &lt;span style=&#34;font-weight:400;&#34;&gt;width:&lt;/span&gt;: 44318 pixel,
-      &lt;span style=&#34;font-weight:400;&#34;&gt;heigth:&lt;/span&gt;: 23914 pixel,
-      &lt;span style=&#34;font-weight:400;&#34;&gt;file size&lt;/span&gt;: 8.5 &lt;span class=&#34;caps&#34;&gt;GB&lt;/span&gt;
-    &lt;/div&gt;&lt;br /&gt;
-&lt;/div&gt;&lt;/p&gt;
-&lt;h1 id=&#34;deployment-tiling&#34;&gt;Deployment -&amp;nbsp;Tiling&lt;/h1&gt;
-&lt;p&gt;Well, creating the gigapixel image is one matter. Another important aspect is how to display this huge amount of pixels over the internet. So let&amp;#8217;s talk about deployment. Current possibilities depend on browser plug-ins like flash or silverlight required to display rich media within web environments. There are numerous viewers like &lt;a href=&#34;http://krpano.com/&#34; target=&#34;_blank&#34;&gt;krpano&lt;/a&gt; (our choice) and &lt;a href=&#34;http://krpano.com/&#34; target=&#34;_blank&#34;&gt;zoomify&lt;/a&gt; for flash or &lt;a href=&#34;http://en.wikipedia.org/wiki/Deep_Zoom&#34; target=&#34;_blank&#34;&gt;deepzoom&lt;/a&gt; for silverlight. Unfortunately &lt;span class=&#34;caps&#34;&gt;HTML5&lt;/span&gt; and its Canvas element isn&amp;#8217;t currently suitable or mature enough to handle gigapixel images (both krpano and zoomify support &lt;span class=&#34;caps&#34;&gt;HTML5&lt;/span&gt; rendering, but not for gigapixel scale images). Another drawback regarding deployment of gigapixel images is the currently weak support for mobile devices. The only working example I could test was &lt;a href=&#34;http://itunes.apple.com/us/app/gigapan-for-ipad/id393734649?mt=8&#34; target=&#34;_blank&#34;&gt;Gigapan for iPad&lt;/a&gt;, a native coded gallery like app for gigapixel images of the &lt;a href=&#34;http://gigapan.com/&#34; target=&#34;_blank&#34;&gt;gigapan gallery&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The method for displaying gigapixel images effectively is based on tiling, just like maps are displayed in browsers. Figures 14 &lt;span class=&#34;amp&#34;&gt;&amp;amp;&lt;/span&gt; 15 describe the process of tiling and displaying gigapixel images over the internet: &lt;span class=&#34;image_figure&#34;&gt;The final image is spitted into multiple levels of smaller tiles that load depending on the navigation path of the user (panning &lt;span class=&#34;amp&#34;&gt;&amp;amp;&lt;/span&gt; zooming). All the  have the same resolution over the different zoom levels. Every zoom level is a plane with a varying quantity of (equal sized) tiles and updates the viewport of the user by loading the corresponding&amp;nbsp;tiles.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;tiling setup of N zoom levels&#34; src=&#34;/media/images/simulzine2-fig14.jpg&#34; /&gt;
-&lt;div class=&#34;image_section&#34;&gt;
-    &lt;span class=&#34;image_figure&#34;&gt;figure 14&lt;/span&gt;&lt;br&gt; 
-    tiling setup of N zoom levels,&lt;br/&gt; 
-    every level&lt;span class=&#34;subscript_style&#34;&gt;N&lt;/span&gt; has t&lt;span class=&#34;subscript_style&#34;&gt;N&lt;/span&gt;=t&lt;span class=&#34;subscript_style&#34;&gt;0&lt;/span&gt;4&lt;span class=&#34;superscript_style&#34;&gt;N &lt;/span&gt; quantity of tiles, &lt;br&gt; (on every level tile resolution is constant)&lt;br&gt;&lt;br /&gt;
-    &lt;div id=&#34;legend&#34;&gt;
-      &lt;span style=&#34;font-weight:400;&#34;&gt;t&lt;span class=&#34;subscript_style&#34;&gt;N&lt;/span&gt;&lt;/span&gt;: quantity of tiles on level&lt;span class=&#34;subscript_style&#34;&gt;N&lt;/span&gt;,
-      &lt;span style=&#34;font-weight:400;&#34;&gt;t&lt;span class=&#34;subscript_style&#34;&gt;0&lt;/span&gt;&lt;/span&gt;: quantity of tiles on level&lt;span class=&#34;subscript_style&#34;&gt;0&lt;/span&gt; (zoomed out image),
-      &lt;span style=&#34;font-weight:400;&#34;&gt;fov&lt;span class=&#34;subscript_style&#34;&gt;N&lt;/span&gt;&lt;/span&gt;: field of view starting point for loading tiles out of level&lt;span class=&#34;subscript_style&#34;&gt;N&lt;/span&gt;,
-      &lt;span style=&#34;font-weight:400;&#34;&gt;max&lt;/span&gt;: maximum field of view
-      &lt;span style=&#34;font-weight:400;&#34;&gt;D&lt;/span&gt;: parameter of fov variations depended on zoom and interaction settings
-    &lt;/div&gt;&lt;br /&gt;
-&lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;![hypothetical 3d space arrangement of different zoom levels(/media/images/simulzine2-fig15.jpg)
-&lt;div class=&#34;image_section&#34;&gt;
-    &lt;span class=&#34;image_figure&#34;&gt;figure 15&lt;/span&gt;&lt;br&gt; 
-    hypothetical 3d space arrangement of different zoom levels&lt;br&gt; 
-    &lt;div id=&#34;legend&#34;&gt;
-      &lt;span style=&#34;font-weight:400;&#34;&gt;red line&lt;/span&gt;: users navigation path through different zoom levels,
-      &lt;span style=&#34;font-weight:400;&#34;&gt;green area&lt;/span&gt;: users viewport - displaying corresponding tiles based on zoom level &amp;#8220;entered&amp;#8221; by the user
-    &lt;/div&gt;&lt;br /&gt;
-&lt;/div&gt;&lt;/p&gt;
-&lt;h1 id=&#34;further-thoughts&#34;&gt;Further&amp;nbsp;thoughts&lt;/h1&gt;
-&lt;p&gt;The goal in gigapixel imaging, especially for cultural heritage work. is to capture the scene, or the object of interest, as objective as it gets. There is no decissive moment like in traditional photography. It is best to perceive the camera as a sensor for color acquisition than as a moment-capturing-device. Good field work leads to better lab results&amp;nbsp;;)&lt;/p&gt;
-&lt;p&gt;To preserve the empirical provenance of the final image, at all stages, records, notes and project files should be kept for the different processes of the above described workflow. This way, the whole post-processing process can be traced back to the original raw photographs and the final gigapixel image acquires the status of a trusted representation of the &amp;#8220;real-world&amp;#8221; in digital form. Read more about empirical provenance and the concept of digital surrogates in the inspiring paper &lt;a href=&#34;http://culturalheritageimaging.org/What_We_Do/Publications/cipa2007/index.html&#34; target=&#34;_blank&#34;&gt;&amp;#8220;A Digital Future for Cultural Heritage&amp;#8221;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Over the last few years there is an ongoing race for the biggest gigapixel image. Wide metropolitan areas or large scale events are captured in gigapixel scale and displayed over the internet with often poor image quality. In general the final pixel size of an image depends on photographic gear and processing power. In contrast, the final image quality depends on consistent applying of some of the above mentioned techniques. Gigapixel scale images can be printed in large dimensions, exploiting their full detail, for a museum viewing experience. In addition gigapixel images can be embedded in 3d space as backdrops in vfx shots or game&amp;nbsp;engines.&lt;/p&gt;
-&lt;h1 id=&#34;expanding-the-boundaries-of-photography&#34;&gt;&lt;span class=&#34;dquo&#34;&gt;&amp;#8220;&lt;/span&gt;Expanding the boundaries of&amp;nbsp;photography&amp;#8221;&lt;/h1&gt;
-&lt;p&gt;Gigapixel images are explorable images, that provide the viewer with access to a variety of information otherwise hidden to the physical visitor of an archaeological or other site. They represent the virtual binoculars of the user. They can serve documentation and restoration purposes over a variety of disciplines. In addition gigapixel images are suitable for fulldome or large theater projections. Gigapixel imaging was taken out of scientific research and pioneered for the internet and the rest of us by the &lt;a href=&#34;http://www.xrez.com/&#34; target=&#34;_blank&#34;&gt;xRez&lt;/a&gt; team. It&amp;#8217;s about &amp;#8220;expanding the boundaries of photography&amp;#8221; as they say. You can watch a recent revealing lecture about gigapixel imaging by Greg Downing and Eric Hanson of xRez &lt;a href=&#34;http://www.annenbergspaceforphotography.org/events/iris-nights/digital-darkroom/104&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. &lt;/p&gt;
-&lt;p&gt;Thank you for&amp;nbsp;reading.&lt;/p&gt;            </content>
+                                            </content>
         </entry>
             <entry>
             <title type="html">Database-driven Blogs and static HTML generators</title>
@@ -402,7 +92,7 @@ tonemapping of 32bit image, retouched sky, cropped (final version)&lt;/br&gt;
             <id>/blog/database-driven-blogs-static-html-generators.html</id>
                         <category   scheme="/blog/tags"
                         term="web_development"
-                        label="Web_Development" />
+                        label="Web_development" />
                         <category   scheme="/blog/tags"
                         term="blogging"
                         label="Blogging" />
@@ -411,51 +101,9 @@ tonemapping of 32bit image, retouched sky, cropped (final version)&lt;/br&gt;
                         label="Cms" />
                         <category   scheme="/blog/tags"
                         term="HTML_generators"
-                        label="Html_Generators" />
+                        label="Html_generators" />
             
             <content type="html">
-                                &lt;p&gt;&lt;img alt=&#34;forgotten_database&#34; src=&#34;/media/images/forgotten_database.jpg&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Searching for the right way to set up and maintain this blog and to overcome the restrictions that come with mainstream blogging software and services, I arrived at certain conclusions that you&amp;#8217;ll find in the following article. It&amp;#8217;s an article about the technical requirements of modern blogging where I consider recent trends and question traditional ways of getting things done. It addresses techies that are about to start blogging seriously, established bloggers and web developers who are looking for state-of-the-art&amp;nbsp;solutions.&lt;/p&gt;
-&lt;h1 id=&#34;planning-the-simulzinecom-blog&#34;&gt;Planning the simulzine.com&amp;nbsp;blog&lt;/h1&gt;
-&lt;p&gt;Beginning to plan our next project, we usually choose a familiar tool-set and known services. This way we are able to rapid prototype our application and then concentrate on the actual requirements of the project. But is this always the right path to follow? We can quickly think of how things can be build, we&amp;#8217;ve created things that function in the past, we feel comfortable about them and are often allergic to new tools. But this prevents us from perceiving better and smarter ways to fulfill our tasks and we often incorporate unnecessary components into the application. In order to broaden our perspective we need to be aware of the community, get out of our comfort zone of skills and rethink traditions. In the context of project planning, my suggestion is to find the time to experiment and where possible go with open standards. In the coming sections, I have noted some of the things I considered important when planning for this&amp;nbsp;blog.&lt;/p&gt;
-&lt;h1 id=&#34;gratis-hosted-platforms&#34;&gt;Gratis hosted&amp;nbsp;platforms&lt;/h1&gt;
-&lt;p&gt;Our favorite free of charge hosted platforms allow us to set up the appearance of our blog in no time and publish our thoughts right away. Popular blogging platforms like blogspot.com, wordpress.com are actually hosting CMSs on their expenses on their servers. But all of this comes with a price. We are restricted to limited configuration choices and third party licenses. We&amp;#8217;ll be using themes that everyone else uses, and even when we change the parameters, our blog will have the same look (a nice photo won&amp;#8217;t make much difference). Our content will be surrounded by your platform&amp;#8217;s banners, icons or logos. Most likely, there will be advertising or links to other sites that we may not want to be displayed on our site. We&amp;#8217;ll not have complete ownership of our blog; even if the content we create is protected, the domain will not belong to us. And moving our blog to another host or service demands quite an effort.&lt;br /&gt;
-&lt;/p&gt;
-&lt;h1 id=&#34;self-hosted-cmss&#34;&gt;Self hosted&amp;nbsp;CMSs&lt;/h1&gt;
-&lt;p&gt;Today, we most commonly choose to install the blogging software (usually a web &lt;a href=&#34;http://en.wikipedia.org/wiki/Web_content_management_system&#34;&gt;Content Management System, &lt;span class=&#34;caps&#34;&gt;CMS&lt;/span&gt;&lt;/a&gt;) on our web servers. Installation is pretty straightforward and it is accompanied by helpful tutorials. The setup of the underlying database may sometimes be tricky for some people, but many hosting providers offer a one-click installation for popular CMSs like Wordpress or Drupal. A self hosted &lt;span class=&#34;caps&#34;&gt;CMS&lt;/span&gt; avoids most of the disadvantages of the gratis hosted platforms and allows greater control and flexibility over your blog. And since most of these CMSs are open source, we can install and modify plenty of wonderful themes or useful plug-ins that suit our blog&amp;#8217;s&amp;nbsp;needs. &lt;/p&gt;
-&lt;p&gt;So, in terms of design and layout, we are more autonomous with a self hosted &lt;span class=&#34;caps&#34;&gt;CMS&lt;/span&gt;. We&amp;#8217;re tied to less company policies and we have more control over the content that we put on our site, no annoying logos, strange links or unwanted advertising. But keep in mind that we need to maintain and upgrade the software ourself and to do this we need to mess with the &amp;#8220;backend stuff&amp;#8221; (eg. Database). This process can cause a lot of headaches to some folks and it requires particular skills, but we shouldn&amp;#8217;t avoid it. Upgrading to the newer &lt;span class=&#34;caps&#34;&gt;CMS&lt;/span&gt; version is vital if we don&amp;#8217;t want our site to become outdated or run into security&amp;nbsp;risks. &lt;/p&gt;
-&lt;p&gt;CMSs serve massive and complicated websites, which receive frequent updates by multiple users. For community sites, e-commerce, archives, news portals, wikis, forums, file-sharing sites or galleries, CMSs are the right choice. And that&amp;#8217;s because you need a database to store large amounts of content. A &lt;span class=&#34;caps&#34;&gt;CMS&lt;/span&gt;, after all, is also a  user interface for your database: it offers user-friendly navigation, facilitates the updating and assists the management of the diverse resources you store in your&amp;nbsp;database.&lt;/p&gt;
-&lt;p&gt;To display the database content on the browser, our site has to be assembled (or generated) each time a client (user) accesses a page. This is a continuous activity that is often characterized as dynamic or, more accurately, database-driven. Database-driven websites need to execute code (most likely &lt;span class=&#34;caps&#34;&gt;PHP&lt;/span&gt; and MySQL) on the server in order to communicate with the database and to display the required content back to the client&amp;#8217;s (user&amp;#8217;s) browser.  This process is resource hungry and slows things down (although a good caching setup can speed things up). Unfortunately database-driven websites are also vulnerable to various malicious&amp;nbsp;attacks. &lt;/p&gt;
-&lt;h1 id=&#34;do-you-really-need-a-cms-for-your-blog&#34;&gt;Do you really need a &lt;span class=&#34;caps&#34;&gt;CMS&lt;/span&gt; for your&amp;nbsp;blog?&lt;/h1&gt;
-&lt;p&gt;Fortunately not. I found that the database and the accompanied &lt;span class=&#34;caps&#34;&gt;CMS&lt;/span&gt; would be unnecessary components in my blog. I thought of my blog (or any other micro-site) as a printed magazine. The printed magazine consists of the front cover, the editorial, the table of contents and the content. Similarly, a simple blog consists of the front page, the list of your posts, the about section and your posts. However, this structure can also be achieved without a database or a &lt;span class=&#34;caps&#34;&gt;CMS&lt;/span&gt; and thus without a dynamic setup like the one described above, which bears many disadvantages as to its complexity and performance. A fully functional and easy to manage blog can be built with the use of static &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt; generators. A simple static micro site with a news section can also be developed the same way and enjoy all the comforts of pure &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt; pages and many more&amp;nbsp;advantages. &lt;/p&gt;
-&lt;p&gt;When talking about static &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt; pages ones mind goes back to the beginning of the Internet where the web was just but plain hyper-connected &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt; documents. Back then, the web&amp;#8217;s purpose was mainly about retrieving information and not interacting with content. Technological refinement over the last twenty years brought a giant leap in experience and active engagement, especially with the introduction of database-driven websites. However, the effectiveness of good old static web pages, in many areas, remains&amp;nbsp;unbeatable.&lt;/p&gt;
-&lt;h1 id=&#34;static-html-generators&#34;&gt;Static &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt;&amp;nbsp;Generators&lt;/h1&gt;
-&lt;p&gt;Static &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt; Generators are simple and brilliant programs. They represent a practical way to create and maintain structured static web sites. They automate many procedures like navigation, design consistency, chronologically ordered list of contents, etc. They output &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt; files on the basis of a set of templates where we describe the components and structure of our blog. They keep our content apart from the actual code of the blog, making it much easier to&amp;nbsp;maintain. &lt;/p&gt;
-&lt;p&gt;Static &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt; Generators are not a new idea hitting the blogosphere. Back in the old days, Moveable Type used static &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt; output to serve blogs, generating and hosting the pages on its webserver. With the appearance of open source software like Jekyll, Hyde, Pelican and many others (there are really dozens of functional &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt; generators out there), the potential of Static &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt; Generators has become obvious. These programs run on our local machine giving more control and flexibility over the process of designing, setting up and maintaining our micro-site or blog. They use templating languages to separate (or filter) the content from the layouts and they use simple markup languages like Markdown to reformat our text&amp;nbsp;files. &lt;/p&gt;
-&lt;p&gt;Edit your new post with your favorite text editor, generate a new output site (single command), check locally, upload to the web. This is the workflow needed to upload a newly created post to your static blog. Static &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt; generators are a growing trend among programmers. And for good reason: static &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt; generators perform much better than popular&amp;nbsp;CMSs.&lt;/p&gt;
-&lt;h1 id=&#34;the-benefits-of-static-websites&#34;&gt;The benefits of static&amp;nbsp;websites&lt;/h1&gt;
-&lt;p&gt;A set of static &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt; pages performs better for the following&amp;nbsp;reasons:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;maintenance - A static blog is easier to maintain. Every post is a single file. We can compose or edit our posts in our favorite text editor, using an easy markdown language or writing &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt; (and JavaScript if you need to embed various dynamic components into your posts). I dislike &lt;span class=&#34;caps&#34;&gt;WYSIWYG&lt;/span&gt; editors because they lack control and implement unnecessary code into the site. The possibility to edit your blog on your local machine and preview articles without any downtime is also a great helper. I don&amp;#8217;t have to worry about updating any software or maintaining a database to keep my blog up to date and&amp;nbsp;running.&lt;/li&gt;
-&lt;li&gt;speed - Static pages load relatively faster than database-driven pages. The absence of server-side processes for querying the database makes loading faster. To display a static page, the browser just needs to load an existing &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt; file from the server and assemble it on the&amp;nbsp;screen.&lt;/li&gt;
-&lt;li&gt;resources - Static pages are resource-friendly for the web-server as well for the user&amp;#8217;s local machine. Minimizing memory and processing resources is always an advantage, especially for mobile&amp;nbsp;devices.&lt;/li&gt;
-&lt;li&gt;mobility - In contrast to database-driven blogs, where our posts are table entries in a database, in a static blog all the posts are single text files, kept in one folder. This is very convenient for migrating or transporting your content to another system or server in the future. This is also very &amp;#8220;digital repository&amp;#8221; friendly as I mention later&amp;nbsp;on. &lt;/li&gt;
-&lt;li&gt;backup - All the code and content of a static site is kept in one place. We only need to copy-paste or push a folder into our favorite repository and we&amp;#8217;re done. All our work is safely kept in our local machine, our web-server or the cloud service of our choice. This is much easier than backing up a database and a (modified)&amp;nbsp;&lt;span class=&#34;caps&#34;&gt;CMS&lt;/span&gt;.&lt;/li&gt;
-&lt;li&gt;security - A static configuration is kind of a sealed structure regarding external interventions to our web-server. The absence of dynamic processes makes it very hard or even impossible for malicious attacks, like cross-site scripting, to harm our&amp;nbsp;site.&lt;/li&gt;
-&lt;li&gt;customization - If you are an experienced web developer then you&amp;#8217;ll find it more convenient to design and layout your blog using straightforward &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt;/&lt;span class=&#34;caps&#34;&gt;CSS&lt;/span&gt;/JavaScript code, instead of having to deal with your &lt;span class=&#34;caps&#34;&gt;CMS&lt;/span&gt;&amp;#8217;s&amp;nbsp;peculiarities.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The digitization&amp;nbsp;perspective:&lt;/p&gt;
-&lt;p&gt;You might want to consider choosing a static &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt; generator only because your content is kept in single files - digital documents, and that&amp;#8217;s a big deal if you ask me. Besides the mobility benefits you have (e.g. moving to another server), you can also enhance your articles with your preferred metadata schema and render them fully searchable and interoperable with various digital repositories. The single document possibility for your authored content is similar to the digitization of books or other cultural objects, where raw files are enhanced with metadata to fit chosen standards. It would be something like treating your blog like an ever growing e-book that&amp;#8217;s compatible with popular metadata standards. Think of it! Being ready to deliver your marked up content to all kinds of digital repositories (and devices) is a great&amp;nbsp;advantage. &lt;/p&gt;
-&lt;h1 id=&#34;tradeoff&#34;&gt;Tradeoff&lt;/h1&gt;
-&lt;p&gt;There is always a tradeoff when choosing one path over another. Although you can embed various dynamic components to your static blog via client side scripting, you cannot incorporate more advanced features like role-based access control or a self-hosted commenting&amp;nbsp;system. &lt;/p&gt;
-&lt;p&gt;If you are planning to create a multi-user site or a blog with multiple authors, a &lt;span class=&#34;caps&#34;&gt;CMS&lt;/span&gt; is the only choice for&amp;nbsp;you. &lt;/p&gt;
-&lt;p&gt;If you really need comments, with a Static &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt; Generator you will probably have to use proprietary software. If you don&amp;#8217;t mind publicizing proprietary software on your blog, you can easily embed (via JavaScript) a commenting system like Disqus or IntenseDebate; but these services do not save conversations on your own web-server and again they bind you to third party licenses &lt;span class=&#34;amp&#34;&gt;&amp;amp;&lt;/span&gt; services. However, if you have the skills to set up a standalone commenting system and you want to embrace foss (free open source software), then consider &lt;a href=&#34;https://github.com/phusion/juvia/&#34;&gt;Juvia&lt;/a&gt;, which is a one man&amp;#8217;s effort and not a SaaS (Software as a Service), so you need to host it your self.&lt;br /&gt;
-&lt;/p&gt;
-&lt;p&gt;As for me, for the time being, I consider social media platforms and e-mail a sufficient way to communicate with people who read my&amp;nbsp;posts.&lt;/p&gt;
-&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
-&lt;p&gt;If you care about how to future proof your efforts as a blogger, then it&amp;#8217;s worth weighing your options carefully and making sure you protect and deploy your articles on the web in the most convenient way. If you are finally convinced that you do not need a database and a &lt;span class=&#34;caps&#34;&gt;CMS&lt;/span&gt; for your blog or any other micro-site project, then choose your static &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt; generator with&amp;nbsp;care. &lt;/p&gt;
-&lt;p&gt;In setting up this blog, my first concern was to overcome the need for a database. Searching for the people that have done this before me, I talked to other programmers, then I read several &lt;a href=&#34;http://stevelosh.com/blog/2010/01/moving-from-django-to-hyde/&#34;&gt;posts&lt;/a&gt; that talked about static site generators. They helped me find the right tool and I started experimenting until I was satisfied with the results. I chose &lt;a href=&#34;https://github.com/hyde/hyde&#34;&gt;Hyde&lt;/a&gt; because it uses the Jinja2 templating language, which is very similar to Django&amp;#8217;s and is written in Python. There is a wide selection of static site generators written in many languages. If you have experience with Ruby, then you will probably go with &lt;a href=&#34;https://github.com/mojombo/jekyll/&#34;&gt;Jekyll&lt;/a&gt;. &lt;/p&gt;
-&lt;p&gt;From the historian&amp;#8217;s point of view, the static &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt; generators represent a return to the roots, the beginning of the web where everything was just hyper-connected documents. The way I see it, these tools remind us of the forgotten benefits of static &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt; pages. They minimize complexity for simple tasks, they can be made compatible with popular repository standards and they are easier to preserve for the long term. It might seem that you are looking backwards - and you are! But you have good reason to do so. You are making certain that your efforts to produce and present all this great content is future proof.&lt;br /&gt;
-&lt;/p&gt;            </content>
+                                            </content>
         </entry>
     </feed>

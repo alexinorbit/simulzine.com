@@ -14,8 +14,8 @@
    <link href='http://fonts.googleapis.com/css?family=Audiowide|Ubuntu|Open+Sans:400,300,300italic,400italic,600,600italic,700,800italic|Muli:300,300italic,400,400italic&subset=latin,greek-ext' rel='stylesheet' type='text/css'>
       <!-- Place favicon.ico & apple-touch-icon.png
         in the root of your domain and delete these references -->
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/media/favicon.ico">
+  <link rel="apple-touch-icon" href="/media/apple-touch-icon.png">
     
 
  
@@ -62,18 +62,21 @@
                     </header>
           <section class="content">
 <article class="post">
-<nav class="post_nav">
-<h0>SIMULZINE</h0>
-<h1 class="title">
-    <a href="/blog/accordion-menu-krpano-panorama-viewer.html">
-        Accordion Menu Generator for the krPano Panorama Viewer
-    </a>
-</h1>
-<time datetime="2013-08-01">
-    Posted: 01 Aug 2013
-</time>
-<a class="button white backlink" href="/blog">all articles</a>
-</nav>
+
+  <nav class="post_nav">
+    <h0>SIMULZINE ff</h0>
+    
+    <h1 class="title">
+        <a href="/blog/accordion-menu-krpano-panorama-viewer.html">
+            Accordion Menu Generator for the krPano Panorama Viewer
+        </a>
+    </h1>
+    <time datetime="2013-08-01">
+        Posted: 01 Aug 2013
+    </time>
+    <a class="button white backlink" href="/blog">all articles</a>
+  </nav>
+
 <div class="inArticleTitle">
 	Accordion Menu Generator for the krPano Panorama Viewer
 </div>
@@ -84,18 +87,18 @@
 <div class="button_demo_container">
 <a class="button_demo white" href="http://simulzine.com/projects/accordion-menu-generator/krpano/" target="_blank">generate an accordion menu &#187;&#187;</a>
 </div></p>
-<p>An accordion menu is an often used element by <span class="caps">GUI</span> designers. It comes handy because it&#8217;s a &#8220;spacesaver&#8221; in rich applications that need to have their content easily accessible. Especially in mobile devices, accordions menus are found everywhere. In this post I present an accordion menu generator for the krpano panorama viewer, that recently got compatible with mobile devices (through webGL or css3D). This is also my first open source project&nbsp;:) </p>
+<p>An accordion menu is an often used element by <span class="caps">GUI</span> designers. It comes handy because it&#8217;s a &#8220;spacesaver&#8221; in rich applications that need to have their content easily accessible. Especially in mobile devices, accordions menus are found everywhere. In this post I present an accordion menu generator for the krpano panorama viewer, that recently got compatible with mobile devices (through webGL or css3D). This is also my first open source project&nbsp;:)</p>
 <h1 id="how-this-project-started">How this project&nbsp;started</h1>
 <p>I prepared a static version of an animated accordion menu, last year, for use in the Acropolis Virtual Tour. After some people in the krpano forums requested the code for the menu, I started to build a dynamic version which could generate a menu based on some essential parameters. Lately the project evolved and got a front-end for novice users to test and generate their menu on the fly. The code of the generated menu is highly customizable in terms of style and functionality. The code is publicly available on github, as a separete repository, and can be improved or extended with other features by anyone&nbsp;interested.</p>
 <h1 id="essentials-of-an-accordion-in-the-graphical-user-interface">Essentials of an accordion in the graphical user&nbsp;interface</h1>
 <p>According to wikipedia: <span class="italic_style">an accordion is a vertically stacked list of items (e.g. labels or thumbnails). Each item can be &#8220;expanded&#8221; or &#8220;stretched&#8221; to reveal the content associated with that item. There can be zero or more items expanded at a time, depending on the configuration.</span> In our case I split the accordion menu in groups and events. Groups are the items that can be expanded and reveal the event buttons. A group can have numerous events. Another important aspect of our approach are formations. When a group becomes active the according formation animates the other objects to reveal the event buttons associated with&nbsp;it.</p>
 <h1 id="variables-of-the-generator">Variables of the&nbsp;generator</h1>
 <p>The following figure depicts the required user input to generate the accordion. Blue dotted lines refer to dimensions (width, height, position) and green lines refer to quantity.
-All dimensions are in % (percentage) of the viewers width and height. Please take into consideration that this figure is only a part of&nbsp;viewer. </p>
+All dimensions are in % (percentage) of the viewers width and height. Please take into consideration that this figure is only a part of&nbsp;viewer.</p>
 <p><img alt="accordion variables" src="/media/images/accordion-vars.png" />
 <div class="image_section">
-    <span class="image_figure">figure 1</span><br> 
-    user variables to generate the accordion menu<br> 
+    <span class="image_figure">figure 1</span><br>
+    user variables to generate the accordion menu<br>
     <div id="legend">
       <span style="font-weight:400;">X</span>: x position of menu (origin top left),
       <span style="font-weight:400;">Y</span>: y position of menu (origin top left),
@@ -104,7 +107,7 @@ All dimensions are in % (percentage) of the viewers width and height. Please tak
       <span style="font-weight:400;"><span class="caps">EH</span></span>: event buttons height,
       <span style="font-weight:400;"><span class="caps">GN</span></span>: quantity of group buttons,
       <span style="font-weight:400;"><span class="caps">G1EN</span></span>: quantity of event buttons for group 1
-    </div><br />
+    </div>
 </div></p>
 <h1 id="a-quick-look-at-the-code">A quick look at the&nbsp;code</h1>
 <p>The krpano viewer is a fully functional panoramic rendering engine. It uses xml code for storing static settings and has its own dynamic scripting language, also called krpano script, when more advanced features, like custom variables and functions, are needed. When embeding the viewer into <span class="caps">HTML</span>, a <span class="caps">DOM</span> element is created that can be manipulated via javascript. This structure helps novice users to have a project up and running quickly (with the default settings), and at the same time gives developers the required tools to make unique customized stuff. <br /></p>
@@ -117,7 +120,7 @@ setParameters(); <!-- set initial values of menu position -->
 <!-- keep previous and current x, y positions of a pointer in the generation process -->
 set(ypos,0);
 set(xpos, get(varX));
-set(ypos2,0); 
+set(ypos2,0);
 set(xpos2, get(varX));
 add(ypos,varY);
 
@@ -131,14 +134,14 @@ for(set(i,1), i le varGN, inc(i), <!-- varGN is quantity of group buttons -->
     set(plugin[%pname].onclick, get(gformation)); <!-- set onclick event of newly created group button -->
     <!-- specify current Y position (ypos2) for generating event buttons  -->
     mul(ypos2,i, varGH);
-    add(ypos2,varY);    
+    add(ypos2,varY);
         if(i == 1, set(varGNx, get(varG1EN)); );  <!-- varG1EN is quantity of event buttons for first group -->
         if(i == 2, set(varGNx, get(varG2EN)); );  <!-- varG2EN is quantity of event buttons for second group -->
         if(i == 3, set(varGNx, get(varG3EN)););  <!-- varG3EN is quantity of event buttons for third group -->
         if(i == 4, set(varGNx, get(varG4EN)););  <!-- varG4EN is quantity of event buttons for fourth group -->
         for(set(k,1), k le varGNx, inc(k), <!-- varGNx is quantity of current group -->
             txtadd(pname, 'Btn_Group', get(i),'_event_', get(k)); <!-- add custom text on event button -->
-            txtadd(xpos_percent,get(xpos), '%'); 
+            txtadd(xpos_percent,get(xpos), '%');
             txtadd(ypos2_percent,get(ypos2), '%');
             txtadd(gformation, 'GroupFormation', get(i), '()');
             addeventBTN(get(pname), get(xpos_percent), get(ypos2_percent), get(varew_percent), get(varEH_percent));  <!-- create and add an event button on specified X and Y positions based on parsed values-->
@@ -178,10 +181,10 @@ for(set(i,1), i le varGN, inc(i), <!-- varGN is quantity of group buttons -->
 
 <action name="addgroupBTN"> <!-- action to add Group button on stage -->
         createGbutton(%1, %2, %3, %4, %5);
-        inc(ypos,get(varGH));       
+        inc(ypos,get(varGH));
 </action>
 
-<action name="addeventBTN"> <!-- action to add Event button on stage -->    
+<action name="addeventBTN"> <!-- action to add Event button on stage -->
         createEbutton(%1, %2, %3, %4, %5);
 </action>
 
@@ -287,15 +290,15 @@ tags:
 </section>
 
 <div class="prev_next">
-	<a class="prev" 
+	<a class="prev"
 	title="Gigapixel Imaging at the Acropolis of Athens - Parthenon"
         href="/blog/gigapixel-imaging-at-the-Acropolis-of-Athens-Parthenon-east-facade.html" >
 	Gigapixel Imaging at the Acropolis of Athens - Parthenon
 	</a>
 	<a class="next"
-    title=""
-    >
-	  
+    title="Generating 2d sprites using animated 3d models"
+        href="/blog/2d-sprite-animations-using-3d-models-in-blender.html" >
+	  Generating 2d sprites using animated 3d models
 	</a>
 </div> 
       </div>
@@ -320,18 +323,18 @@ tags:
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js">\x3C/script>')</script>
      <script type="text/javascript">
- $(".post_nav").css("visibility", "hidden"); 
+ $(".post_nav").css("visibility", "hidden");
     $(window).scroll(function () {
 		var d = $(window).scrollTop();
     	if (d > 200 )
     		{
-      			$(".post_nav").css("visibility", "visible"); 
-      			$(".post_nav").fadeIn("slow"); 
-      		};	
+      			$(".post_nav").css("visibility", "visible");
+      			$(".post_nav").fadeIn("slow");
+      		};
       	if (d < 200 )
     		{
-      			$(".post_nav").fadeOut("slow");	
-      		};		
+      			$(".post_nav").fadeOut("slow");
+      		};
     });
 </script>
 <script type="text/javascript">

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SIMULZINE#4 demo#3 - Animated Clamp Shell</title>
+	<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<script src="http://code.createjs.com/easeljs-0.6.0.min.js"></script>
+	<script src="http://code.createjs.com/tweenjs-0.3.0.min.js"></script>
+	<script src="http://code.createjs.com/movieclip-0.5.0.min.js"></script>
+	<script src="http://code.createjs.com/preloadjs-0.2.0.min.js"></script>
+	<script src="createjs/shell.js"></script>
+	<style>
+		@media only screen and (min-device-width: 800px) { html { overflow:hidden; } }
+		html { height:100%; }
+		body {
+			color: #909090;
+			font-family:'Muli', sans-serif;
+			font-size:13px;
+			text-align:center;
+			font-weight: bold;
+			background-color: #303030;
+			margin: 0px;
+			overflow: visible; }
+
+		a:hover{ color:#FFFFFF; text-decoration:underline; }
+
+		#krpanoDIV{
+			width:100%;
+			height:75%;
+			position:absolute;
+			overflow: visible;
+		}
+
+		    #bottom {
+
+			position: absolute;
+			width: 100%;
+			padding: 5px;
+			bottom:0px;
+
+		    }
+
+		     #top {
+
+			position: relative;
+			width: 100%;
+			padding: 5px;
+
+
+		    }
+			#caption{
+
+			}
+		    a { color: #d0d0d0;
+		    	text-decoration:none;}
+	</style>
+	<script>
+	var canvas, stage, exportRoot;
+
+	function init() {
+		canvas = document.getElementById("canvas");
+		images = images||{};
+
+	var manifest = [
+		{src:"images/shell250001.png", id:"shell250001"},
+		{src:"images/shell250002.png", id:"shell250002"},
+		{src:"images/shell250003.png", id:"shell250003"},
+		{src:"images/shell250004.png", id:"shell250004"},
+		{src:"images/shell250005.png", id:"shell250005"},
+		{src:"images/shell250006.png", id:"shell250006"},
+		{src:"images/shell250007.png", id:"shell250007"},
+		{src:"images/shell250008.png", id:"shell250008"},
+		{src:"images/shell250009.png", id:"shell250009"},
+		{src:"images/shell250010.png", id:"shell250010"},
+		{src:"images/shell250011.png", id:"shell250011"},
+		{src:"images/shell250012.png", id:"shell250012"},
+		{src:"images/shell250013.png", id:"shell250013"},
+		{src:"images/shell250014.png", id:"shell250014"},
+		{src:"images/shell250015.png", id:"shell250015"},
+		{src:"images/shell250016.png", id:"shell250016"},
+		{src:"images/shell250017.png", id:"shell250017"},
+		{src:"images/shell250018.png", id:"shell250018"},
+		{src:"images/shell250019.png", id:"shell250019"},
+		{src:"images/shell250020.png", id:"shell250020"},
+		{src:"images/shell250021.png", id:"shell250021"},
+		{src:"images/shell250022.png", id:"shell250022"},
+		{src:"images/shell250023.png", id:"shell250023"},
+		{src:"images/shell250024.png", id:"shell250024"},
+		{src:"images/shell250025.png", id:"shell250025"},
+		{src:"images/shell250026.png", id:"shell250026"},
+		{src:"images/shell250027.png", id:"shell250027"},
+		{src:"images/shell250028.png", id:"shell250028"},
+		{src:"images/shell250029.png", id:"shell250029"},
+		{src:"images/shell250030.png", id:"shell250030"},
+		{src:"images/shell250031.png", id:"shell250031"},
+		{src:"images/shell250032.png", id:"shell250032"},
+		{src:"images/shell250033.png", id:"shell250033"},
+		{src:"images/shell250034.png", id:"shell250034"},
+		{src:"images/shell250035.png", id:"shell250035"}
+	];
+
+		var loader = new createjs.PreloadJS(false);
+		loader.onFileLoad = handleFileLoad;
+		loader.onComplete = handleComplete;
+		loader.loadManifest(manifest);
+	}
+
+	function handleFileLoad(o) {
+		if (o.type == "image") { images[o.id] = o.result; }
+	}
+
+	function handleComplete() {
+		exportRoot = new lib.shell();
+
+		stage = new createjs.Stage(canvas);
+		stage.addChild(exportRoot);
+		stage.update();
+
+		var fps_label = new createjs.Text("-- fps", "bold 14px Verdana", "#909090");
+				//fps_label.shadow = new createjs.Shadow("#000000", 1, 1, 2);
+				fps_label.x = 6;
+				fps_label.y = 6;
+
+		var debug_tick = function(){
+				fps_label.text = Math.round(createjs.Ticker.getMeasuredFPS())+' fps';
+				stage.addChild(fps_label);
+			};
+
+
+		createjs.Ticker.useRAF = true;
+		createjs.Ticker.setFPS(15);
+		createjs.Ticker.addListener(stage);
+		createjs.Ticker.addEventListener('tick', debug_tick);
+	}
+	</script>
+</head>
+<body onload="init();">
+
+	<div id="top" style="font-weight:400;">
+	<a style="font-family: 'Audiowide',  sans-serif;  font-size:16px;" href="http://www.simulzine.com/blog/2d-sprite-animations-using-3d-models-in-blender.html">SIMULZINE#4</a> demo#3<br/>
+	<br/>
+	loopable animation made in Blender<br/>
+	played in HTML5 Canvas using CreateJS at 15 fps<br/>
+	<span style="font-weight:900; font-size:16px; color:#fff;">Animated Fishing Pole</span><br/>
+	resolution: 358 x 358<br/>
+	number of frames: 35<br/>
+	</div>
+	<canvas id="canvas" width="358" height="358" style="background-color:#ffffff"></canvas>
+	<br/><br/>
+	<a style="font-weight:400; font-size:10px; color:#999;" href="http://www.simulzine.com/blog/2d-sprite-animations-using-3d-models-in-blender.html" >back to main article</a>
+
+</body>
+</html>

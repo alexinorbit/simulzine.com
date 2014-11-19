@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SIMULZINE#4 demo#1 - Animated River Water</title>
+	<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<script src="http://code.createjs.com/easeljs-0.6.0.min.js"></script>
+	<script src="http://code.createjs.com/tweenjs-0.3.0.min.js"></script>
+	<script src="http://code.createjs.com/movieclip-0.5.0.min.js"></script>
+	<script src="http://code.createjs.com/preloadjs-0.2.0.min.js"></script>
+	<script src="createjs/river-bg.js"></script>
+	<style>
+		@media only screen and (min-device-width: 800px) { html { overflow:hidden; } }
+		html { height:100%; }
+		body {
+			color: #909090;
+			font-family:'Muli', sans-serif;
+			font-size:13px;
+			text-align:center;
+			font-weight: bold;
+			background-color: #303030;
+			margin: 0px;
+			overflow: visible; }
+
+		a:hover{ color:#FFFFFF; text-decoration:underline; }
+
+		#krpanoDIV{
+			width:100%;
+			height:75%;
+			position:absolute;
+			overflow: visible;
+		}
+
+		    #bottom {
+
+			position: absolute;
+			width: 100%;
+			padding: 5px;
+			bottom:0px;
+
+		    }
+
+		     #top {
+
+			position: relative;
+			width: 100%;
+			padding: 5px;
+
+
+		    }
+			#caption{
+
+			}
+		    a { color: #d0d0d0;
+		    	text-decoration:none;}
+	</style>
+	<script>
+	var canvas, stage, exportRoot;
+
+	function init() {
+		canvas = document.getElementById("canvas");
+		images = images||{};
+
+		var manifest = [
+			{src:"images/main_bg_layer0_1024.jpg", id:"main_bg_layer0_1024"},
+			{src:"images/main_bg_layer1_1024.png", id:"main_bg_layer1_1024"},
+			{src:"images/river0001.png", id:"river0001"},
+			{src:"images/river0002.png", id:"river0002"},
+			{src:"images/river0003.png", id:"river0003"},
+			{src:"images/river0004.png", id:"river0004"},
+			{src:"images/river0005.png", id:"river0005"},
+			{src:"images/river0006.png", id:"river0006"},
+			{src:"images/river0007.png", id:"river0007"},
+			{src:"images/river0008.png", id:"river0008"},
+			{src:"images/river0009.png", id:"river0009"},
+			{src:"images/river0010.png", id:"river0010"},
+			{src:"images/river0011.png", id:"river0011"},
+			{src:"images/river0012.png", id:"river0012"},
+			{src:"images/river0013.png", id:"river0013"},
+			{src:"images/river0014.png", id:"river0014"},
+			{src:"images/river0015.png", id:"river0015"},
+			{src:"images/river0016.png", id:"river0016"},
+			{src:"images/river0017.png", id:"river0017"},
+			{src:"images/river0018.png", id:"river0018"},
+			{src:"images/river0019.png", id:"river0019"},
+			{src:"images/river0020.png", id:"river0020"},
+			{src:"images/river0021.png", id:"river0021"},
+			{src:"images/river0022.png", id:"river0022"},
+			{src:"images/river0023.png", id:"river0023"},
+			{src:"images/river0024.png", id:"river0024"},
+			{src:"images/river0025.png", id:"river0025"},
+			{src:"images/river0026.png", id:"river0026"},
+			{src:"images/river0027.png", id:"river0027"},
+			{src:"images/river0028.png", id:"river0028"},
+			{src:"images/river0029.png", id:"river0029"}
+		];
+
+		var loader = new createjs.PreloadJS(false);
+		loader.onFileLoad = handleFileLoad;
+		loader.onComplete = handleComplete;
+		loader.loadManifest(manifest);
+	}
+
+	function handleFileLoad(o) {
+		if (o.type == "image") { images[o.id] = o.result; }
+	}
+
+	function handleComplete() {
+		exportRoot = new lib.riverbg();
+
+		stage = new createjs.Stage(canvas);
+		stage.addChild(exportRoot);
+		stage.update();
+
+		var fps_label = new createjs.Text("-- fps", "bold 14px Verdana", "#f2f639");
+				//fps_label.shadow = new createjs.Shadow("#000000", 1, 1, 2);
+				fps_label.x = 6;
+				fps_label.y = 6;
+
+		var debug_tick = function(){
+				fps_label.text = Math.round(createjs.Ticker.getMeasuredFPS())+' fps';
+				stage.addChild(fps_label);
+			};
+
+
+		createjs.Ticker.useRAF = true;
+		createjs.Ticker.setFPS(10);
+		createjs.Ticker.addListener(stage);
+		createjs.Ticker.addEventListener('tick', debug_tick);
+	}
+	</script>
+</head>
+<body onload="init();">
+		<div id="top" style="font-weight:400;">
+		<a style="font-family: 'Audiowide',  sans-serif;  font-size:16px;" href="http://www.simulzine.com/blog/2d-sprite-animations-using-3d-models-in-blender.html">SIMULZINE#4</a> demo#1<br/>
+		 <br/>
+		 loopable animation made in Blender<br/>
+		 played in HTML5 Canvas using CreateJS at 10 fps<br/>
+		<span style="font-weight:900; font-size:16px; color:#fff;">Animated River Water</span><br/>
+		resolution: 512 x 384<br/>
+		number of frames: 29<br/>
+		</div>
+		<canvas id="canvas" width="512" height="384" style="background-color:#ffffff"></canvas>
+		<br/><br/>
+		<a style="font-weight:400; font-size:10px; color:#999;" href="http://www.simulzine.com/blog/2d-sprite-animations-using-3d-models-in-blender.html" >back to main article</a>
+
+</body>
+</html>

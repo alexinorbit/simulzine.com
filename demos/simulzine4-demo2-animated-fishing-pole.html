@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SIMULZINE#4 demo#2 - Animated Fishing Pole</title>
+	<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<script src="http://code.createjs.com/easeljs-0.6.0.min.js"></script>
+	<script src="http://code.createjs.com/tweenjs-0.3.0.min.js"></script>
+	<script src="http://code.createjs.com/movieclip-0.5.0.min.js"></script>
+	<script src="http://code.createjs.com/preloadjs-0.2.0.min.js"></script>
+	<script src="createjs/pole.js"></script>
+	<style>
+		@media only screen and (min-device-width: 800px) { html { overflow:hidden; } }
+		html { height:100%; }
+		body {
+			color: #909090;
+			font-family:'Muli', sans-serif;
+			font-size:13px;
+			text-align:center;
+			font-weight: bold;
+			background-color: #303030;
+			margin: 0px;
+			overflow: visible; }
+
+		a:hover{ color:#FFFFFF; text-decoration:underline; }
+
+		#krpanoDIV{
+			width:100%;
+			height:75%;
+			position:absolute;
+			overflow: visible;
+		}
+
+		    #bottom {
+
+			position: absolute;
+			width: 100%;
+			padding: 5px;
+			bottom:0px;
+
+		    }
+
+		     #top {
+
+			position: relative;
+			width: 100%;
+			padding: 5px;
+
+
+		    }
+			#caption{
+
+			}
+		    a { color: #d0d0d0;
+		    	text-decoration:none;}
+	</style>
+	<script>
+	var canvas, stage, exportRoot;
+
+	function init() {
+		canvas = document.getElementById("canvas");
+		images = images||{};
+
+	var manifest = [
+		{src:"images/_0000.png", id:"_0000"},
+		{src:"images/_0001.png", id:"_0001"},
+		{src:"images/_0002.png", id:"_0002"},
+		{src:"images/_0003.png", id:"_0003"},
+		{src:"images/_0004.png", id:"_0004"},
+		{src:"images/_0005.png", id:"_0005"},
+		{src:"images/_0006.png", id:"_0006"},
+		{src:"images/_0007.png", id:"_0007"},
+		{src:"images/_0008.png", id:"_0008"},
+		{src:"images/_0009.png", id:"_0009"},
+		{src:"images/_0010.png", id:"_0010"},
+		{src:"images/_0011.png", id:"_0011"},
+		{src:"images/_0012.png", id:"_0012"},
+		{src:"images/_0013.png", id:"_0013"},
+		{src:"images/_0014.png", id:"_0014"},
+		{src:"images/_0015.png", id:"_0015"},
+		{src:"images/_0016.png", id:"_0016"},
+		{src:"images/_0017.png", id:"_0017"},
+		{src:"images/_0018.png", id:"_0018"},
+		{src:"images/_0019.png", id:"_0019"},
+		{src:"images/_0020.png", id:"_0020"},
+		{src:"images/_0021.png", id:"_0021"},
+		{src:"images/_0022.png", id:"_0022"},
+		{src:"images/_0023.png", id:"_0023"},
+		{src:"images/_0024.png", id:"_0024"},
+		{src:"images/_0025.png", id:"_0025"},
+		{src:"images/_0026.png", id:"_0026"},
+		{src:"images/_0027.png", id:"_0027"},
+		{src:"images/_0028.png", id:"_0028"},
+		{src:"images/_0029.png", id:"_0029"},
+		{src:"images/_0030.png", id:"_0030"},
+		{src:"images/_0031.png", id:"_0031"},
+		{src:"images/_0032.png", id:"_0032"},
+		{src:"images/_0033.png", id:"_0033"},
+		{src:"images/_0034.png", id:"_0034"},
+		{src:"images/_0035.png", id:"_0035"},
+		{src:"images/_0036.png", id:"_0036"},
+		{src:"images/_0037.png", id:"_0037"},
+		{src:"images/_0038.png", id:"_0038"},
+		{src:"images/_0039.png", id:"_0039"},
+		{src:"images/_0040.png", id:"_0040"},
+		{src:"images/_0041.png", id:"_0041"},
+		{src:"images/_0042.png", id:"_0042"},
+		{src:"images/_0043.png", id:"_0043"},
+		{src:"images/_0044.png", id:"_0044"},
+		{src:"images/_0045.png", id:"_0045"},
+		{src:"images/_0046.png", id:"_0046"},
+		{src:"images/_0047.png", id:"_0047"},
+		{src:"images/_0048.png", id:"_0048"},
+		{src:"images/_0049.png", id:"_0049"},
+		{src:"images/_0050.png", id:"_0050"},
+		{src:"images/_0051.png", id:"_0051"},
+		{src:"images/_0052.png", id:"_0052"},
+		{src:"images/_0053.png", id:"_0053"},
+		{src:"images/_0054.png", id:"_0054"},
+		{src:"images/_0055.png", id:"_0055"},
+		{src:"images/_0056.png", id:"_0056"},
+		{src:"images/_0057.png", id:"_0057"},
+		{src:"images/_0058.png", id:"_0058"},
+		{src:"images/_0059.png", id:"_0059"},
+		{src:"images/_0060.png", id:"_0060"},
+		{src:"images/_0061.png", id:"_0061"},
+		{src:"images/_0062.png", id:"_0062"},
+		{src:"images/_0063.png", id:"_0063"},
+		{src:"images/_0064.png", id:"_0064"},
+		{src:"images/_0065.png", id:"_0065"},
+		{src:"images/_0066.png", id:"_0066"},
+		{src:"images/_0067.png", id:"_0067"},
+		{src:"images/_0068.png", id:"_0068"},
+		{src:"images/_0069.png", id:"_0069"},
+		{src:"images/_0070.png", id:"_0070"},
+		{src:"images/_0071.png", id:"_0071"},
+		{src:"images/_0072.png", id:"_0072"},
+		{src:"images/_0073.png", id:"_0073"}
+	];
+
+		var loader = new createjs.PreloadJS(false);
+		loader.onFileLoad = handleFileLoad;
+		loader.onComplete = handleComplete;
+		loader.loadManifest(manifest);
+	}
+
+	function handleFileLoad(o) {
+		if (o.type == "image") { images[o.id] = o.result; }
+	}
+
+	function handleComplete() {
+		exportRoot = new lib.pole();
+
+		stage = new createjs.Stage(canvas);
+		stage.addChild(exportRoot);
+		stage.update();
+
+		var fps_label = new createjs.Text("-- fps", "bold 14px Verdana", "#909090");
+				//fps_label.shadow = new createjs.Shadow("#000000", 1, 1, 2);
+				fps_label.x = 6;
+				fps_label.y = 6;
+
+		var debug_tick = function(){
+				fps_label.text = Math.round(createjs.Ticker.getMeasuredFPS())+' fps';
+				stage.addChild(fps_label);
+			};
+
+
+		createjs.Ticker.useRAF = true;
+		createjs.Ticker.setFPS(25);
+		createjs.Ticker.addListener(stage);
+		createjs.Ticker.addEventListener('tick', debug_tick);
+	}
+	</script>
+</head>
+<body onload="init();">
+	<div id="top" style="font-weight:400;">
+	<a style="font-family: 'Audiowide',  sans-serif;  font-size:16px;" href="http://www.simulzine.com/blog/2d-sprite-animations-using-3d-models-in-blender.html">SIMULZINE#4</a> demo#2<br/>
+	<br/>
+	loopable animation made in Blender<br/>
+	played in HTML5 Canvas using CreateJS at 25 fps<br/>
+	<span style="font-weight:900; font-size:16px; color:#fff;">Animated Fishing Pole</span><br/>
+	resolution: 350 x 693<br/>
+	number of frames: 74<br/>
+	</div>
+	<canvas id="canvas" width="350" height="636" style="background-color:#ffffff"></canvas>
+	<br/><br/>
+	<a style="font-weight:400; font-size:10px; color:#999;" href="http://www.simulzine.com/blog/2d-sprite-animations-using-3d-models-in-blender.html" >back to main article</a>
+</body>
+</html>

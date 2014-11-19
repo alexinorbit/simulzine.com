@@ -12,6 +12,10 @@ description: blog
 {% set latest = site.content.walk_resources_sorted_by_time()|first %}
 {% if latest -%}
 <nav class="post_nav">
+{% for res in site.content.walk_resources_sorted_by_index() %}
+  dsadsa{{ loop.index }}. [{{ res.slug|capitalize }}]({{ res.full_url }})
+{% endfor %}
+
 <h1 class="title">
     <a href="{{ content_url(latest.url) }}">
         {{ latest.meta.title }}
@@ -20,15 +24,14 @@ description: blog
 <time datetime="{{ latest.meta.created.strftime('%Y-%m-%d') }}">
     Published: {{ latest.meta.created.strftime('%d %b %Y') }}
 </time>
-<a class="button white backlink" href="{{ content_url(resource.node.url) }}">all articles</a>
 </nav>
 
-{% refer to latest.url as post %} 
+{% refer to latest.url as post %}
 <a href="{{ content_url(latest.url) }}" id="front_cover">{{ post.image|markdown|typogrify }}</a>
 <div id="front_excerpt">
 {{ post.excerpt|markdown|typogrify }}
 <a class="button white medium" href="{{ content_url(latest.url) }}" style="float:right; margin-top:20px;">Continue &rarr;</a>
 </div>
-<div style="clear:both;"></div> 
+<div style="clear:both;"></div>
 
 {%- endif %}
