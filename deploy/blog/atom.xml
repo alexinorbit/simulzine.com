@@ -7,7 +7,7 @@
         <link href="/"/>
     
         
-    <updated>2014-11-19T21:25:47Z</updated>
+    <updated>2014-11-20T00:07:43Z</updated>
 
     <id>/blog/atom.xml/</id>
 
@@ -19,17 +19,17 @@
             <published>2014-11-15T00:00:00Z</published>
             <id>/blog/2d-sprite-animations-using-3d-models-in-blender.html</id>
                         <category   scheme="/blog/tags"
-                        term="blender"
-                        label="Blender" />
+                        term="blender_3D"
+                        label="Blender_3d" />
                         <category   scheme="/blog/tags"
-                        term="2D"
-                        label="2d" />
+                        term="animation"
+                        label="Animation" />
                         <category   scheme="/blog/tags"
-                        term="3D"
-                        label="3d" />
+                        term="createjs"
+                        label="Createjs" />
                         <category   scheme="/blog/tags"
-                        term="html5"
-                        label="Html5" />
+                        term="2d_sprite_sheets"
+                        label="2d_sprite_sheets" />
             
             <content type="html">
                                             </content>

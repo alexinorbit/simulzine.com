@@ -4,7 +4,7 @@ listable: false
 
 ---
 
-{% set tag = site.tagger.tags['html5'] %}
+{% set tag = site.tagger.tags['createjs'] %}
 {% set source = site.content.node_from_relative_path('blog') %}
-{% set walker = source['walk_resources_tagged_with_html5'] %}
+{% set walker = source['walk_resources_tagged_with_createjs'] %}
 {% extends "tagged_posts.j2" %}

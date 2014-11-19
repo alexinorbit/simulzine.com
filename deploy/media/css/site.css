@@ -48,11 +48,11 @@ table {
 }
 
 a {
-    color: #222; 
+    color: #222;
 }
 
 a:hover{
-    
+
     color: rgba(241,9,9,.6);
 }
 
@@ -61,7 +61,7 @@ body{
     background-color: #fcfcfc;
     padding: 0;
     margin: 0;
-    
+
 }
 
 h1{
@@ -111,19 +111,19 @@ footer{
     border-radius: .5em;
     -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-    box-shadow: 0 1px 2px rgba(0,0,0,.2); 
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
 }
 .button:hover {
     text-decoration: none;
 }
 .button:active {
-	
-	
+
+
     position: relative;
     top: 1px;
 }
 
-.button_demo {	
+.button_demo {
 	display: inline-block;
     zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
     *display: inline;
@@ -173,7 +173,7 @@ footer{
     border-radius: .5em;
     -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-    box-shadow: 0 1px 2px rgba(0,0,0,.2); 
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
 }
 .button2:hover {
     text-decoration: none;
@@ -183,7 +183,7 @@ footer{
     top: 1px;
 }
 
-.button_demo2 {	
+.button_demo2 {
 	display: inline-block;
     zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
     *display: inline;
@@ -232,7 +232,7 @@ footer{
 
 /* white */
 .white {
-    color: #4c4c4c;   
+    color: #4c4c4c;
     background: #e5e5e5;
 }
 .white:hover {
@@ -291,7 +291,7 @@ footer{
     -webkit-border-bottom-right-radius: 0.5em;
     -moz-border-radius-bottomleft: 0.5em;
     -moz-border-radius-bottomright: 0.5em;
-   
+
 }
 
 .banner nav li a.button:hover{
@@ -336,9 +336,9 @@ h1.title{
 #front_excerpt{
 	font-size:13px;
 }
-	
 
-section.content{ 
+
+section.content{
     padding: 12px;
     background-color: #ffffff;
     -moz-box-shadow: 0px 4px 12px #ccc; /* FF3.5+ */
@@ -348,7 +348,7 @@ section.content{
      -ms-filter: "progid:DXImageTransform.Microsoft.dropshadow(OffX=12px, OffY=12px, Color='#ccc')"; /* IE8 */
 }
 
-section.content_list{ 
+section.content_list{
     padding: 12px;
 }
 
@@ -382,7 +382,7 @@ section.content_list{
     font-size: 12px;
     line-height: 100%;
     margin-bottom: 12px;
-    display:inline;  
+    display:inline;
 }
 
 .listing li article {
@@ -395,7 +395,7 @@ section.content_list{
     line-height: 20px;
     margin-bottom: 12px;
     font-family: 'Muli', sans-serif;
-    
+
 }
 
 .listing time{
@@ -404,7 +404,7 @@ section.content_list{
     padding-top: 4px;
     margin-top:0px;
     font-size: 10px;
-    float:right;    
+    float:right;
     color:#666666;
 }
 
@@ -423,7 +423,7 @@ article.post img{
     margin-bottom: 0px;
     text-align:center;
     width:600px;
-    
+
 }
 
 .post time{
@@ -543,7 +543,7 @@ a.prev{
 }
 
 a.prev,
-a.next{ 
+a.next{
   	width:290px;
   	font-size:12px;
     margin-bottom: 12px;
@@ -578,7 +578,7 @@ a.backlink:hover, a.prev:hover, a.next:hover{
 .post_nav a{
     color: #000;
     text-decoration: none;
-    
+
 }
 
 .post_nav div{
@@ -644,7 +644,7 @@ vertical-align:middle; margin-bottom: 0px; }
 
 /* EDITORIAL */
 .editorial {
-	
+
 }
 
 .editorial p{
@@ -671,18 +671,18 @@ vertical-align:middle; margin-bottom: 0px; }
 	font-size: 16px;
     line-height: 18px;
     font-family: 'Muli',  sans-serif;
-    font-weight: 300; 
+    font-weight: 300;
     color: #000;
     font-style:italic;
-    
-	
+
+
 }
 
 #legend, image_section {
 	font-size: 14px;
 	list-style-type:none;
 	display: inline;
-	
+
 }
 
 .demo_section {
@@ -691,13 +691,13 @@ vertical-align:middle; margin-bottom: 0px; }
 	font-size: 20px;
   line-height: 18px;
   font-family: 'Muli',  sans-serif;
-  font-weight: 250; 
+  font-weight: 250;
   color: #000;
   font-style:italic;
   margin-left: 3px;
   margin-bottom:25px;
 
-    
+
 }
 .demo_section ul {
 list-style-type:disc;
@@ -708,7 +708,7 @@ margin-left: 30px;
 }
 
 .image_figure {
-	color:#303030; 
+	color:#303030;
 	font-size:14px;
 }
 
@@ -721,17 +721,17 @@ margin-left: 30px;
 }
 
 .superscript_style {
-	font-size:xx-small; 
+	font-size:xx-small;
 	vertical-align:super;
 }
 
 .subscript_style {
-	font-size:xx-small; 
+	font-size:xx-small;
 	vertical-align:sub;
 }
 
 #codebox {
-	
+
 	-webkit-transition: width 1s ease-out;
     -moz-transition: width 1s ease-out;
     -o-transition: width 1s ease-out;

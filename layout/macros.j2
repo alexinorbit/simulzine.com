@@ -1,13 +1,14 @@
 {% macro render_excerpt(res, class=None) %}
 {% refer to res.url as post %}
 <article>
+<time>
+    Published: {{ res.meta.created.strftime('%d %b %Y') }}
+</time><br/>
 <h3><a href="{{ content_url(res.url) }}">{{ res.meta.title }}</a></h3>
 <a href="{{ content_url(res.url) }}">{{ post.image|markdown|typogrify }}</a>
 {{ post.excerpt|markdown|typogrify }}
 <a class="button white medium" href="{{ content_url(res.url) }}" style="float:right; margin-top:20px;">Continue &rarr;</a>
-<time datetime="{{ res.meta.created.strftime('%Y-%m-%d') }}">
-    Published: {{ res.meta.created.strftime('%d %b %Y') }}
-</time>
+
 </article>
 {% endmacro %}
 

@@ -4,7 +4,7 @@ listable: false
 
 ---
 
-{% set tag = site.tagger.tags['3D'] %}
+{% set tag = site.tagger.tags['blender_3D'] %}
 {% set source = site.content.node_from_relative_path('blog') %}
-{% set walker = source['walk_resources_tagged_with_3D'] %}
+{% set walker = source['walk_resources_tagged_with_blender_3D'] %}
 {% extends "tagged_posts.j2" %}

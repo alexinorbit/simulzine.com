@@ -7,8 +7,7 @@
     <meta charset=""
   <meta http-equiv="X-UA-Compatible" content="">
   <title>Generating 2d sprites using animated 3d models</title>
-  <meta name="description" content="tutorial of gigapixel imaging
-">
+  <meta name="description" content="None">
   <meta name="author" content="Alex Giannakidis">
   <meta name="viewport" content="">
    <link href='http://fonts.googleapis.com/css?family=Audiowide|Ubuntu|Open+Sans:400,300,300italic,400italic,600,600italic,700,800italic|Muli:300,300italic,400,400italic&subset=latin,greek-ext' rel='stylesheet' type='text/css'>
@@ -64,8 +63,8 @@
 <article class="post">
 
   <nav class="post_nav">
-    <h0>SIMULZINE ff</h0>
-    
+    <h0>SIMULZINE</h0>
+
     <h1 class="title">
         <a href="/blog/2d-sprite-animations-using-3d-models-in-blender.html">
             Generating 2d sprites using animated 3d models
@@ -85,7 +84,7 @@
 </time>
 <p><img alt="SIMULZINE#4-cover-2d-3d-blender" src="/media/images/simulzine4-cover.jpg" />
 <br/></p>
-<p>This article describes the workflow used for making 2d sprite textures with the help of 3d animated models and Blender. The resulting 2d animations can be used as assets in games or other applications. In this way, more realistic and easier to produce animations can be embedded in a 2d&nbsp;setting.</p>
+<p>This article describes the workflow used for making 2d sprite textures with the help of 3d animated models and Blender. The resulting 2d animations can be used as assets in games or other applications. In this way, more realistic and easier to produce animations can be embedded in a 2d setting. The trade-off between performance and resolution is something the development team has to deal efficiently with especially when targeting <span class="caps">HTML5</span> mobile games.<br/><br/></p>
 <h1 id="a-river-scene-for-an-html5-fishing-game">A river scene for an <span class="caps">HTML5</span> fishing&nbsp;game</h1>
 <p>The workflow was developed and used in some <span class="caps">HTML5</span> demo games of a game studio for which i was doing contract work back in 2013. We wanted to make a visually appealing river scene, where the player will repeatedly throw a fishing pole into the water to catch fish. Based on his catch, the player would either win, lose or participate in a mini game. The background image of the scene was chosen by the art director, while i, as the animator, focused mostly on the water, the fishing pole, and the clamp&nbsp;shell.</p>
 <p><img alt="backdrop of the river scene" src="/media/images/simulzine4-fig1.jpg" />
@@ -121,7 +120,7 @@
 </div></p>
 <p>Download the blendfile to understand and use this setup in your own&nbsp;projects.</p>
 <div class="button_demo_container">
-<a class="button_demo white" href="file:///media/alex/green500/Dropbox/repos/simulzine.com/demos/simulzine4-demo1-animated-river-water.html" target="_blank">download .blendfile &#187;&#187;</a>
+<a class="button_demo white" href="http://goo.gl/pN1gzY">download .blendfile </a>
 </div>
 
 <p>The river consists of a plane (with an ocean modifier applied) repeated three times in the Y direction. To simulate the river flow, the camera (with its backdrop and the sky) were moved in the Y direction, while the ocean modifier generated the desired water effects. Having in mind that the ocean modifier renders identical waves in every repeated plane, if we start moving the camera (with its backdrop and the sky) from the center of the first plane to the exact center of the next repeated plane, a seamless loopable animation is achieved! Also, the material of the river has a mirror effect similar to most water materials used in 3d. This way it reflects the surrounding environment (in our case the background image and the&nbsp;sky).</p>
@@ -131,7 +130,7 @@
   a sprite sheet of the river water animation consisting of 29 frames<br>
 </div></p>
 <div class="button_demo_container">
-<a class="button_demo white" href="file:///media/alex/green500/Dropbox/repos/simulzine.com/demos/simulzine4-demo1-animated-river-water.html" target="_blank">view <span class="caps">HTML5</span> canvas animation &#187;&#187;</a>
+<a class="button_demo white" href="http://www.simulzine.com/demos/simulzine4-demo1-animated-river-water.html" target="_blank">view <span class="caps">HTML5</span> canvas animation &#187;&#187;</a>
 </div>
 
 <h1 id="3d-animated-fishing-pole-and-lure">3d animated fishing pole and&nbsp;lure</h1>
@@ -148,7 +147,7 @@
   a sprite sheet of the fishing pole animation consisting of 74 frames<br>
 </div></p>
 <div class="button_demo_container">
-<a class="button_demo white" href="file:///media/alex/green500/Dropbox/repos/simulzine.com/demos/simulzine4-demo1-animated-river-water.html" target="_blank">view <span class="caps">HTML5</span> canvas animation &#187;&#187;</a>
+<a class="button_demo white" href="http://www.simulzine.com/demos/simulzine4-demo2-animated-fishing-pole.html" target="_blank">view <span class="caps">HTML5</span> canvas animation &#187;&#187;</a>
 </div>
 
 <h1 id="3d-animated-clamp-shell-with-or-without-a-perl-inside">3d animated clamp shell with or without a perl&nbsp;inside</h1>
@@ -169,7 +168,7 @@
   a sprite sheet of the clamp shell animation consisting of 35 frames<br>
 </div></p>
 <div class="button_demo_container">
-<a class="button_demo white" href="file:///media/alex/green500/Dropbox/repos/simulzine.com/demos/simulzine4-demo1-animated-river-water.html" target="_blank">view <span class="caps">HTML5</span> canvas animation &#187;&#187;</a>
+<a class="button_demo white" href="http://www.simulzine.com/demos/simulzine4-demo3-animated-clamp-shell.html" target="_blank">view <span class="caps">HTML5</span> canvas animation &#187;&#187;</a>
 </div>
 
 <h1 id="rendering-and-2d-sprite-sheet-generation">Rendering and 2d sprite sheet&nbsp;generation</h1>
@@ -181,35 +180,35 @@
 <li>Blender was the 3d animation suite of&nbsp;choice</li>
 <li>Texturepacker was used for sprite sheet&nbsp;generation</li>
 <li>CreateJS was the Javascript Canvas&nbsp;Library</li>
-<li>Flash Professional Toolkit for CreateJS was used to prepare the demos for this&nbsp;article</li>
+<li>(Flash Professional Toolkit for CreateJS was used to prepare the demos for this&nbsp;article)</li>
 </ul>
 <div class="article_tags">
 <ul class="tags clear">
 tags:
 <li>
-    <a class="small" href="/blog/tags/blender.html">
-        blender
+    <a class="small" href="/blog/tags/blender_3D.html">
+        blender_3D
     </a>
 </li>
 <li>
-    <a class="small" href="/blog/tags/2D.html">
-        2D
+    <a class="small" href="/blog/tags/animation.html">
+        animation
     </a>
 </li>
 <li>
-    <a class="small" href="/blog/tags/3D.html">
-        3D
+    <a class="small" href="/blog/tags/createjs.html">
+        createjs
     </a>
 </li>
 <li>
-    <a class="small" href="/blog/tags/html5.html">
-        html5
+    <a class="small" href="/blog/tags/2d_sprite_sheets.html">
+        2d_sprite_sheets
     </a>
 </li>
 </ul>
 </div>
 </article><div class="social_buttons">
-<a href="https://twitter.com/share" class="twitter-share-button" data-via="orbitlab" data-related="orbitlab" data-hashtags="acropolis">Tweet</a>
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="alexinorbit">Tweet</a>
 <div class="g-plusone"></div>
 </div>
 </section>

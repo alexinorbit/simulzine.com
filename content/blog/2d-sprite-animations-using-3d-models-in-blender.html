@@ -1,14 +1,13 @@
 ---
 index: 4
 title: Generating 2d sprites using animated 3d models
-description: >
-   tutorial of gigapixel imaging
+description:
 created: !!timestamp '2014-11-15'
 tags:
-    - blender
-    - 2D
-    - 3D
-    - html5
+    - blender_3D
+    - animation
+    - createjs
+    - 2d_sprite_sheets
 ---
 
 {% mark image -%}
@@ -21,10 +20,10 @@ tags:
 
 {% mark excerpt -%}
 
-This article describes the workflow used for making 2d sprite textures with the help of 3d animated models and Blender. The resulting 2d animations can be used as assets in games or other applications. In this way, more realistic and easier to produce animations can be embedded in a 2d setting.
+This article describes the workflow used for making 2d sprite textures with the help of 3d animated models and Blender. The resulting 2d animations can be used as assets in games or other applications. In this way, more realistic and easier to produce animations can be embedded in a 2d setting. The trade-off between performance and resolution is something the development team has to deal efficiently with especially when targeting HTML5 mobile games.
 
 {%- endmark %}
-
+<br/><br/>
 
 # A river scene for an HTML5 fishing game #
 
@@ -68,7 +67,7 @@ To address the above, a simple scene was created in Blender constisting of :
 Download the blendfile to understand and use this setup in your own projects.
 
 <div class="button_demo_container">
-<a class="button_demo white" href="file:///media/alex/green500/Dropbox/repos/simulzine.com/demos/simulzine4-demo1-animated-river-water.html" target="_blank">download .blendfile &#187;&#187;</a>
+<a class="button_demo white" href="http://goo.gl/pN1gzY">download .blendfile </a>
 </div>
 
 
@@ -82,7 +81,7 @@ The river consists of a plane (with an ocean modifier applied) repeated three ti
 
 
 <div class="button_demo_container">
-<a class="button_demo white" href="file:///media/alex/green500/Dropbox/repos/simulzine.com/demos/simulzine4-demo1-animated-river-water.html" target="_blank">view HTML5 canvas animation &#187;&#187;</a>
+<a class="button_demo white" href="http://www.simulzine.com/demos/simulzine4-demo1-animated-river-water.html" target="_blank">view HTML5 canvas animation &#187;&#187;</a>
 </div>
 
 # 3d animated fishing pole and lure #
@@ -104,7 +103,7 @@ A simple deform modifier and shapekeys were used to animate the fishing pole. Th
 </div>
 
 <div class="button_demo_container">
-<a class="button_demo white" href="file:///media/alex/green500/Dropbox/repos/simulzine.com/demos/simulzine4-demo1-animated-river-water.html" target="_blank">view HTML5 canvas animation &#187;&#187;</a>
+<a class="button_demo white" href="http://www.simulzine.com/demos/simulzine4-demo2-animated-fishing-pole.html" target="_blank">view HTML5 canvas animation &#187;&#187;</a>
 </div>
 
 # 3d animated clamp shell with or without a perl inside #
@@ -129,7 +128,7 @@ For its use in another scene in the game, an animated clamp shell was required t
 </div>
 
 <div class="button_demo_container">
-<a class="button_demo white" href="file:///media/alex/green500/Dropbox/repos/simulzine.com/demos/simulzine4-demo1-animated-river-water.html" target="_blank">view HTML5 canvas animation &#187;&#187;</a>
+<a class="button_demo white" href="http://www.simulzine.com/demos/simulzine4-demo3-animated-clamp-shell.html" target="_blank">view HTML5 canvas animation &#187;&#187;</a>
 </div>
 
 # Rendering and 2d sprite sheet generation #
@@ -145,4 +144,4 @@ The game was developed in HTML5 Canvas using the CreateJS library and was intend
 * Blender was the 3d animation suite of choice
 * Texturepacker was used for sprite sheet generation
 * CreateJS was the Javascript Canvas Library
-* Flash Professional Toolkit for CreateJS was used to prepare the demos for this article
+* (Flash Professional Toolkit for CreateJS was used to prepare the demos for this article)
