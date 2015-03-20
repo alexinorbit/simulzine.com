@@ -7,10 +7,33 @@
         <link href="/"/>
     
         
-    <updated>2014-11-20T00:07:42Z</updated>
+    <updated>2015-03-20T01:58:14Z</updated>
 
     <id>/atom.xml/</id>
 
+            <entry>
+            <title type="html">Photorealistic Scientific Visualization of Tsunami Waves and Sea Level Rise, IEEE Publication</title>
+            <author><name>Alex Giannakidis</name></author>
+            <link href="/blog/photorealistic-tsunami-visualization-ieee-publication.html"/>
+            <updated>2015-03-20T00:00:00Z</updated>
+            <published>2015-03-20T00:00:00Z</published>
+            <id>/blog/photorealistic-tsunami-visualization-ieee-publication.html</id>
+                        <category   scheme="/blog/tags"
+                        term="blender_3D"
+                        label="Blender_3d" />
+                        <category   scheme="/blog/tags"
+                        term="animation"
+                        label="Animation" />
+                        <category   scheme="/blog/tags"
+                        term="visualization"
+                        label="Visualization" />
+                        <category   scheme="/blog/tags"
+                        term="tsunami"
+                        label="Tsunami" />
+            
+            <content type="html">
+                                            </content>
+        </entry>
             <entry>
             <title type="html">Generating 2d sprites using animated 3d models</title>
             <author><name>Alex Giannakidis</name></author>

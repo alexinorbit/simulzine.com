@@ -7,10 +7,36 @@
         <link href="/"/>
     
         
-    <updated>2014-11-20T00:07:43Z</updated>
+    <updated>2015-03-20T01:58:15Z</updated>
 
     <id>/blog/excerpts.xml/</id>
 
+            <entry>
+            <title type="html">Photorealistic Scientific Visualization of Tsunami Waves and Sea Level Rise, IEEE Publication</title>
+            <author><name>Alex Giannakidis</name></author>
+            <link href="/blog/photorealistic-tsunami-visualization-ieee-publication.html"/>
+            <updated>2015-03-20T00:00:00Z</updated>
+            <published>2015-03-20T00:00:00Z</published>
+            <id>/blog/photorealistic-tsunami-visualization-ieee-publication.html</id>
+                        <category   scheme="/blog/tags"
+                        term="blender_3D"
+                        label="Blender_3d" />
+                        <category   scheme="/blog/tags"
+                        term="animation"
+                        label="Animation" />
+                        <category   scheme="/blog/tags"
+                        term="visualization"
+                        label="Visualization" />
+                        <category   scheme="/blog/tags"
+                        term="tsunami"
+                        label="Tsunami" />
+            
+            <content type="html">
+                
+                &lt;iframe width=&#34;620&#34; height=&#34;360&#34; src=&#34;https://www.youtube.com/embed/9oXmg4s-Z8s&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;A methodology for the photorealistic scientific visualization of tsunami waves, i&amp;#8217;ve been working on, with the Technical University of Crete, sporadically over the last 5 years, was presented at the &lt;span class=&#34;caps&#34;&gt;IEEE&lt;/span&gt; International Conference of Imaging Systems &lt;span class=&#34;amp&#34;&gt;&amp;amp;&lt;/span&gt; Techiques, last October in&amp;nbsp;Santorini.&lt;/p&gt;            </content>
+        </entry>
             <entry>
             <title type="html">Generating 2d sprites using animated 3d models</title>
             <author><name>Alex Giannakidis</name></author>
