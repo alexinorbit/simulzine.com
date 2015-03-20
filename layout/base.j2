@@ -20,9 +20,9 @@
   <link rel="shortcut icon" href="{{ media_url('/favicon.ico') }}">
   <link rel="apple-touch-icon" href="{{ media_url('/apple-touch-icon.png') }}">
   {% endblock favicons %}
-  
 
- 
+
+
   {% block css %}
   <link rel="stylesheet" href="{{ media_url('css/syntaxhighlighter/styles/shCoreMidnight.css') }}" type="text/css" >
   <link rel="stylesheet" href="{{ media_url('css/site.css') }}" >
@@ -54,16 +54,16 @@
           <section class="content">
           {% block main %}
           {% endblock main %}
-          </section> 
-          {% endblock mytab %} 
+          </section>
+          {% endblock mytab %}
       </div>
-       	  
+
     {% endblock container %}
   </div> <!--! end of #container -->
   <footer>
-    <a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank">creative commons license</a>, 2012, Alex Giannakidis |
-    static pages generated with <a href="https://github.com/hyde/hyde" target="_blank">hyde</a> <br/> 
-    view <a href="https://github.com/alexinorbit/simulzine.com" target="_blank">source</a> on github, 
+    <a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank">creative commons license</a>, 2012-2015, Alex Giannakidis |
+    static pages generated with <a href="https://github.com/hyde/hyde" target="_blank">hyde</a> <br/>
+    view <a href="https://github.com/alexinorbit/simulzine.com" target="_blank">source</a> on github,
     subscribe to <a href="/atom.xml" target="_blank">rss</a>
   </footer>
   {% endblock content%}
@@ -72,7 +72,7 @@
 		SyntaxHighlighter.autoloader(
   			'js jscript javascript      {{ media_url('css/syntaxhighlighter/scripts/shBrushJScript.js') }}',
   			'xml xhtml xslt html xhtml  {{ media_url('css/syntaxhighlighter/scripts/shBrushXml.js') }}'
-  			
+
 		);
 	SyntaxHighlighter.defaults['toolbar'] = false;
 	SyntaxHighlighter.defaults['gutter'] = false;
@@ -88,7 +88,7 @@
   {% block analytics %}
   {% include "analytics.j2" %}
   {% endblock analytics %}
-	 
+
   {% endblock js %}
 </body>
 </html>
